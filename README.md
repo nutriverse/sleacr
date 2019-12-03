@@ -7,6 +7,10 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build
+status](https://travis-ci.org/rapidsurveys/sleacr.svg?branch=master)](https://travis-ci.org/rapidsurveys/sleacr)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/rapidsurveys/sleacr?branch=master&svg=true)](https://ci.appveyor.com/project/rapidsurveys/sleacr)
 <!-- badges: end -->
 
 In the recent past, measurement of coverage has been mainly through
