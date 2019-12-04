@@ -27,7 +27,8 @@ be taken from}
 
 \item{fine}{Granularity of simulated proportiongs; Defaul to 1}
 
-\item{progress}{Logical. Should simulation progress be shown? Default is TRUE}
+\item{progress}{Logical. Should simulation progress be shown?
+Default is TRUE}
 }
 \value{
 A data.frame of coverage proportions and LQAS outcomes
@@ -37,6 +38,6 @@ Function to perform a series of LQAS analysis on simulated coverage survey
 data
 }
 \examples{
-lqas_simul(pop = 10000, n = 40, d.lower = 60, d.upper = 90)
+lqas_simul(runs = 10, pop = 10000, n = 40, d.lower = 60, d.upper = 90)
 
 }

@@ -40,6 +40,7 @@ Function to test performance of LQAS classifier
 }
 \examples{
 
-test_lqas_classifier(pop = 10000, n = 40, d.lower = 60, d.upper = 90)
+test_lqas_classifier(replicates = 5, runs = 5,
+                     pop = 10000, n = 40, d.lower = 60, d.upper = 90)
 
 }
