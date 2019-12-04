@@ -49,7 +49,9 @@ lqas_run <- function(data, n, d.lower, d.upper) {
   ##
   d <- c(floor(n * (d.lower / 100)), floor(n * (d.upper / 100)))
   ##
-  survey.data <- data.frame(data[sample(x = 1:nrow(data), size = n, replace = FALSE), ])
+  survey.data <- data.frame(data[sample(x = 1:nrow(data),
+                                        size = n,
+                                        replace = FALSE), ])
   d.run <- sum(survey.data$case)
   result <- list(d = d.run, outcome = 1)
   if (d.run > d[1])
@@ -79,12 +81,13 @@ lqas_run <- function(data, n, d.lower, d.upper) {
 #' @param p.lower Starting proportion for simulations. Default is 0
 #' @param p.upper Ending proportion for simulations. Default is 100
 #' @param fine Granularity of simulated proportiongs; Defaul to 1
-#' @param progress Logical. Should simulation progress be shown? Default is TRUE
+#' @param progress Logical. Should simulation progress be shown?
+#'   Default is TRUE
 #'
 #' @return A data.frame of coverage proportions and LQAS outcomes
 #'
 #' @examples
-#' lqas_simul(pop = 10000, n = 40, d.lower = 60, d.upper = 90)
+#' lqas_simul(runs = 10, pop = 10000, n = 40, d.lower = 60, d.upper = 90)
 #'
 #' @export
 #'
@@ -144,7 +147,8 @@ lqas_simul <- function(runs = 50,
 #'
 #' @examples
 #'
-#' test_lqas_classifier(pop = 10000, n = 40, d.lower = 60, d.upper = 90)
+#' test_lqas_classifier(replicates = 5, runs = 5,
+#'                      pop = 10000, n = 40, d.lower = 60, d.upper = 90)
 #'
 #' @export
 #'
