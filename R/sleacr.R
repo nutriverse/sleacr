@@ -9,8 +9,15 @@
 #'
 #' @docType package
 #' @name squeacr
+#' @exportMethod print lqasClass
+#' @exportMethod plot lqasSim
+#' @importFrom grDevices quartz
+#' @importFrom graphics abline legend lines plot points
+#' @importFrom stats lowess
 #'
 #'
 #
 ################################################################################
 "_PACKAGE"
+
+
