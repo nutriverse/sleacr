@@ -227,6 +227,7 @@ get_class_prob <- function(x) {
   pGross <- gross.misclass
   ##
   probs <- c(pLow, pModerate, pHigh, pOverall, pGross)
+  names(probs) <- c("Low", "Medium", "High", "Overall", "Gross Missclassification")
   ## Concatenate outputs into a list
   results <- list(cm = cm, correct = correct,
                   denominators = denominators, probs = probs)
