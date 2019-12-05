@@ -77,7 +77,7 @@ navbarPage(title = "sleacr", id = "chosenTab", theme = shinytheme("sandstone"),
             tableOutput(outputId = "probClassTable")
           ),
           tabPanel(title = "Plot", value = 2,
-            plotOutput(outputId = "probClassPlot")
+            plotOutput(outputId = "probClassPlot", height = "600px")
           )
         )
       )
