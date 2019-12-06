@@ -322,8 +322,7 @@ plot.lqasSim <- function(x, ...) {
   lines(lowess(p, p.moderate, f = 0.02), col = "orange", lwd = 2)
   lines(lowess(p, p.high, f = 0.02), col = "green", lwd = 2)
   abline(v = x$d.lower, lty = 3); abline(v = x$d.upper, lty = 3)
-  legend(x = 20,
-         y = 0.45,
+  legend(x = "bottomright",
          legend = c("Low", "Moderate", "High"),
          cex = 0.8,
          lty = c(1, 1, 1),
