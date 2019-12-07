@@ -5,7 +5,8 @@
 \alias{sleacr}
 \alias{sleacr-package}
 \alias{squeacr-package}
-\title{sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R}
+\title{sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and 
+    Coverage (SLEAC) Tools in R}
 \description{
 In the recent past, measurement of coverage has been mainly through 
     two-stage cluster sampled surveys either as part of a nutrition assessment 
@@ -14,10 +15,12 @@ In the recent past, measurement of coverage has been mainly through
     used for final programme evaluation meaning results arrive too late for 
     programme adaptation. SLEAC, which stands for Simplified Lot Quality Assurance 
     Sampling Evaluation of Access and Coverage, is a low resource method designed 
-    specifically to address this limitation and is used regularly for monitoring, planning and 
-    importantly, timely improvement to programme quality, both for agency and 
-    Ministry of Health (MoH) led programmes. This package provides functions
-    for use in conducting a SLEAC assessment.
+    specifically to address this limitation and is used regularly for monitoring, 
+    planning and importantly, timely improvement to programme quality, both for 
+    agency and Ministry of Health (MoH) led programmes. SLEAC is designed to
+    complement the Semi-quantitative Evaluation of Access and Coverage (SQUEAC)
+    method. This package provides functions for use in conducting a SLEAC 
+    assessment.
 }
 \references{
 Myatt, Mark et al. 2012. Semi-Quantitative Evaluation of Access and
@@ -25,7 +28,12 @@ Coverage (SQUEAC)/Simplified Lot Quality Assurance Sampling Evaluation of
 Access and Coverage (SLEAC) Technical Reference. Washington, DC: FHI 360/FANTA.
 }
 \author{
-\strong{Maintainer}: Ernest Guevarra \email{ernest@guevarra.io} (0000-0002-4887-4415)
+\strong{Maintainer}: Ernest Guevarra \email{ernest@guevarra.io} (0000-0002-4887-4415) [copyright holder]
+
+Authors:
+\itemize{
+  \item Mark Myatt \email{mark@brixtonhealth.com} [copyright holder]
+}
 
 }
 \keyword{internal}
