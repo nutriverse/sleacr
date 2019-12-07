@@ -1,8 +1,87 @@
 ################################################################################
 #
+#' Calculate the binomial coefficient "n-choose-k"
+#'
+#' @param n Total population
+#' @param k Number of sample drawn from total population
+#'
+#' @return A numeric vector of binomial probability
+#'
+#' @examples
+#' get_binom_hypergeom(n = 600, k = 40)
+#'
+#' @export
+#'
+#'
+#
+################################################################################
+
+get_binom_hypergeom <- function(n, k) {
+  x <- 1
+  for(i in 1:k) {
+    x <- x * (n - i + 1) / i
+  }
+  return(x)
+}
+
+
+################################################################################
+#
+#' Calculate hypergeometric probability
+#'
+#' @param k Number of cases in the sample
+#' @param m Number of cases in the population
+#' @param n Sample size
+#' @param N Population size
+#'
+#' @return A numeric value of hypergeometric probability given specified
+#'   parameters
+#'
+#' @examples
+#' get_hypergeom(k = 5, m = 600, n = 25, N = 10000)
+#'
+#' @export
+#'
+#
+################################################################################
+
+get_hypergeom <- function(k, m, n, N) {
+  (get_binom_hypergeom(n = m, k = k) * get_binom_hypergeom(n = N - m, k = n - k)) / get_binom_hypergeom(n = N, k = n)
+}
+
+
+################################################################################
+#
+#' Calculate cumulative hypergeometric probabilities
+#'
+#' @param k Number of cases in the sample
+#' @param m Number of cases in the population
+#' @param n Sample size
+#' @param N Population size
+#' @param tail A character vector indicating "lower" (default) or "upper" tail
+#'
+#' @examples
+#' get_hypergeom_cum(k = 5, m = 600, n = 25, N = 10000)
+#'
+#' @export
+#'
+#
+################################################################################
+
+get_hypergeom_cum <- function(k, m, n, N, tail = "lower") {
+  x <- 0
+  for(i in 0:k) {
+    x <- x + get_hypergeom(k = k, m = n, n = n, N = N)
+  }
+  if(tail == "upper") x <- 1 - x
+  return(x)
+}
+
+################################################################################
+#
 #' Calculate sample size of number of cases to be found to assess coverage
 #'
-#' @param c Total population size of cases in the specified survey area
+#' @param N Total population size of cases in the specified survey area
 #' @param dLower Lower triage threshold. Values from 0 to 1.
 #' @param dUpper Upper triage threshold. Values from 0 to 1.
 #' @param alpha Maximum tolerable alpha error. Values from 0 to 1.
@@ -14,44 +93,37 @@
 #'   beta error for the specified classification scheme
 #'
 #' @examples
-#' get_n(c = 600, dLower = 0.7, dUpper = 0.9)
+#' get_n(N = 600, dLower = 0.7, dUpper = 0.9)
 #'
 #' @export
 #'
 #
 ################################################################################
 
-get_n <- function(c, dLower, dUpper, alpha = 0.1, beta = 0.1) {
-
-  low <- ceiling(dLower  * c)
-  high <- ceiling(dUpper * c)
+get_n <- function(N, dLower, dUpper, alpha = 0.1, beta = 0.1) {
+  low <- ceiling(dLower  * N)
+  high <- ceiling(dUpper * N)
 
   d <- 0
-  k <- d + 1
+  n <- d + 1
 
   observedAlpha <- 1
   observedBeta <- 1
 
-  while(observedAlpha > alpha & k < c) {
-
-    while(observedBeta <= beta & k < c) {
-      k <- k + 1
-
-      observedAlpha <- min(phyper(q = 0:(k + 1), m = high, n = c - high, k = k, lower.tail = TRUE))
-      observedBeta <- 1 - min(phyper(q = 0:(k + 1), m = low, n = c - low, k = k, lower.tail = TRUE))
-
+  while(observedAlpha > alpha & n < N) {
+    while(observedBeta <= beta & n < N) {
+      n <- n + 1
+      observedAlpha <- get_hypergeom_cum(k = d, m = high, n = n, N = N, tail = "lower")
+      observedBeta <- get_hypergeom_cum(k = d, m = low, n = n, N = N, tail = "upper")
       if(observedAlpha <= alpha) break
     }
-
     if(observedAlpha <= alpha & observedBeta <= beta) break
-
     d = d + 1
-
-    observedAlpha <- min(phyper(q = 0:(k + 1), m = high, n = c - high, k = k, lower.tail = TRUE))
-    observedBeta <- 1 - min(phyper(q = 0:(k + 1), m = low, n = c - low, k = k, lower.tail = TRUE))
+    observedAlpha <- get_hypergeom_cum(k = d, m = high, n = n, N = N, tail = "lower")
+    observedBeta <- get_hypergeom_cum(k = d, m = low, n = n, N = N, tail = "upper")
   }
   ## Concatenate results into a list
-  results <- list(n = k, d = d + 1, alpha = observedAlpha, beta = observedBeta)
+  results <- list(n = n, d = d + 1, alpha = observedAlpha, beta = observedBeta)
   ## Return results
   return(results)
 }
