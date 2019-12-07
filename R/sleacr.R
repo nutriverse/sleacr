@@ -13,7 +13,7 @@
 #' @exportMethod plot lqasSim
 #' @importFrom grDevices quartz
 #' @importFrom graphics abline legend lines plot points
-#' @importFrom stats lowess
+#' @importFrom stats lowess phyper
 #'
 #'
 #
