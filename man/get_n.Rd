@@ -4,10 +4,10 @@
 \alias{get_n}
 \title{Calculate sample size of number of cases to be found to assess coverage}
 \usage{
-get_n(c, dLower, dUpper, alpha = 0.1, beta = 0.1)
+get_n(N, dLower, dUpper, alpha = 0.1, beta = 0.1)
 }
 \arguments{
-\item{c}{Total population size of cases in the specified survey area}
+\item{N}{Total population size of cases in the specified survey area}
 
 \item{dLower}{Lower triage threshold. Values from 0 to 1.}
 
@@ -27,6 +27,6 @@ A list of values providing the LQAS sampling plan for the specified
 Calculate sample size of number of cases to be found to assess coverage
 }
 \examples{
-get_n(c = 600, dLower = 0.7, dUpper = 0.9)
+get_n(N = 600, dLower = 0.7, dUpper = 0.9)
 
 }
