@@ -2,7 +2,10 @@
 
 S3method(plot,lqasSim)
 S3method(print,lqasClass)
+export(get_binom_hypergeom)
 export(get_class_prob)
+export(get_hypergeom)
+export(get_hypergeom_cum)
 export(get_n)
 export(get_n_cases)
 export(get_n_clusters)
