@@ -63,14 +63,14 @@ get_hypergeom <- function(k, m, n, N) {
 #' @param tail A character vector indicating "lower" (default) or "upper" tail
 #'
 #' @examples
-#' get_hypergeom_cum(k = 5, m = 600, n = 25, N = 10000)
+#' get_hypergeom_cumulative(k = 5, m = 600, n = 25, N = 10000)
 #'
 #' @export
 #'
 #
 ################################################################################
 
-get_hypergeom_cum <- function(k, m, n, N, tail = "lower") {
+get_hypergeom_cumulative <- function(k, m, n, N, tail = "lower") {
   x <- 0
   for(i in 0:k) {
     x <- x + get_hypergeom(k = k, m = n, n = n, N = N)
@@ -115,18 +115,22 @@ get_n <- function(N, dLower, dUpper, alpha = 0.1, beta = 0.1) {
   while(observedAlpha > alpha & n < N) {
     while(observedBeta <= beta & n < N) {
       n <- n + 1
-      observedAlpha <- get_hypergeom_cum(k = d, m = high, n = n, N = N,
-                                         tail = "lower")
-      observedBeta <- get_hypergeom_cum(k = d, m = low, n = n, N = N,
-                                        tail = "upper")
+      observedAlpha <- get_hypergeom_cumulative(k = d, m = high,
+                                                n = n, N = N,
+                                                tail = "lower")
+      observedBeta <- get_hypergeom_cumulative(k = d, m = low,
+                                               n = n, N = N,
+                                               tail = "upper")
       if(observedAlpha <= alpha) break
     }
     if(observedAlpha <= alpha & observedBeta <= beta) break
     d = d + 1
-    observedAlpha <- get_hypergeom_cum(k = d, m = high, n = n, N = N,
-                                       tail = "lower")
-    observedBeta <- get_hypergeom_cum(k = d, m = low, n = n, N = N,
-                                      tail = "upper")
+    observedAlpha <- get_hypergeom_cumulative(k = d, m = high,
+                                              n = n, N = N,
+                                              tail = "lower")
+    observedBeta <- get_hypergeom_cumulative(k = d, m = low,
+                                             n = n, N = N,
+                                             tail = "upper")
   }
   ## Concatenate results into a list
   results <- list(n = n, d = d + 1, alpha = observedAlpha, beta = observedBeta)
@@ -176,10 +180,12 @@ get_d <- function(N, n, dLower, dUpper, alpha = 0.1, beta = 0.1) {
   startRule <- dLower * n
 
   for(i in startRule:n) {
-    observedAlpha <- get_hypergeom_cum(k = i, m = high, n = n, N = N,
-                                       tail = "lower")
-    observedBeta <- get_hypergeom_cum(k = i, m = low, n = n, N = N,
-                                       tail = "upper")
+    observedAlpha <- get_hypergeom_cumulative(k = i, m = high,
+                                              n = n, N = N,
+                                              tail = "lower")
+    observedBeta <- get_hypergeom_cumulative(k = i, m = low,
+                                             n = n, N = N,
+                                             tail = "upper")
 
     overallError <- observedAlpha + observedBeta
 
@@ -191,12 +197,12 @@ get_d <- function(N, n, dLower, dUpper, alpha = 0.1, beta = 0.1) {
 
   d <- bestRule
 
-  observedAlpha <- abs(get_hypergeom_cum(k = d, m = high,
-                                         n = n, N = N,
-                                         tail = "lower"))
-  observedBeta <- abs(get_hypergeom_cum(k = d, m = low,
-                                        n = n, N = N,
-                                        tail = "upper"))
+  observedAlpha <- abs(get_hypergeom_cumulative(k = d, m = high,
+                                                n = n, N = N,
+                                                tail = "lower"))
+  observedBeta <- abs(get_hypergeom_cumulative(k = d, m = low,
+                                               n = n, N = N,
+                                               tail = "upper"))
 
   ## Concatenate results into a list
   results <- list(n = n, d = d + 1, alpha = observedAlpha, beta = observedBeta)
