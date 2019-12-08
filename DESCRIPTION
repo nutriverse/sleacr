@@ -22,6 +22,10 @@ Description: In the recent past, measurement of coverage has been mainly through
     method. This package provides functions for use in conducting a SLEAC 
     assessment.
 License: GPL-3
+Imports: 
+    spatialsampler (>= 0.1.0)
+Remotes:  
+    validmeasures/spatialsampler
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
