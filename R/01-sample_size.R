@@ -46,7 +46,9 @@ get_binom_hypergeom <- function(n, k) {
 ################################################################################
 
 get_hypergeom <- function(k, m, n, N) {
-  (get_binom_hypergeom(n = m, k = k) * get_binom_hypergeom(n = N - m, k = n - k)) / get_binom_hypergeom(n = N, k = n)
+  (get_binom_hypergeom(n = m, k = k) *
+     get_binom_hypergeom(n = N - m, k = n - k)) /
+    get_binom_hypergeom(n = N, k = n)
 }
 
 
@@ -113,15 +115,89 @@ get_n <- function(N, dLower, dUpper, alpha = 0.1, beta = 0.1) {
   while(observedAlpha > alpha & n < N) {
     while(observedBeta <= beta & n < N) {
       n <- n + 1
-      observedAlpha <- get_hypergeom_cum(k = d, m = high, n = n, N = N, tail = "lower")
-      observedBeta <- get_hypergeom_cum(k = d, m = low, n = n, N = N, tail = "upper")
+      observedAlpha <- get_hypergeom_cum(k = d, m = high, n = n, N = N,
+                                         tail = "lower")
+      observedBeta <- get_hypergeom_cum(k = d, m = low, n = n, N = N,
+                                        tail = "upper")
       if(observedAlpha <= alpha) break
     }
     if(observedAlpha <= alpha & observedBeta <= beta) break
     d = d + 1
-    observedAlpha <- get_hypergeom_cum(k = d, m = high, n = n, N = N, tail = "lower")
-    observedBeta <- get_hypergeom_cum(k = d, m = low, n = n, N = N, tail = "upper")
+    observedAlpha <- get_hypergeom_cum(k = d, m = high, n = n, N = N,
+                                       tail = "lower")
+    observedBeta <- get_hypergeom_cum(k = d, m = low, n = n, N = N,
+                                      tail = "upper")
   }
+  ## Concatenate results into a list
+  results <- list(n = n, d = d + 1, alpha = observedAlpha, beta = observedBeta)
+  ## Return results
+  return(results)
+}
+
+
+################################################################################
+#
+#' Calculate decision rule for a specified sample size and lower and upper
+#' triage thresholds
+#'
+#' @param N Total population size of cases in the specified survey area
+#' @param n Sample size
+#' @param dLower Lower triage threshold. Values from 0 to 1.
+#' @param dUpper Upper triage threshold. Values from 0 to 1.
+#' @param alpha Maximum tolerable alpha error. Values from 0 to 1.
+#'   Default is 0.1
+#' @param beta Maximum tolerable beta error. Values from 0 to 1. Default is 0.1
+#'
+#' @return A list of values providing the LQAS sampling plan for the specified
+#'   parameters. The list includes sample size, decision rule, alpha error and
+#'   beta error for the specified classification scheme
+#'
+#' @examples
+#' get_d(N = 600, n = 40, dLower = 0.7, dUpper = 0.9)
+#'
+#' @export
+#'
+#
+################################################################################
+
+get_d <- function(N, n, dLower, dUpper, alpha = 0.1, beta = 0.1) {
+  low <- ceiling(dLower  * N)
+  high <- ceiling(dUpper * N)
+
+  d <- 0
+  n <- d + 1
+
+  observedAlpha <- 1
+  observedBeta <- 1
+
+  overallError <- 0
+  bestError <- 1
+  bestRule <- 0
+  startRule <- dLower * n
+
+  for(i in startRule:n) {
+    observedAlpha <- get_hypergeom_cum(k = i, m = high, n = n, N = N,
+                                       tail = "lower")
+    observedBeta <- get_hypergeom_cum(k = i, m = low, n = n, N = N,
+                                       tail = "upper")
+
+    overallError <- observedAlpha + observedBeta
+
+    if(overallError < bestError) {
+      bestError <- overallError
+      bestRule <- i
+    }
+  }
+
+  d <- bestRule
+
+  observedAlpha <- abs(get_hypergeom_cum(k = d, m = high,
+                                         n = n, N = N,
+                                         tail = "lower"))
+  observedBeta <- abs(get_hypergeom_cum(k = d, m = low,
+                                        n = n, N = N,
+                                        tail = "upper"))
+
   ## Concatenate results into a list
   results <- list(n = n, d = d + 1, alpha = observedAlpha, beta = observedBeta)
   ## Return results
