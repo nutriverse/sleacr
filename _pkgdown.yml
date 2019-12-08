@@ -27,3 +27,14 @@ reference:
   - get_d
   - get_n_cases
   - get_n_villages
+
+- title: Tests for SLEAC classifier performance
+  contents:
+  - make_data
+  - run_lqas
+  - simul_lqas
+  - test_lqas_classifier
+  - get_class_prob
+  - print.lqas
+  - plot.lqasSim
+
