@@ -1,0 +1,29 @@
+title: zscorer
+
+url: https://rapidsurveys.io/sleacr
+
+template:
+  params:
+    bootswatch: sandstone
+    #ganalytics: UA-102485058-6
+
+home:
+  #strip_header: true
+  links:
+  - text: Read more about Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC)
+    href: https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf
+
+reference:
+- title: Description
+  contents:
+  - sleacr
+
+- title: Sample size estimation
+  contents:
+  - get_binom_hypergeom
+  - get_hypergeom
+  - get_hypergeom_cumulative
+  - get_n
+  - get_d
+  - get_n_cases
+  - get_n_villages
