@@ -1,4 +1,25 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-language: R
+language: r
+
+warnings_are_errors: true
+sudo: false
 cache: packages
+
+before_install:
+  - sudo add-apt-repository ppa:ubuntugis/ppa -y
+  - sudo apt-get update -q
+  - sudo apt-get install gdal-bin -y
+  - sudo apt-get -y install python-gdal -y
+
+addons:
+   apt:
+     packages:
+       - libgdal-dev
+       - libproj-dev
+
+r_github_packages:
+  - r-lib/covr
+
+after_success:
+  - Rscript -e 'covr::codecov()'
