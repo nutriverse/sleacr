@@ -4,9 +4,18 @@
 \alias{test_lqas_classifier}
 \title{Function to test performance of LQAS classifier}
 \usage{
-test_lqas_classifier(replicates = 20, runs = 50, pop = NULL,
-  n = NULL, d.lower = NULL, d.upper = NULL, p.lower = 0,
-  p.upper = 100, fine = 1, progress = TRUE)
+test_lqas_classifier(
+  replicates = 20,
+  runs = 50,
+  pop = NULL,
+  n = NULL,
+  d.lower = NULL,
+  d.upper = NULL,
+  p.lower = 0,
+  p.upper = 100,
+  fine = 1,
+  progress = TRUE
+)
 }
 \arguments{
 \item{replicates}{Number of replicate LQAS simulations to perform.

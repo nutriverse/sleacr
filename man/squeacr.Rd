@@ -4,7 +4,6 @@
 \name{squeacr}
 \alias{sleacr}
 \alias{sleacr-package}
-\alias{squeacr-package}
 \title{sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and 
     Coverage (SLEAC) Tools in R}
 \description{
@@ -28,7 +27,7 @@ Coverage (SQUEAC)/Simplified Lot Quality Assurance Sampling Evaluation of
 Access and Coverage (SLEAC) Technical Reference. Washington, DC: FHI 360/FANTA.
 }
 \author{
-\strong{Maintainer}: Ernest Guevarra \email{ernest@guevarra.io} (0000-0002-4887-4415) [copyright holder]
+\strong{Maintainer}: Ernest Guevarra \email{ernest@guevarra.io} (\href{https://orcid.org/0000-0002-4887-4415}{ORCID}) [copyright holder]
 
 Authors:
 \itemize{

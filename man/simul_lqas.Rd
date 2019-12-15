@@ -5,8 +5,17 @@
 \title{Function to perform a series of LQAS analysis on simulated coverage survey
 data}
 \usage{
-simul_lqas(runs = 50, pop = NULL, n, d.lower, d.upper, p.lower = 0,
-  p.upper = 100, fine = 1, progress = TRUE)
+simul_lqas(
+  runs = 50,
+  pop = NULL,
+  n,
+  d.lower,
+  d.upper,
+  p.lower = 0,
+  p.upper = 100,
+  fine = 1,
+  progress = TRUE
+)
 }
 \arguments{
 \item{runs}{Number of simulation runs to perform per coverage proportion.
