@@ -8,7 +8,7 @@
 #' @keywords internal
 #'
 #' @docType package
-#' @name squeacr
+#' @name sleacr
 #' @exportMethod print lqasClass
 #' @exportMethod plot lqasSim
 #' @importFrom graphics abline legend lines plot points
