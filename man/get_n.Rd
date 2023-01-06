@@ -20,8 +20,8 @@ Default is 0.1}
 }
 \value{
 A list of values providing the LQAS sampling plan for the specified
-  parameters. The list includes sample size, decision rule, alpha error and
-  beta error for the specified classification scheme
+parameters. The list includes sample size, decision rule, alpha error and
+beta error for the specified classification scheme
 }
 \description{
 Calculate sample size of number of cases to be found to assess coverage

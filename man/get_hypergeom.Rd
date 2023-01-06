@@ -17,7 +17,7 @@ get_hypergeom(k, m, n, N)
 }
 \value{
 A numeric value of hypergeometric probability given specified
-  parameters
+parameters
 }
 \description{
 Calculate hypergeometric probability

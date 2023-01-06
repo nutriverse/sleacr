@@ -18,7 +18,7 @@ months}
 }
 \value{
 Numeric value of the estimated number of clusters to sample to reach
-  target sample size
+target sample size
 }
 \description{
 Calculate number of clusters to sample to reach target sample size
