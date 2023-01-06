@@ -20,7 +20,7 @@
 make_data <- function(proportion, pop) {
   d <- round(pop * (proportion / 100))
   case <- c(rep(1, d), rep(0, pop - d))
-  id <- 1:length(case)
+  id <- seq_len(length(case))
   result <- data.frame(cbind(id, case))
   return(result)
 }
@@ -49,9 +49,9 @@ run_lqas <- function(data, n, d.lower, d.upper) {
   ##
   d <- c(floor(n * (d.lower / 100)), floor(n * (d.upper / 100)))
   ##
-  survey.data <- data.frame(data[sample(x = 1:nrow(data),
-                                        size = n,
-                                        replace = FALSE), ])
+  survey.data <- data.frame(
+    data[sample(x = seq_len(nrow(data)), size = n, replace = FALSE), ]
+  )
   d.run <- sum(survey.data$case)
   result <- list(d = d.run, outcome = 1)
   if (d.run > d[1])
@@ -113,7 +113,7 @@ simul_lqas <- function(runs = 50,
     ##
     test.data <- make_data(proportion, pop = pop)
     ##
-    for(i in 1:runs) {
+    for(i in seq_len(runs)) {
       test.run <- cbind(data.frame(run_lqas(data = test.data,
                                             n = n,
                                             d.lower = d.lower,
@@ -168,7 +168,7 @@ test_lqas_classifier <- function(replicates = 20,
   ## Create concatenating object for replicate simulations
   x <- NULL
   ## Cycle through number of replicate simulations
-  for(i in 1:replicates) {
+  for(i in seq_len(replicates)) {
     x <- rbind(x, simul_lqas(runs = runs,
                              pop = pop,
                              n = n,
