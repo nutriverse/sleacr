@@ -22,7 +22,10 @@ Description: In the recent past, measurement of coverage has been mainly through
 License: GPL-3
 Suggests: 
     covr,
-    spelling
+    knitr,
+    rmarkdown,
+    spelling,
+    testthat (>= 3.0.0)
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
@@ -30,3 +33,5 @@ RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 URL: https://nutriverse.io/sleacr/, https://github.com/nutriverse/sleacr
 BugReports: https://github.com/nutriverse/sleacr/issues
+Config/testthat/edition: 3
+VignetteBuilder: knitr
