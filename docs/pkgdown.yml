@@ -1,8 +1,9 @@
-pandoc: 2.3.1
-pkgdown: 1.4.1
+pandoc: 2.19.2
+pkgdown: 2.0.7
 pkgdown_sha: ~
-articles: []
+articles: {}
+last_built: 2023-01-06T12:45Z
 urls:
-  reference: https://rapidsurveys.io/sleacr/reference
-  article: https://rapidsurveys.io/sleacr/articles
+  reference: https://nutriverse.io/sleacr/reference
+  article: https://nutriverse.io/sleacr/articles
 

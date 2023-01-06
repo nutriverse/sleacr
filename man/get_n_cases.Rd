@@ -17,7 +17,7 @@ months}
 }
 \value{
 Numeric value of the estimated number of cases in the specified
-  survey area
+survey area
 }
 \description{
 Calculate estimated number of cases for a condition affecting children under

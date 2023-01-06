@@ -1,0 +1,16 @@
+citHeader("To cite sleacr in publications use:")
+
+citEntry(
+  entry    = "Manual",
+  title    = "sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R",
+  author   = person("Ernest Guevarra"),
+  year     = "2023",
+  note     = "R package version 0.0.0.9000",
+  url      = "https://nutriverse.io/sleacr/",
+  textVersion = paste(
+    "Ernest Guevarra (2023).",
+    "sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R",
+    "R package version 0.0.0.9000",
+    "URL https://nutriverse.io/sleacr/"
+  )
+)

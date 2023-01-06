@@ -80,7 +80,7 @@ run_lqas <- function(data, n, d.lower, d.upper) {
 #' @param d.upper A numeric value for the upper classification threshold
 #' @param p.lower Starting proportion for simulations. Default is 0
 #' @param p.upper Ending proportion for simulations. Default is 100
-#' @param fine Granularity of simulated proportiongs; Defaul to 1
+#' @param fine Granularity of simulated proportions; Default to 1
 #' @param progress Logical. Should simulation progress be shown?
 #'   Default is TRUE
 #'
@@ -140,7 +140,7 @@ simul_lqas <- function(runs = 50,
 #' @param d.upper A numeric value for the upper classification threshold
 #' @param p.lower Starting proportion for simulations. Default is 0
 #' @param p.upper Ending proportion for simulations. Default is 100
-#' @param fine Granularity of simulated proportiongs; Defaul to 1
+#' @param fine Granularity of simulated proportions; Defaul to 1
 #' @param progress Logical. Should simulation progress be shown? Default is TRUE
 #'
 #' @return A sleac object

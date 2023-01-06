@@ -8,3 +8,6 @@
 ^docs$
 ^\.docs$
 ^\.github$
+^pkgdown/_pkgdown\.yml$
+^pkgdown$
+^codecov\.yml$

@@ -37,7 +37,7 @@ be taken from}
 
 \item{p.upper}{Ending proportion for simulations. Default is 100}
 
-\item{fine}{Granularity of simulated proportiongs; Defaul to 1}
+\item{fine}{Granularity of simulated proportions; Defaul to 1}
 
 \item{progress}{Logical. Should simulation progress be shown? Default is TRUE}
 }
