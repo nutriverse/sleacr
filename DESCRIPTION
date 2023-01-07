@@ -20,12 +20,15 @@ Description: In the recent past, measurement of coverage has been mainly through
     of Access and Coverage (SQUEAC) method. This package provides functions for 
     use in conducting a SLEAC assessment.
 License: GPL-3
+Depends: 
+    R (>= 2.10)
 Suggests: 
     covr,
     knitr,
     rmarkdown,
     spelling,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    tibble
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
@@ -35,5 +38,3 @@ URL: https://nutriverse.io/sleacr/, https://github.com/nutriverse/sleacr
 BugReports: https://github.com/nutriverse/sleacr/issues
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-Depends: 
-    R (>= 2.10)
