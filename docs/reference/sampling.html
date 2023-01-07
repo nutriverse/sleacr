@@ -115,24 +115,24 @@ identifier for the entire set of clusters to sample from.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6</span>
 <span class="r-in"><span><span class="va">interval</span> <span class="op">&lt;-</span> <span class="fu">get_sampling_interval</span><span class="op">(</span>N_clusters <span class="op">=</span> <span class="fl">211</span>, n_clusters <span class="op">=</span> <span class="fl">35</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">select_random_start</span><span class="op">(</span><span class="va">interval</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2</span>
 <span class="r-in"><span><span class="fu">select_sampling_clusters</span><span class="op">(</span>N_clusters <span class="op">=</span> <span class="fl">211</span>, n_clusters <span class="op">=</span> <span class="fl">35</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]   2   8  14  20  26  32  38  44  50  56  62  68  74  80  86  92  98 104 110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [20] 116 122 128 134 140 146 152 158 164 170 176 182 188 194 200 206</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]   6  12  18  24  30  36  42  48  54  60  66  72  78  84  90  96 102 108 114</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [20] 120 126 132 138 144 150 156 162 168 174 180 186 192 198 204 210</span>
 <span class="r-in"><span><span class="fu">create_sampling_list</span><span class="op">(</span>cluster_list <span class="op">=</span> <span class="va">village_list</span>, n_clusters <span class="op">=</span> <span class="fl">70</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 71 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       id chiefdom section    village  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>    12 Badjia   Kpallay    Fala     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>    26 Badjia   Sei        Nomiama  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>    40 Bagbe    Jongo      Sami     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>    54 Bagbe    Niawa      Kpuawala </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>    68 Bagbe    Nyallay    Walihun  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>    82 Bagbo    Gorapon    Panguma  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>    96 Bagbo    Jimmi      Mopandima</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   110 Bagbo    Kpangbalia Mogbain  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   124 Bagbo    Niagorehun Salema   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   138 Bagbo    Tissawa    Monjemei </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       id chiefdom section    village    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     9 Badjia   Kpallay    Jokibu     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>    23 Badjia   Njargbahun Solima     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>    37 Bagbe    Jongo      Venima     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>    51 Bagbe    Kemoh      Kpetema    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>    65 Bagbe    Nyallay    Man-Pendobu</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>    79 Bagbo    Bum        Gbatorma   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>    93 Bagbo    Jimmi      Limba      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   107 Bagbo    Jimmi      Waiima     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   121 Bagbo    Mano       Semabu     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   135 Bagbo    Tissawa    Manibo     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 61 more rows</span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
