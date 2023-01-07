@@ -86,22 +86,22 @@ run_lqas <- function(data, n, d.lower, d.upper) {
 #' @return A data.frame of coverage proportions and LQAS outcomes
 #'
 #' @examples
-#' simul_lqas(runs = 10, pop = 10000, n = 40, d.lower = 60, d.upper = 90)
+#' simulate_lqas(runs = 10, pop = 10000, n = 40, d.lower = 60, d.upper = 90)
 #'
 #' @export
 #'
 #
 ################################################################################
 
-simul_lqas <- function(runs = 50,
-                       pop = NULL,
-                       n,
-                       d.lower,
-                       d.upper,
-                       p.lower = 0,
-                       p.upper = 100,
-                       fine = 1,
-                       progress = TRUE) {
+simulate_lqas <- function(runs = 50,
+                          pop = NULL,
+                          n,
+                          d.lower,
+                          d.upper,
+                          p.lower = 0,
+                          p.upper = 100,
+                          fine = 1,
+                          progress = TRUE) {
   ## Create empty concatenating data.frame
   result <- data.frame()
 
@@ -178,7 +178,7 @@ test_lqas_classifier <- function(replicates = 20,
   for (i in seq_len(replicates)) {
     x <- rbind(
       x,
-      simul_lqas(
+      simulate_lqas(
         runs = runs, pop = pop, n = n,
         d.lower = d.lower, d.upper = d.upper,
         p.lower = p.lower, p.upper = p.upper,
