@@ -17,3 +17,16 @@ knitr::opts_chunk$set(
 ```{r setup, echo = FALSE}
 library(sleacr)
 ```
+
+**Simplified LQAS (Lot Quality Assurance Sampling) Evaluation of Access and Coverage (SLEAC)** is a low-resource method for
+classifying the coverage of selective feeding programmes. It was designed for use in programmes delivering CMAM services over many service delivery units. Examples of such programs include:
+
+* National or regional programs delivering CMAM services through health districts; and,
+* District programs delivering CMAM services through primary health care centres.
+
+**SLEAC** surveys classify coverage at the level of the service delivery unit. This will vary with the scale of the programme. For example:
+
+* In the case of a national or regional program delivering CMAM services through health districts (or the equivalent local administrative unit) the service delivery unit is the heath district;
+
+* In the case of a district program delivering CMAM services through primary healthcare centres the service delivery unit is the primary healthcare centre
+
