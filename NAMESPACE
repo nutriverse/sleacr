@@ -2,6 +2,7 @@
 
 S3method(plot,lqasSim)
 S3method(print,lqasClass)
+export(classify_coverage)
 export(create_sampling_list)
 export(get_binom_hypergeom)
 export(get_class_prob)

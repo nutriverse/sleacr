@@ -25,6 +25,9 @@
     <loc>https://nutriverse.io/sleacr/news/index.html</loc>
   </url>
   <url>
+    <loc>https://nutriverse.io/sleacr/reference/classify_coverage.html</loc>
+  </url>
+  <url>
     <loc>https://nutriverse.io/sleacr/reference/get_binom_hypergeom.html</loc>
   </url>
   <url>
@@ -71,6 +74,9 @@
   </url>
   <url>
     <loc>https://nutriverse.io/sleacr/reference/sleacr.html</loc>
+  </url>
+  <url>
+    <loc>https://nutriverse.io/sleacr/reference/survey_data.html</loc>
   </url>
   <url>
     <loc>https://nutriverse.io/sleacr/reference/test_lqas_classifier.html</loc>
