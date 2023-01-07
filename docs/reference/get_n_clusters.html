@@ -76,7 +76,7 @@
 
 
 <dt>N</dt>
-<dd><p>Population for all ages in the specified survey area</p></dd>
+<dd><p>Average cluster population for all ages in the specified survey area</p></dd>
 
 
 <dt>u5</dt>
@@ -98,11 +98,11 @@ target sample size</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## Calculate number of villages to sample given a population of 100000</span></span></span>
-<span class="r-in"><span><span class="co">## persons of all ages with an under-5 population of 17% and a prevalence</span></span></span>
-<span class="r-in"><span><span class="co">## of SAM of 2% if the target sample size is 40</span></span></span>
-<span class="r-in"><span><span class="fu">get_n_clusters</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">40</span>, N <span class="op">=</span> <span class="fl">100000</span>, u5 <span class="op">=</span> <span class="fl">0.17</span>, p <span class="op">=</span> <span class="fl">0.02</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">## Calculate number of villages to sample given an average village population</span></span></span>
+<span class="r-in"><span><span class="co">## of 600 persons of all ages with an under-5 population of 17% and a</span></span></span>
+<span class="r-in"><span><span class="co">## prevalence of SAM of 2% if the target sample size is 40</span></span></span>
+<span class="r-in"><span><span class="fu">get_n_clusters</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">40</span>, N <span class="op">=</span> <span class="fl">600</span>, u5 <span class="op">=</span> <span class="fl">0.17</span>, p <span class="op">=</span> <span class="fl">0.02</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 20</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

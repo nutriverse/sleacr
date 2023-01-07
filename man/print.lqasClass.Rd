@@ -2,21 +2,21 @@
 % Please edit documentation in R/03-test_classifier.R
 \name{print.lqasClass}
 \alias{print.lqasClass}
-\title{\code{print} helper function for \code{get_class_prob} function}
+\title{\code{print} helper function for \code{\link[=get_class_prob]{get_class_prob()}} function}
 \usage{
 \method{print}{lqasClass}(x, ...)
 }
 \arguments{
-\item{x}{An object resulting from applying the \code{get_class_prob()}
+\item{x}{An object resulting from applying the \code{\link[=get_class_prob]{get_class_prob()}}
 function.}
 
-\item{...}{Additional \code{print()} parameters}
+\item{...}{Additional \code{print} parameters}
 }
 \value{
-Printed output of \code{get_class_prob()} function
+Printed output of \code{\link[=get_class_prob]{get_class_prob()}} function
 }
 \description{
-\code{print} helper function for \code{get_class_prob} function
+\code{print} helper function for \code{\link[=get_class_prob]{get_class_prob()}} function
 }
 \examples{
 sim <- test_lqas_classifier(replicates = 5, runs = 5,

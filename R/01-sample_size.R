@@ -18,10 +18,12 @@
 
 get_binom_hypergeom <- function(n, k) {
   x <- 1
-  for(i in 1:k) {
+
+  for(i in seq_len(k)) {
     x <- x * (n - i + 1) / i
   }
-  return(x)
+
+  x
 }
 
 
@@ -46,9 +48,11 @@ get_binom_hypergeom <- function(n, k) {
 ################################################################################
 
 get_hypergeom <- function(k, m, n, N) {
-  (get_binom_hypergeom(n = m, k = k) *
-     get_binom_hypergeom(n = N - m, k = n - k)) /
-    get_binom_hypergeom(n = N, k = n)
+  p_cases <- get_binom_hypergeom(n = m, k = k)
+  p_non_cases <- get_binom_hypergeom(n = N - m, k = n - k)
+  total_population <- get_binom_hypergeom(n = N, k = n)
+
+  (p_cases * p_non_cases) / total_population
 }
 
 
@@ -72,11 +76,13 @@ get_hypergeom <- function(k, m, n, N) {
 
 get_hypergeom_cumulative <- function(k, m, n, N, tail = "lower") {
   x <- 0
+
   for(i in 0:k) {
     x <- x + get_hypergeom(k = k, m = n, n = n, N = N)
   }
   if(tail == "upper") x <- 1 - x
-  return(x)
+
+  x
 }
 
 ################################################################################
@@ -112,30 +118,38 @@ get_n <- function(N, dLower, dUpper, alpha = 0.1, beta = 0.1) {
   observedAlpha <- 1
   observedBeta <- 1
 
-  while(observedAlpha > alpha & n < N) {
-    while(observedBeta <= beta & n < N) {
+  while (observedAlpha > alpha & n < N) {
+    while (observedBeta <= beta & n < N) {
       n <- n + 1
-      observedAlpha <- get_hypergeom_cumulative(k = d, m = high,
-                                                n = n, N = N,
-                                                tail = "lower")
-      observedBeta <- get_hypergeom_cumulative(k = d, m = low,
-                                               n = n, N = N,
-                                               tail = "upper")
-      if(observedAlpha <= alpha) break
+
+      observedAlpha <- get_hypergeom_cumulative(
+        k = d, m = high, n = n, N = N, tail = "lower"
+      )
+
+      observedBeta <- get_hypergeom_cumulative(
+        k = d, m = low, n = n, N = N, tail = "upper"
+      )
+      if (observedAlpha <= alpha) break
     }
-    if(observedAlpha <= alpha & observedBeta <= beta) break
+
+    if (observedAlpha <= alpha & observedBeta <= beta) break
+
     d = d + 1
-    observedAlpha <- get_hypergeom_cumulative(k = d, m = high,
-                                              n = n, N = N,
-                                              tail = "lower")
-    observedBeta <- get_hypergeom_cumulative(k = d, m = low,
-                                             n = n, N = N,
-                                             tail = "upper")
+
+    observedAlpha <- get_hypergeom_cumulative(
+      k = d, m = high, n = n, N = N, tail = "lower"
+    )
+
+    observedBeta <- get_hypergeom_cumulative(
+      k = d, m = low, n = n, N = N, tail = "upper"
+    )
   }
+
   ## Concatenate results into a list
   results <- list(n = n, d = d + 1, alpha = observedAlpha, beta = observedBeta)
+
   ## Return results
-  return(results)
+  results
 }
 
 
@@ -179,17 +193,18 @@ get_d <- function(N, n, dLower, dUpper, alpha = 0.1, beta = 0.1) {
   bestRule <- 0
   startRule <- dLower * n
 
-  for(i in startRule:n) {
-    observedAlpha <- get_hypergeom_cumulative(k = i, m = high,
-                                              n = n, N = N,
-                                              tail = "lower")
-    observedBeta <- get_hypergeom_cumulative(k = i, m = low,
-                                             n = n, N = N,
-                                             tail = "upper")
+  for (i in startRule:n) {
+    observedAlpha <- get_hypergeom_cumulative(
+      k = i, m = high, n = n, N = N, tail = "lower"
+    )
+
+    observedBeta <- get_hypergeom_cumulative(
+      k = i, m = low, n = n, N = N, tail = "upper"
+    )
 
     overallError <- observedAlpha + observedBeta
 
-    if(overallError < bestError) {
+    if (overallError < bestError) {
       bestError <- overallError
       bestRule <- i
     }
@@ -197,17 +212,23 @@ get_d <- function(N, n, dLower, dUpper, alpha = 0.1, beta = 0.1) {
 
   d <- bestRule
 
-  observedAlpha <- abs(get_hypergeom_cumulative(k = d, m = high,
-                                                n = n, N = N,
-                                                tail = "lower"))
-  observedBeta <- abs(get_hypergeom_cumulative(k = d, m = low,
-                                               n = n, N = N,
-                                               tail = "upper"))
+  observedAlpha <- abs(
+    get_hypergeom_cumulative(
+      k = d, m = high, n = n, N = N, tail = "lower"
+    )
+  )
+
+  observedBeta <- abs(
+    get_hypergeom_cumulative(
+      k = d, m = low, n = n, N = N, tail = "upper"
+    )
+  )
 
   ## Concatenate results into a list
   results <- list(n = n, d = d + 1, alpha = observedAlpha, beta = observedBeta)
+
   ## Return results
-  return(results)
+  results
 }
 
 
@@ -225,8 +246,8 @@ get_d <- function(N, n, dLower, dUpper, alpha = 0.1, beta = 0.1) {
 #'   survey area
 #'
 #' @examples
-#' ## Calculate number of SAM cases in a population of 100000 persons of all ages
-#' ## with an under-5 population of 17% and a prevalence of 2%
+#' ## Calculate number of SAM cases in a population of 100000 persons of all
+#' ## ages with an under-5 population of 17% and a prevalence of 2%
 #' get_n_cases(N = 100000, u5 = 0.17, p = 0.02)
 #'
 #' @export
@@ -244,7 +265,7 @@ get_n_cases <- function(N, u5, p) {
 #' Calculate number of clusters to sample to reach target sample size
 #'
 #' @param n Target sample size of cases for the coverage survey
-#' @param N Population for all ages in the specified survey area
+#' @param N Average cluster population for all ages in the specified survey area
 #' @param u5 Proportion (value from 0 to 1) of population that are aged 6-59
 #'   months
 #' @param p Prevalence of condition that is to be assessed
@@ -253,10 +274,10 @@ get_n_cases <- function(N, u5, p) {
 #'   target sample size
 #'
 #' @examples
-#' ## Calculate number of villages to sample given a population of 100000
-#' ## persons of all ages with an under-5 population of 17% and a prevalence
-#' ## of SAM of 2% if the target sample size is 40
-#' get_n_clusters(n = 40, N = 100000, u5 = 0.17, p = 0.02)
+#' ## Calculate number of villages to sample given an average village population
+#' ## of 600 persons of all ages with an under-5 population of 17% and a
+#' ## prevalence of SAM of 2% if the target sample size is 40
+#' get_n_clusters(n = 40, N = 600, u5 = 0.17, p = 0.02)
 #'
 #' @export
 #'
