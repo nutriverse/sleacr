@@ -19,3 +19,29 @@
 #
 ################################################################################
 "village_list"
+
+
+################################################################################
+#
+#'
+#' SLEAC survey data from Sierra Leone
+#'
+#' @format A tibble with 14 rows and 6 columns:
+#' \describe{
+#'   \item{`country`}{Country}
+#'   \item{`province`}{Province}
+#'   \item{`district`}{District}
+#'   \item{`in`}{Cases found who are in the programme}
+#'   \item{`out`}{Cases found who are not in the programme}
+#'   \item{`n`}{Total number of under 5 children sampled}
+#' }
+#'
+#' @source Ministry of Health, Sierra Leone
+#'
+#' @examples
+#' survey_data
+#'
+#
+################################################################################
+"survey_data"
+
