@@ -9,7 +9,7 @@ get_n_clusters(n, N, u5, p)
 \arguments{
 \item{n}{Target sample size of cases for the coverage survey}
 
-\item{N}{Population for all ages in the specified survey area}
+\item{N}{Average cluster population for all ages in the specified survey area}
 
 \item{u5}{Proportion (value from 0 to 1) of population that are aged 6-59
 months}
@@ -24,9 +24,9 @@ target sample size
 Calculate number of clusters to sample to reach target sample size
 }
 \examples{
-## Calculate number of villages to sample given a population of 100000
-## persons of all ages with an under-5 population of 17\% and a prevalence
-## of SAM of 2\% if the target sample size is 40
-get_n_clusters(n = 40, N = 100000, u5 = 0.17, p = 0.02)
+## Calculate number of villages to sample given an average village population
+## of 600 persons of all ages with an under-5 population of 17\% and a
+## prevalence of SAM of 2\% if the target sample size is 40
+get_n_clusters(n = 40, N = 600, u5 = 0.17, p = 0.02)
 
 }

@@ -35,3 +35,5 @@ URL: https://nutriverse.io/sleacr/, https://github.com/nutriverse/sleacr
 BugReports: https://github.com/nutriverse/sleacr/issues
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)

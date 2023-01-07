@@ -67,6 +67,9 @@
     <loc>https://nutriverse.io/sleacr/reference/run_lqas.html</loc>
   </url>
   <url>
+    <loc>https://nutriverse.io/sleacr/reference/sampling.html</loc>
+  </url>
+  <url>
     <loc>https://nutriverse.io/sleacr/reference/simul_lqas.html</loc>
   </url>
   <url>
@@ -77,5 +80,8 @@
   </url>
   <url>
     <loc>https://nutriverse.io/sleacr/reference/test_lqas_classifier.html</loc>
+  </url>
+  <url>
+    <loc>https://nutriverse.io/sleacr/reference/village_list.html</loc>
   </url>
 </urlset>

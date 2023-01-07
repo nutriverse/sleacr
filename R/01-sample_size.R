@@ -265,7 +265,7 @@ get_n_cases <- function(N, u5, p) {
 #' Calculate number of clusters to sample to reach target sample size
 #'
 #' @param n Target sample size of cases for the coverage survey
-#' @param N Population for all ages in the specified survey area
+#' @param N Average cluster population for all ages in the specified survey area
 #' @param u5 Proportion (value from 0 to 1) of population that are aged 6-59
 #'   months
 #' @param p Prevalence of condition that is to be assessed
@@ -274,10 +274,10 @@ get_n_cases <- function(N, u5, p) {
 #'   target sample size
 #'
 #' @examples
-#' ## Calculate number of villages to sample given a population of 100000
-#' ## persons of all ages with an under-5 population of 17% and a prevalence
-#' ## of SAM of 2% if the target sample size is 40
-#' get_n_clusters(n = 40, N = 100000, u5 = 0.17, p = 0.02)
+#' ## Calculate number of villages to sample given an average village population
+#' ## of 600 persons of all ages with an under-5 population of 17% and a
+#' ## prevalence of SAM of 2% if the target sample size is 40
+#' get_n_clusters(n = 40, N = 600, u5 = 0.17, p = 0.02)
 #'
 #' @export
 #'
