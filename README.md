@@ -15,6 +15,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![Codecov test
 coverage](https://codecov.io/gh/nutriverse/sleacr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/sleacr?branch=main)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/sleacr/badge)](https://www.codefactor.io/repository/github/nutriverse/sleacr)
+[![DOI](https://zenodo.org/badge/186984529.svg)](https://zenodo.org/badge/latestdoi/186984529)
 <!-- badges: end -->
 
 In the recent past, measurement of coverage has been mainly through
@@ -68,7 +69,8 @@ citation("sleacr")
 #> 
 #>   Ernest Guevarra (2023). sleacr: Simplified Lot Quality Assurance
 #>   Sampling Evaluation of Access and Coverage (SLEAC) Tools in R R
-#>   package version 0.0.0.9000 URL https://nutriverse.io/sleacr/
+#>   package version 0.0.0.9000 URL https://nutriverse.io/sleacr/ DOI
+#>   10.5281/zenodo.7510932
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -78,6 +80,7 @@ citation("sleacr")
 #>     year = {2023},
 #>     note = {R package version 0.0.0.9000},
 #>     url = {https://nutriverse.io/sleacr/},
+#>     doi = {10.5281/zenodo.7510932},
 #>   }
 ```
 
