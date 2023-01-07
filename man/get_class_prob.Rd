@@ -7,7 +7,7 @@
 get_class_prob(x)
 }
 \arguments{
-\item{x}{Simulated results data produced by \code{test_lqas_classifier}}
+\item{x}{Simulated results data produced by \code{\link[=test_lqas_classifier]{test_lqas_classifier()}}}
 }
 \value{
 A list of LQAS misclassification probabilities results

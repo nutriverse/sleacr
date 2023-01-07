@@ -7,7 +7,7 @@
 run_lqas(data, n, d.lower, d.upper)
 }
 \arguments{
-\item{data}{A vector of simulated data produced by \code{make_data}}
+\item{data}{A vector of simulated data produced by \code{\link[=make_data]{make_data()}}}
 
 \item{n}{Sample size of actual or test coverage data}
 

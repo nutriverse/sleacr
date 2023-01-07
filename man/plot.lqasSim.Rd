@@ -2,21 +2,21 @@
 % Please edit documentation in R/03-test_classifier.R
 \name{plot.lqasSim}
 \alias{plot.lqasSim}
-\title{\code{plot} helper function for \code{test_lqas_classifier} function}
+\title{\code{plot} helper function for \code{\link[=test_lqas_classifier]{test_lqas_classifier()}} function}
 \usage{
 \method{plot}{lqasSim}(x, ...)
 }
 \arguments{
 \item{x}{An object of class \code{lqasSim} produced by
-\code{test_lqas_classifier} function}
+\code{\link[=test_lqas_classifier]{test_lqas_classifier()}} function}
 
-\item{...}{Additional \code{plot()} parameters}
+\item{...}{Additional \code{plot} parameters}
 }
 \value{
 An LQAS probability of classification plot
 }
 \description{
-\code{plot} helper function for \code{test_lqas_classifier} function
+\code{plot} helper function for \code{\link[=test_lqas_classifier]{test_lqas_classifier()}} function
 }
 \examples{
 x <- test_lqas_classifier(replicates = 5, runs = 5,

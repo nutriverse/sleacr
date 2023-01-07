@@ -29,7 +29,7 @@ make_data <- function(proportion, pop) {
 #
 #' Function to perform LQAS based on data based on specified decision rules
 #'
-#' @param data A vector of simulated data produced by \code{make_data}
+#' @param data A vector of simulated data produced by [make_data()]
 #' @param n Sample size of actual or test coverage data
 #' @param d.lower A numeric value for the lower classification threshold
 #' @param d.upper A numeric value for the upper classification threshold
@@ -46,23 +46,22 @@ make_data <- function(proportion, pop) {
 ################################################################################
 
 run_lqas <- function(data, n, d.lower, d.upper) {
-  ##
+
   d <- c(floor(n * (d.lower / 100)), floor(n * (d.upper / 100)))
-  ##
+
   survey.data <- data.frame(
     data[sample(x = seq_len(nrow(data)), size = n, replace = FALSE), ]
   )
+
   d.run <- sum(survey.data$case)
+
   result <- list(d = d.run, outcome = 1)
-  if (d.run > d[1])
-  {
-    result <- list(d = d.run, outcome = 2)
-  }
-  if (d.run > d[2])
-  {
-    result <- list(d = d.run, outcome = 3)
-  }
-  return(result)
+
+  if (d.run > d[1]) result <- list(d = d.run, outcome = 2)
+
+  if (d.run > d[2]) result <- list(d = d.run, outcome = 3)
+
+  result
 }
 
 
@@ -103,25 +102,32 @@ simul_lqas <- function(runs = 50,
                        p.upper = 100,
                        fine = 1,
                        progress = TRUE) {
-  ##
+  ## Create empty concatenating data.frame
   result <- data.frame()
-  ##
-  for(proportion in seq(from = p.lower, to = p.upper, by = fine)) {
-    if(progress) {
+
+  ## Simulate
+  for (proportion in seq(from = p.lower, to = p.upper, by = fine)) {
+    if (progress) {
       cat("Running simulations for proportion := ", proportion, "%\n", sep = "")
     }
-    ##
+
     test.data <- make_data(proportion, pop = pop)
-    ##
+
     for(i in seq_len(runs)) {
-      test.run <- cbind(data.frame(run_lqas(data = test.data,
-                                            n = n,
-                                            d.lower = d.lower,
-                                            d.upper = d.upper)), proportion)
+      test.run <- cbind(
+        data.frame(
+          run_lqas(
+            data = test.data, n = n, d.lower = d.lower, d.upper = d.upper
+          )
+        ),
+        proportion
+      )
+
       result <- rbind(result, test.run)
     }
   }
-  return(result)
+
+  result
 }
 
 
@@ -167,25 +173,29 @@ test_lqas_classifier <- function(replicates = 20,
                                  progress = TRUE) {
   ## Create concatenating object for replicate simulations
   x <- NULL
+
   ## Cycle through number of replicate simulations
-  for(i in seq_len(replicates)) {
-    x <- rbind(x, simul_lqas(runs = runs,
-                             pop = pop,
-                             n = n,
-                             d.lower = d.lower,
-                             d.upper = d.upper,
-                             p.lower = p.lower,
-                             p.upper = p.upper,
-                             fine = 1,
-                             progress = progress))
+  for (i in seq_len(replicates)) {
+    x <- rbind(
+      x,
+      simul_lqas(
+        runs = runs, pop = pop, n = n,
+        d.lower = d.lower, d.upper = d.upper,
+        p.lower = p.lower, p.upper = p.upper,
+        fine = 1, progress = progress
+      )
+    )
   }
-  ##
+
+  ## concatenate parameters and results
   x <- list(x, d.lower, d.upper, p.lower, p.upper)
+
   names(x) <- c("x", "d.lower", "d.upper", "p.lower", "p.upper")
-  ##
+
+  ## Define class of results
   class(x) <- "lqasSim"
-  ##
-  return(x)
+
+  x
 }
 
 
@@ -193,7 +203,7 @@ test_lqas_classifier <- function(replicates = 20,
 #
 #' Function to produce misclassification probabilities
 #'
-#' @param x Simulated results data produced by \code{test_lqas_classifier}
+#' @param x Simulated results data produced by [test_lqas_classifier()]
 #'
 #' @return A list of LQAS misclassification probabilities results
 #'
@@ -210,8 +220,14 @@ test_lqas_classifier <- function(replicates = 20,
 
 get_class_prob <- function(x) {
   ## Create confusion matrix
-  x[[1]]$true <- cut(x[[1]]$p, breaks = c(0, x$d.lower, x$d.upper, 100), labels = c(1, 2, 3))
+  x[[1]]$true <- cut(
+    x[[1]]$p,
+    breaks = c(0, x$d.lower, x$d.upper, 100),
+    labels = c(1, 2, 3)
+  )
+
   cm <- table(x[[1]]$true, x[[1]]$outcome)
+
   ## Calculate summary probability results
   correct <- diag(cm)
   denominators <- apply(cm, 1, sum)
@@ -219,34 +235,43 @@ get_class_prob <- function(x) {
   names(correct.proportion.by.group) <- c("Low", "Medium", "High")
   correct.proportion.overall <- sum(correct) / sum(denominators)
   gross.misclass <- (cm[1, 3] + cm[3, 1]) / sum(denominators)
+
   ## Organise probability results
   pLow <- correct.proportion.by.group["Low"]
   pModerate <- correct.proportion.by.group["Medium"]
   pHigh <- correct.proportion.by.group["High"]
   pOverall <- correct.proportion.overall
   pGross <- gross.misclass
+
   ##
   probs <- c(pLow, pModerate, pHigh, pOverall, pGross)
-  names(probs) <- c("Low", "Medium", "High", "Overall", "Gross Missclassification")
+  names(probs) <- c(
+    "Low", "Medium", "High", "Overall", "Gross Missclassification"
+  )
+
   ## Concatenate outputs into a list
-  results <- list(cm = cm, correct = correct,
-                  denominators = denominators, probs = probs)
+  results <- list(
+    cm = cm, correct = correct,
+    denominators = denominators, probs = probs
+  )
+
   ##
   class(results) <- "lqasClass"
+
   ##
-  return(results)
+  results
 }
 
 
 ################################################################################
 #
-#' \code{print} helper function for \code{get_class_prob} function
+#' `print` helper function for [get_class_prob()] function
 #'
-#' @param x An object resulting from applying the \code{get_class_prob()}
+#' @param x An object resulting from applying the [get_class_prob()]
 #'   function.
-#' @param ... Additional \code{print()} parameters
+#' @param ... Additional `print` parameters
 #'
-#' @return Printed output of \code{get_class_prob()} function
+#' @return Printed output of [get_class_prob()] function
 #'
 #' @examples
 #' sim <- test_lqas_classifier(replicates = 5, runs = 5,
@@ -271,11 +296,11 @@ print.lqasClass <- function(x, ...) {
 
 ################################################################################
 #
-#' \code{plot} helper function for \code{test_lqas_classifier} function
+#' `plot` helper function for [test_lqas_classifier()] function
 #'
-#' @param x An object of class \code{lqasSim} produced by
-#'   \code{test_lqas_classifier} function
-#' @param ... Additional \code{plot()} parameters
+#' @param x An object of class `lqasSim` produced by
+#'   [test_lqas_classifier()] function
+#' @param ... Additional `plot` parameters
 #'
 #' @return An LQAS probability of classification plot
 #'

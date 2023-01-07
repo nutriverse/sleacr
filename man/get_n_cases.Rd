@@ -24,8 +24,8 @@ Calculate estimated number of cases for a condition affecting children under
 5 years old in a specified survey area
 }
 \examples{
-## Calculate number of SAM cases in a population of 100000 persons of all ages
-## with an under-5 population of 17\% and a prevalence of 2\%
+## Calculate number of SAM cases in a population of 100000 persons of all
+## ages with an under-5 population of 17\% and a prevalence of 2\%
 get_n_cases(N = 100000, u5 = 0.17, p = 0.02)
 
 }
