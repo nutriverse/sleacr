@@ -14,7 +14,7 @@ survey_data <- read.csv("data-raw/sleacSL.csv")
 
 survey_data <- subset(survey_data, select = c(-vita, -worm))
 
-names(survey_data) <- c("country", "province", "district", "in", "out", "n")
+names(survey_data) <- c("country", "province", "district", "in_cases", "out_cases", "n")
 
 survey_data <- tibble::tibble(survey_data)
 

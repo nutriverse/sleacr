@@ -10,8 +10,8 @@ A tibble with 14 rows and 6 columns:
 \item{\code{country}}{Country}
 \item{\code{province}}{Province}
 \item{\code{district}}{District}
-\item{\verb{in}}{Cases found who are in the programme}
-\item{\code{out}}{Cases found who are not in the programme}
+\item{\code{in_cases}}{Cases found who are in the programme}
+\item{\code{out_cases}}{Cases found who are not in the programme}
 \item{\code{n}}{Total number of under 5 children sampled}
 }
 }

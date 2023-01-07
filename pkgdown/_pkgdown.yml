@@ -52,6 +52,10 @@ reference:
     - select_sampling_clusters
     - create_sampling_list
 
+  - title: Coverage classifier
+    contents:
+    - classify_coverage
+
   - title: Tests for SLEAC classifier performance
     contents:
     - make_data
@@ -65,3 +69,4 @@ reference:
   - title: Datasets
     contents:
     - village_list
+    - survey_data

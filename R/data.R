@@ -31,8 +31,8 @@
 #'   \item{`country`}{Country}
 #'   \item{`province`}{Province}
 #'   \item{`district`}{District}
-#'   \item{`in`}{Cases found who are in the programme}
-#'   \item{`out`}{Cases found who are not in the programme}
+#'   \item{`in_cases`}{Cases found who are in the programme}
+#'   \item{`out_cases`}{Cases found who are not in the programme}
 #'   \item{`n`}{Total number of under 5 children sampled}
 #' }
 #'
