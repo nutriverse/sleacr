@@ -21,12 +21,6 @@ navbar:
     #   menu:
     #   - text: "Detecting haemoglobinaemia"
     #     href: articles/haemoglobinaemia.html
-    #   - text: "Detecting inflammation"
-    #     href: articles/inflammation.html
-    #   - text: "Detecting iron deficiency"
-    #     href: articles/iron-deficiency.html
-    #   - text: "Detecting iodine deficiency"
-    #     href: articles/iodine-deficiency.html
     twitter:
       icon: "fab fa-twitter fa-lg"
       href: https://twitter.com/katilingban
