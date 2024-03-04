@@ -29,11 +29,13 @@ In the recent past, measurement of coverage has been mainly through two-stage cl
 
 ## Installation
 
-The `sleacr` package is not yet available on [CRAN](https://cran.r-project.org). You can install the development version of `sleacr` from [GitHub](https://github.com/nutriverse/sleacr) with:
+The `sleacr` package is not yet available on [CRAN](https://cran.r-project.org) but can be installed from the [Nutriverse R universe](https://nutriverse.r-universe.dev) as follows:
 
-``` r
-if (!require(remotes)) install.packages("remotes")
-remotes::install_github("nutriverse/sleacr")
+```{r install, echo = TRUE, eval = FALSE}
+install.packages(
+  "sleacr",
+  repos = c('https://nutriverse.r-universe.dev', 'https://cloud.r-project.org')
+)
 ```
 
 ## What does `sleacr` do?

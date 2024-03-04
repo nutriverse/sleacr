@@ -1,72 +1,70 @@
 title: sleacr
 
-url: https://nutriverse.io/sleacr
+url: https://nutriverse.io/sleacr/
 
 template:
   bootstrap: 5
-  bootswatch: lumen
+  bootswatch: cosmo
   theme: haddock
   ganalytics: UA-102485058-6
 
 navbar:
-  bg: primary
+  bg: success
   type: light
   structure:
-    left:  [home, intro, reference, articles, news]
-    right: [twitter, linkedin, github]
-
+    left:
+    - home
+    - intro
+    - reference
+    - articles
+    - news
+    right:
+    - mastodon
+    - linkedin
+    - github
   components:
-    # articles:
-    #   text: Articles
-    #   menu:
-    #   - text: "Detecting haemoglobinaemia"
-    #     href: articles/haemoglobinaemia.html
-    twitter:
-      icon: "fab fa-twitter fa-lg"
-      href: https://twitter.com/katilingban
+    mastodon:
+      icon: fab fa-mastodon fa-lg
+      href: https://fosstodon.org/@katilingban
     linkedin:
-      icon: "fab fa-linkedin fa-lg"
+      icon: fab fa-linkedin fa-lg
       href: https://www.linkedin.com/company/katilingban
 
 home:
-  #strip_header: true
   links:
-  - text: Read more about Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC)
+  - text: Read more about Simplified Lot Quality Assurance Sampling Evaluation of
+      Access and Coverage (SLEAC)
     href: https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf
 
 reference:
-  - title: Sample size estimation
-    contents:
-    - get_binom_hypergeom
-    - get_hypergeom
-    - get_hypergeom_cumulative
-    - get_n
-    - get_d
-    - get_n_cases
-    - get_n_clusters
+- title: Sample size estimation
+  contents:
+  - get_binom_hypergeom
+  - get_hypergeom
+  - get_hypergeom_cumulative
+  - get_n
+  - get_d
+  - get_n_cases
+  - get_n_clusters
+- title: Stage 1 sampling
+  contents:
+  - get_sampling_interval
+  - select_random_start
+  - select_sampling_clusters
+  - create_sampling_list
+- title: Coverage classifier
+  contents: classify_coverage
+- title: Tests for SLEAC classifier performance
+  contents:
+  - make_data
+  - run_lqas
+  - simulate_lqas
+  - test_lqas_classifier
+  - get_class_prob
+  - print.lqasClass
+  - plot.lqasSim
+- title: Datasets
+  contents:
+  - village_list
+  - survey_data
 
-  - title: Stage 1 sampling
-    contents:
-    - get_sampling_interval
-    - select_random_start
-    - select_sampling_clusters
-    - create_sampling_list
-
-  - title: Coverage classifier
-    contents:
-    - classify_coverage
-
-  - title: Tests for SLEAC classifier performance
-    contents:
-    - make_data
-    - run_lqas
-    - simulate_lqas
-    - test_lqas_classifier
-    - get_class_prob
-    - print.lqasClass
-    - plot.lqasSim
-
-  - title: Datasets
-    contents:
-    - village_list
-    - survey_data
