@@ -1,10 +1,13 @@
 title: sleacr
+
 url: https://nutriverse.io/sleacr/
+
 template:
   bootstrap: 5
-  bootswatch: cosmos
+  bootswatch: cosmo
   theme: haddock
   ganalytics: UA-102485058-6
+
 navbar:
   bg: success
   type: light
@@ -26,11 +29,13 @@ navbar:
     linkedin:
       icon: fab fa-linkedin fa-lg
       href: https://www.linkedin.com/company/katilingban
+
 home:
   links:
   - text: Read more about Simplified Lot Quality Assurance Sampling Evaluation of
       Access and Coverage (SLEAC)
     href: https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf
+
 reference:
 - title: Sample size estimation
   contents:
