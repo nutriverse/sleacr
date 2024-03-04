@@ -34,13 +34,14 @@ functions for use in conducting a SLEAC assessment.
 ## Installation
 
 The `sleacr` package is not yet available on
-[CRAN](https://cran.r-project.org). You can install the development
-version of `sleacr` from [GitHub](https://github.com/nutriverse/sleacr)
-with:
+[CRAN](https://cran.r-project.org) but can be installed from the
+[Nutriverse R universe](https://nutriverse.r-universe.dev) as follows:
 
 ``` r
-if (!require(remotes)) install.packages("remotes")
-remotes::install_github("nutriverse/sleacr")
+install.packages(
+  "sleacr",
+  repos = c('https://nutriverse.r-universe.dev', 'https://cloud.r-project.org')
+)
 ```
 
 ## What does `sleacr` do?
@@ -64,7 +65,6 @@ citation provided by a call to the `citation` function as follows:
 
 ``` r
 citation("sleacr")
-#> 
 #> To cite sleacr in publications use:
 #> 
 #>   Ernest Guevarra (2023). sleacr: Simplified Lot Quality Assurance
