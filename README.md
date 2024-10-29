@@ -35,7 +35,7 @@ functions for use in conducting a SLEAC assessment.
 
 The `sleacr` package is not yet available on
 [CRAN](https://cran.r-project.org) but can be installed from the
-[Nutriverse R universe](https://nutriverse.r-universe.dev) as follows:
+[nutriverse R Universe](https://nutriverse.r-universe.dev) as follows:
 
 ``` r
 install.packages(
@@ -51,12 +51,12 @@ sampling, data collection, and data analysis of a SLEAC survey. The
 current version of the `sleacr` package currently provides the
 following:
 
-- Functions to calculate the sample size needed for a SLEAC survey;
+  - Functions to calculate the sample size needed for a SLEAC survey;
 
-- Functions to draw a stage 1 sample for a SLEAC survey;
+  - Functions to draw a stage 1 sample for a SLEAC survey;
 
-- Functions to determine the performance of chosen classifier cut-offs
-  for analysis of SLEAC survey data.
+  - Functions to determine the performance of chosen classifier cut-offs
+    for analysis of SLEAC survey data.
 
 ## Citation
 
@@ -92,5 +92,5 @@ would like to contribute to the package, please see our [contributing
 guidelines](https://nutriverse.io/sleacr/CONTRIBUTING.html).
 
 This project is released with a [Contributor Code of
-Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
-By contributing to this project, you agree to abide by its terms.
+Conduct](https://nutriverse.io/sleacr/CODE_OF_CONDUCT.html). By
+contributing to this project, you agree to abide by its terms.

@@ -2,33 +2,27 @@ title: sleacr
 
 url: https://nutriverse.io/sleacr/
 
+development:
+  mode: auto
+
 template:
   bootstrap: 5
-  bootswatch: cosmo
-  theme: haddock
-  ganalytics: UA-102485058-6
+  bootswatch: pulse
+  theme: breeze-light
+  ganalytics: G-8JY8XQC801
+  bslib:
+    pkgdown-nav-height: 100px
 
 navbar:
   bg: success
   type: light
   structure:
-    left:
-    - home
-    - intro
-    - reference
-    - articles
-    - news
-    right:
-    - mastodon
-    - linkedin
-    - github
+    left:  [home, intro, reference, articles, news]
+    right: [search, mastodon, github]
   components:
     mastodon:
       icon: fab fa-mastodon fa-lg
-      href: https://fosstodon.org/@katilingban
-    linkedin:
-      icon: fab fa-linkedin fa-lg
-      href: https://www.linkedin.com/company/katilingban
+      href: https://fosstodon.org/@nutriverse
 
 home:
   links:
@@ -37,34 +31,34 @@ home:
     href: https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf
 
 reference:
-- title: Sample size estimation
-  contents:
-  - get_binom_hypergeom
-  - get_hypergeom
-  - get_hypergeom_cumulative
-  - get_n
-  - get_d
-  - get_n_cases
-  - get_n_clusters
-- title: Stage 1 sampling
-  contents:
-  - get_sampling_interval
-  - select_random_start
-  - select_sampling_clusters
-  - create_sampling_list
-- title: Coverage classifier
-  contents: classify_coverage
-- title: Tests for SLEAC classifier performance
-  contents:
-  - make_data
-  - run_lqas
-  - simulate_lqas
-  - test_lqas_classifier
-  - get_class_prob
-  - print.lqasClass
-  - plot.lqasSim
-- title: Datasets
-  contents:
-  - village_list
-  - survey_data
+  - title: Sample size estimation
+    contents:
+    - get_binom_hypergeom
+    - get_hypergeom
+    - get_hypergeom_cumulative
+    - get_n
+    - get_d
+    - get_n_cases
+    - get_n_clusters
+  - title: Stage 1 sampling
+    contents:
+    - get_sampling_interval
+    - select_random_start
+    - select_sampling_clusters
+    - create_sampling_list
+  - title: Coverage classifier
+    contents: classify_coverage
+  - title: Tests for SLEAC classifier performance
+    contents:
+    - make_data
+    - run_lqas
+    - simulate_lqas
+    - test_lqas_classifier
+    - get_class_prob
+    - print.lqasClass
+    - plot.lqasSim
+  - title: Datasets
+    contents:
+    - village_list
+    - survey_data
 
