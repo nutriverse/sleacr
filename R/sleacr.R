@@ -9,8 +9,6 @@
 #'
 #' @docType package
 #' @name sleacr
-#' @exportMethod print lqasClass
-#' @exportMethod plot lqasSim
 #' @importFrom graphics abline legend lines plot points
 #' @importFrom stats lowess phyper
 #'
