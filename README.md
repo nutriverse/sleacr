@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R <img src="man/figures/logo.png" width="200px" align="right" />
+# sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R <img src="man/figures/sleacr.png" width="200px" align="right" />
 
 <!-- badges: start -->
 
@@ -67,10 +67,10 @@ citation provided by a call to the `citation` function as follows:
 citation("sleacr")
 #> To cite sleacr in publications use:
 #> 
-#>   Ernest Guevarra (2023). sleacr: Simplified Lot Quality Assurance
-#>   Sampling Evaluation of Access and Coverage (SLEAC) Tools in R R
-#>   package version 0.0.0.9000 URL https://nutriverse.io/sleacr/ DOI
-#>   10.5281/zenodo.7510932
+#>   Ernest Guevarra (2023). sleacr: Simplified Lot Quality
+#>   Assurance Sampling Evaluation of Access and Coverage (SLEAC)
+#>   Tools in R R package version 0.0.0.9000 URL
+#>   https://nutriverse.io/sleacr/ DOI 10.5281/zenodo.7510932
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
