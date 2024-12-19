@@ -72,17 +72,17 @@ citation("sleacr")
 #>   Emru, Kate Sadler (2012). _Semi-Quantitative Evaluation of
 #>   Access and Coverage (SQUEAC)/Simplified Lot Quality
 #>   Assurance Sampling Evaluation of Access and Coverage (SLEAC)
-#>   Technical Reference_.
+#>   Technical Reference_. FHI 360/FANTA, Washington, DC.
 #>   <https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
-#>   @Manual{,
+#>   @Book{,
 #>     title = {Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference},
 #>     author = {{Mark Myatt} and {Ernest Guevarra} and {Lionella Fieschi} and {Allison Norris} and {Saul Guerrero} and {Lilly Schofield} and {Daniel Jones} and {Ephrem Emru} and {Kate Sadler}},
 #>     year = {2012},
 #>     publisher = {FHI 360/FANTA},
-#>     location = {Washington, DC},
+#>     address = {Washington, DC},
 #>     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},
 #>   }
 ```
