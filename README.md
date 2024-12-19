@@ -5,9 +5,9 @@
 
 <!-- badges: start -->
 
-[![Project Status: WIP – Initial development is in progress, but there
-has not yet been a stable, usable release suitable for the
-public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![R-CMD-check](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml)
@@ -31,9 +31,23 @@ importantly, timely improvement to programme quality, both for agency
 and Ministry of Health (MoH) led programmes. This package provides
 functions for use in conducting a SLEAC assessment.
 
+## What does the package do?
+
+The `{sleacr}` package provides functions that facilitate the design,
+sampling, data collection, and data analysis of a SLEAC survey. The
+current version of the `{sleacr}` package currently provides the
+following:
+
+  - Functions to calculate the sample size needed for a SLEAC survey;
+
+  - Functions to draw a stage 1 sample for a SLEAC survey;
+
+  - Functions to determine the performance of chosen classifier cut-offs
+    for analysis of SLEAC survey data.
+
 ## Installation
 
-The `sleacr` package is not yet available on
+The `{sleacr}` package is not yet available on
 [CRAN](https://cran.r-project.org) but can be installed from the
 [nutriverse R Universe](https://nutriverse.r-universe.dev) as follows:
 
@@ -44,43 +58,32 @@ install.packages(
 )
 ```
 
-## What does `sleacr` do?
-
-The `sleacr` package provides functions that facilitate the design,
-sampling, data collection, and data analysis of a SLEAC survey. The
-current version of the `sleacr` package currently provides the
-following:
-
-  - Functions to calculate the sample size needed for a SLEAC survey;
-
-  - Functions to draw a stage 1 sample for a SLEAC survey;
-
-  - Functions to determine the performance of chosen classifier cut-offs
-    for analysis of SLEAC survey data.
-
 ## Citation
 
-If you find the `sleacr` package useful, please cite using the suggested
+If you use `{sleacr}` in your work, please cite using the suggested
 citation provided by a call to the `citation` function as follows:
 
 ``` r
 citation("sleacr")
 #> To cite sleacr in publications use:
 #> 
-#>   Ernest Guevarra (2023). sleacr: Simplified Lot Quality
+#>   Mark Myatt, Ernest Guevarra, Lionella Fieschi, Allison
+#>   Norris, Saul Guerrero, Lilly Schofield, Daniel Jones, Ephrem
+#>   Emru, Kate Sadler (2012). _Semi-Quantitative Evaluation of
+#>   Access and Coverage (SQUEAC)/Simplified Lot Quality
 #>   Assurance Sampling Evaluation of Access and Coverage (SLEAC)
-#>   Tools in R R package version 0.0.0.9000 URL
-#>   https://nutriverse.io/sleacr/ DOI 10.5281/zenodo.7510932
+#>   Technical Reference_.
+#>   <https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Manual{,
-#>     title = {sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R},
-#>     author = {{Ernest Guevarra}},
-#>     year = {2023},
-#>     note = {R package version 0.0.0.9000},
-#>     url = {https://nutriverse.io/sleacr/},
-#>     doi = {10.5281/zenodo.7510932},
+#>     title = {Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference},
+#>     author = {{Mark Myatt} and {Ernest Guevarra} and {Lionella Fieschi} and {Allison Norris} and {Saul Guerrero} and {Lilly Schofield} and {Daniel Jones} and {Ephrem Emru} and {Kate Sadler}},
+#>     year = {2012},
+#>     publisher = {FHI 360/FANTA},
+#>     location = {Washington, DC},
+#>     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},
 #>   }
 ```
 
