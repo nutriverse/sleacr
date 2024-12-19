@@ -4,7 +4,7 @@
 \name{sleacr}
 \alias{sleacr-package}
 \alias{sleacr}
-\title{sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R}
+\title{sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
