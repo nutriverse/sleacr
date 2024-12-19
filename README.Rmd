@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R <img src="man/figures/logo.png" width="200px" align="right" />
+# sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools <img src="man/figures/logo.png" width="200px" align="right" />
 
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
