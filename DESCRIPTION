@@ -1,8 +1,7 @@
 Package: sleacr
 Type: Package
 Title: Simplified Lot Quality Assurance Sampling Evaluation of Access and 
-    Coverage (SLEAC) Tools in R
-Version: 0.0.0.9000
+    Coverage (SLEAC) Tools
 Authors@R: person("Ernest", "Guevarra", 
     comment = c(ORCID = "0000-0002-4887-4415"), 
     email = "ernest@guevarra.io", role = c("aut", "cre"))

@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R <img src="man/figures/logo.png" width="200px" align="right" />
+# sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools <img src="man/figures/logo.png" width="200px" align="right" />
 
 <!-- badges: start -->
 
@@ -67,23 +67,23 @@ citation provided by a call to the `citation` function as follows:
 citation("sleacr")
 #> To cite sleacr in publications use:
 #> 
-#>   Mark Myatt, Ernest Guevarra, Lionella Fieschi, Allison
-#>   Norris, Saul Guerrero, Lilly Schofield, Daniel Jones, Ephrem
-#>   Emru, Kate Sadler (2012). _Semi-Quantitative Evaluation of
-#>   Access and Coverage (SQUEAC)/Simplified Lot Quality
-#>   Assurance Sampling Evaluation of Access and Coverage (SLEAC)
-#>   Technical Reference_. FHI 360/FANTA, Washington, DC.
+#>   Myatt, Mark, Guevarra, Ernest, Fieschi, Lionella, Norris,
+#>   Allison, Guerrero, Saul, Schofield, Lilly, Jones, Daniel,
+#>   Emru, Ephrem, Sadler, Kate (2012). _Semi-Quantitative
+#>   Evaluation of Access and Coverage (SQUEAC)/Simplified Lot
+#>   Quality Assurance Sampling Evaluation of Access and Coverage
+#>   (SLEAC) Technical Reference_.
 #>   <https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
-#>   @Book{,
+#>   @Manual{,
+#>     location = {Washington, DC},
 #>     title = {Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference},
-#>     author = {{Mark Myatt} and {Ernest Guevarra} and {Lionella Fieschi} and {Allison Norris} and {Saul Guerrero} and {Lilly Schofield} and {Daniel Jones} and {Ephrem Emru} and {Kate Sadler}},
-#>     year = {2012},
-#>     publisher = {FHI 360/FANTA},
-#>     address = {Washington, DC},
 #>     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},
+#>     publisher = {FHI 360/FANTA},
+#>     author = {{Myatt} and {Mark} and {Guevarra} and {Ernest} and {Fieschi} and {Lionella} and {Norris} and {Allison} and {Guerrero} and {Saul} and {Schofield} and {Lilly} and {Jones} and {Daniel} and {Emru} and {Ephrem} and {Sadler} and {Kate}},
+#>     year = {2012},
 #>   }
 ```
 
