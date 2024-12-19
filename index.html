@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R • sleacr</title>
+<title>Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools • sleacr</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -16,7 +16,7 @@
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools">
 <meta name="description" content="In the recent past, measurement of coverage has been mainly through two-stage cluster sampled surveys either as part of a nutrition assessment or through a specific coverage survey known as Centric Systematic Area Sampling (CSAS). However, such methods are resource intensive and often only used for final programme evaluation meaning results arrive too late for programme adaptation. SLEAC, which stands for Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage, is a low resource method designed specifically to address this limitation and is used regularly for monitoring, planning and importantly, timely improvement to programme quality, both for agency and Ministry of Health (MoH) led programmes. SLEAC is designed to complement the Semi-quantitative Evaluation of Access and Coverage (SQUEAC) method. This package provides functions for use in conducting a SLEAC assessment.">
 <meta property="og:description" content="In the recent past, measurement of coverage has been mainly through two-stage cluster sampled surveys either as part of a nutrition assessment or through a specific coverage survey known as Centric Systematic Area Sampling (CSAS). However, such methods are resource intensive and often only used for final programme evaluation meaning results arrive too late for programme adaptation. SLEAC, which stands for Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage, is a low resource method designed specifically to address this limitation and is used regularly for monitoring, planning and importantly, timely improvement to programme quality, both for agency and Ministry of Health (MoH) led programmes. SLEAC is designed to complement the Semi-quantitative Evaluation of Access and Coverage (SQUEAC) method. This package provides functions for use in conducting a SLEAC assessment.">
 <meta property="og:image" content="https://nutriverse.io/sleacr/logo.png">
@@ -57,7 +57,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="sleacr-simplified-lot-quality-assurance-sampling-evaluation-of-access-and-coverage-sleac-tools-in-r-">sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools in R <a class="anchor" aria-label="anchor" href="#sleacr-simplified-lot-quality-assurance-sampling-evaluation-of-access-and-coverage-sleac-tools-in-r-"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="sleacr-simplified-lot-quality-assurance-sampling-evaluation-of-access-and-coverage-sleac-tools-">sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools <a class="anchor" aria-label="anchor" href="#sleacr-simplified-lot-quality-assurance-sampling-evaluation-of-access-and-coverage-sleac-tools-"></a>
 </h1>
 </div>
 <!-- badges: start -->
@@ -91,23 +91,23 @@
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"sleacr"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; To cite sleacr in publications use:</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;   Mark Myatt, Ernest Guevarra, Lionella Fieschi, Allison</span></span>
-<span><span class="co">#&gt;   Norris, Saul Guerrero, Lilly Schofield, Daniel Jones, Ephrem</span></span>
-<span><span class="co">#&gt;   Emru, Kate Sadler (2012). _Semi-Quantitative Evaluation of</span></span>
-<span><span class="co">#&gt;   Access and Coverage (SQUEAC)/Simplified Lot Quality</span></span>
-<span><span class="co">#&gt;   Assurance Sampling Evaluation of Access and Coverage (SLEAC)</span></span>
-<span><span class="co">#&gt;   Technical Reference_.</span></span>
+<span><span class="co">#&gt;   Myatt, Mark, Guevarra, Ernest, Fieschi, Lionella, Norris,</span></span>
+<span><span class="co">#&gt;   Allison, Guerrero, Saul, Schofield, Lilly, Jones, Daniel,</span></span>
+<span><span class="co">#&gt;   Emru, Ephrem, Sadler, Kate (2012). _Semi-Quantitative</span></span>
+<span><span class="co">#&gt;   Evaluation of Access and Coverage (SQUEAC)/Simplified Lot</span></span>
+<span><span class="co">#&gt;   Quality Assurance Sampling Evaluation of Access and Coverage</span></span>
+<span><span class="co">#&gt;   (SLEAC) Technical Reference_.</span></span>
 <span><span class="co">#&gt;   &lt;https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf&gt;.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;   @Manual{,</span></span>
-<span><span class="co">#&gt;     title = {Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference},</span></span>
-<span><span class="co">#&gt;     author = {{Mark Myatt} and {Ernest Guevarra} and {Lionella Fieschi} and {Allison Norris} and {Saul Guerrero} and {Lilly Schofield} and {Daniel Jones} and {Ephrem Emru} and {Kate Sadler}},</span></span>
-<span><span class="co">#&gt;     year = {2012},</span></span>
-<span><span class="co">#&gt;     publisher = {FHI 360/FANTA},</span></span>
 <span><span class="co">#&gt;     location = {Washington, DC},</span></span>
+<span><span class="co">#&gt;     title = {Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference},</span></span>
 <span><span class="co">#&gt;     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},</span></span>
+<span><span class="co">#&gt;     publisher = {FHI 360/FANTA},</span></span>
+<span><span class="co">#&gt;     author = {{Myatt} and {Mark} and {Guevarra} and {Ernest} and {Fieschi} and {Lionella} and {Norris} and {Allison} and {Guerrero} and {Saul} and {Schofield} and {Lilly} and {Jones} and {Daniel} and {Emru} and {Ephrem} and {Sadler} and {Kate}},</span></span>
+<span><span class="co">#&gt;     year = {2012},</span></span>
 <span><span class="co">#&gt;   }</span></span></code></pre></div>
 </div>
 <div class="section level2">
