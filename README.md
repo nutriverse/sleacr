@@ -67,23 +67,24 @@ citation provided by a call to the `citation` function as follows:
 citation("sleacr")
 #> To cite sleacr in publications use:
 #> 
-#>   Myatt, Mark, Guevarra, Ernest, Fieschi, Lionella, Norris,
-#>   Allison, Guerrero, Saul, Schofield, Lilly, Jones, Daniel,
-#>   Emru, Ephrem, Sadler, Kate (2012). _Semi-Quantitative
+#>   Mark Myatt, Ernest Guevarra, Lionella Fieschi, Allison
+#>   Norris, Saul Guerrero, Lilly Schofield, Daniel Jones,
+#>   Ephrem Emru, Kate Sadler (2012). _Semi-Quantitative
 #>   Evaluation of Access and Coverage (SQUEAC)/Simplified Lot
-#>   Quality Assurance Sampling Evaluation of Access and Coverage
-#>   (SLEAC) Technical Reference_.
+#>   Quality Assurance Sampling Evaluation of Access and
+#>   Coverage (SLEAC) Technical Reference_. FHI 360/FANTA,
+#>   Washington, DC.
 #>   <https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
-#>   @Manual{,
-#>     location = {Washington, DC},
+#>   @Book{,
 #>     title = {Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference},
-#>     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},
-#>     publisher = {FHI 360/FANTA},
-#>     author = {{Myatt} and {Mark} and {Guevarra} and {Ernest} and {Fieschi} and {Lionella} and {Norris} and {Allison} and {Guerrero} and {Saul} and {Schofield} and {Lilly} and {Jones} and {Daniel} and {Emru} and {Ephrem} and {Sadler} and {Kate}},
+#>     author = {{Mark Myatt} and {Ernest Guevarra} and {Lionella Fieschi} and {Allison Norris} and {Saul Guerrero} and {Lilly Schofield} and {Daniel Jones} and {Ephrem Emru} and {Kate Sadler}},
 #>     year = {2012},
+#>     publisher = {FHI 360/FANTA},
+#>     address = {Washington, DC},
+#>     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},
 #>   }
 ```
 
