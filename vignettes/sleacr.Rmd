@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Introduction to sleacr"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Introduction}
