@@ -19,12 +19,20 @@ navbar:
   type: dark
   structure:
     left:  [home, intro, reference, articles, news]
-    right: [search, mastodon, github]
+    right: [search, website, mastodon, bluesky, github]
   components:
+    website:
+      icon: "fa-globe"
+      aria-label: Website
+      href: https://nutriverse.io
     mastodon:
       icon: "fab fa-mastodon fa-lg"
       aria-label: Mastodon
-      href: https://fosstodon.org/@nutriverse
+      href: https://mastodon.social/@nutriverse
+    bluesky:
+      icon: "fab fa-bluesky fa-lg"
+      aria-label: Bluesky
+      href: https://bsky.app/profile/nutriverse.io
 
 home:
   links:
