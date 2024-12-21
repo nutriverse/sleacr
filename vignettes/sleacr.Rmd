@@ -2,7 +2,7 @@
 title: "Introduction to sleacr"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Introduction}
+  %\VignetteIndexEntry{Introduction to sleacr}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

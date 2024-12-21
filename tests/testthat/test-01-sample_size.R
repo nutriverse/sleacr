@@ -22,11 +22,11 @@ test_that("output is numeric", {
 ## Test that output is a list
 
 test_that("output is list", {
-  expect_type(get_n(N = 600, dLower = 0.7, dUpper = 0.9), "list")
+  expect_type(get_sample_n(N = 600, dLower = 0.7, dUpper = 0.9), "list")
 })
 
 test_that("output is list", {
-  expect_type(get_d(N = 600, n = 40, dLower = 0.7, dUpper = 0.9), "list")
+  expect_type(get_sample_d(N = 600, n = 40, dLower = 0.7, dUpper = 0.9), "list")
 })
 
 ## Test that output is an numeric
