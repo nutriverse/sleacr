@@ -16,7 +16,7 @@ months}
 \item{p}{Prevalence of condition that is to be assessed}
 }
 \value{
-Numeric value of the estimated number of cases in the specified
+A numeric value of the estimated number of cases in the specified
 survey area
 }
 \description{

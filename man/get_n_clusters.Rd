@@ -17,8 +17,8 @@ months}
 \item{p}{Prevalence of condition that is to be assessed}
 }
 \value{
-Numeric value of the estimated number of clusters to sample to reach
-target sample size
+A numeric value of the estimated number of clusters to sample to
+reach target sample size
 }
 \description{
 Calculate number of clusters to sample to reach target sample size

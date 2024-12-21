@@ -19,7 +19,7 @@ Description: In the recent past, measurement of coverage has been mainly through
     programmes. SLEAC is designed to complement the Semi-quantitative Evaluation 
     of Access and Coverage (SQUEAC) method. This package provides functions for 
     use in conducting a SLEAC assessment.
-License: GPL-3
+License: GPL (>= 3)
 Depends: 
     R (>= 2.10)
 Suggests: 

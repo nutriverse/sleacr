@@ -12,3 +12,4 @@
 ^pkgdown$
 ^codecov\.yml$
 ^README\.html$
+^LICENSE\.md$

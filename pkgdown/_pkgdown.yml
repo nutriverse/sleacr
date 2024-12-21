@@ -33,23 +33,21 @@ home:
     href: https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf
 
 reference:
-  - title: Sample size estimation
+  - title: LQAS sampling frame
     contents:
-    - get_binom_hypergeom
-    - get_hypergeom
-    - get_hypergeom_cumulative
-    - get_n
-    - get_d
-    - get_n_cases
-    - get_n_clusters
+    - starts_with("get_sample")
+    - starts_with("get_n")
+
   - title: Stage 1 sampling
     contents:
     - get_sampling_interval
     - select_random_start
     - select_sampling_clusters
     - create_sampling_list
+
   - title: Coverage classifier
     contents: classify_coverage
+
   - title: Tests for SLEAC classifier performance
     contents:
     - make_data
@@ -59,8 +57,8 @@ reference:
     - get_class_prob
     - print.lqasClass
     - plot.lqasSim
+
   - title: Datasets
     contents:
     - village_list
     - survey_data
-
