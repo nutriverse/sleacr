@@ -2,6 +2,7 @@
 <url><loc>https://nutriverse.io/sleacr/404.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/CODE_OF_CONDUCT.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/CONTRIBUTING.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/LICENSE.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/articles/index.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/articles/sleacr.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/authors.html</loc></url>
@@ -10,12 +11,11 @@
 <url><loc>https://nutriverse.io/sleacr/reference/classify_coverage.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/get_binom_hypergeom.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/get_class_prob.html</loc></url>
-<url><loc>https://nutriverse.io/sleacr/reference/get_d.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/get_hypergeom.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/get_hypergeom_cumulative.html</loc></url>
-<url><loc>https://nutriverse.io/sleacr/reference/get_n.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/get_n_cases.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/get_n_clusters.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/reference/get_sample.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/index.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/make_data.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/plot.lqasSim.html</loc></url>
