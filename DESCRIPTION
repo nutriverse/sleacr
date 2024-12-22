@@ -3,9 +3,15 @@ Type: Package
 Title: Simplified Lot Quality Assurance Sampling Evaluation of Access and 
     Coverage (SLEAC) Tools
 Version: 0.0.0.9000
-Authors@R: person("Ernest", "Guevarra", 
-    comment = c(ORCID = "0000-0002-4887-4415"), 
-    email = "ernest@guevarra.io", role = c("aut", "cre"))
+Authors@R: c(
+    person("Ernest", "Guevarra", 
+           comment = c(ORCID = "0000-0002-4887-4415"), 
+           email = "ernest@guevarra.io", 
+           role = c("aut", "cre")),
+    person("Mark", "Myatt", 
+           comment = c(ORCID = "0000-0003-1119-1474"),
+           email = "mark@brixtonhealth.com", 
+           role = "aut"))
 Description: In the recent past, measurement of coverage has been mainly through 
     two-stage cluster sampled surveys either as part of a nutrition assessment 
     or through a specific coverage survey known as Centric Systematic Area 
