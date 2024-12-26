@@ -50,6 +50,12 @@ test_that("warnings and errors come up as expected", {
       proportion = 0.3, pop = 10000, n = 40, dLower = 0.6, dUpper = 1
     )
   )
+
+  expect_error(
+    lqas_simulate_run(
+      proportion = 0.3, pop = 10000, n = 40, dLower = 0.9, dUpper = 0.6
+    )
+  )
 })
 
 test_that("outcome is a data.frame", {
