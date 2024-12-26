@@ -51,7 +51,8 @@ reference:
     - starts_with("get_sampling")
 
   - title: Coverage classifier
-    contents: classify_coverage
+    contents:
+    - starts_with("lqas_classify")
 
   - title: Tests for SLEAC classifier performance
     contents:
