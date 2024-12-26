@@ -24,11 +24,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Ernest Guevarra \email{ernest@guevarra.io} (\href{https://orcid.org/0000-0002-4887-4415}{ORCID})
+\strong{Maintainer}: Ernest Guevarra \email{ernest@guevarra.io} (\href{https://orcid.org/0000-0002-4887-4415}{ORCID}) [copyright holder]
 
 Authors:
 \itemize{
-  \item Mark Myatt \email{mark@brixtonhealth.com} (\href{https://orcid.org/0000-0003-1119-1474}{ORCID})
+  \item Mark Myatt \email{mark@brixtonhealth.com} (\href{https://orcid.org/0000-0003-1119-1474}{ORCID}) [copyright holder]
 }
 
 }
