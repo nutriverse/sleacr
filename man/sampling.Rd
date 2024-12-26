@@ -21,16 +21,17 @@ create_sampling_list(cluster_list, n_clusters)
 \item{n_clusters}{Number of sampling clusters to be selected}
 
 \item{interval}{Sampling interval usually calculated using
-\code{get_sampling_interval()}}
+\verb{[get_sampling_interval()]}}
 
 \item{cluster_list}{A data.frame containing at least the name or any other
 identifier for the entire set of clusters to sample from.}
 }
 \value{
-A numeric value for \code{get_sampling_interval()} and
-\code{select_random_start()}; An integer vector for \code{select_sampling_clusters()}
-giving the row index for selected clusters; A data.frame for
-\code{create_sampling_list()} which is a subset of \code{cluster_list}
+A numeric value for \verb{[get_sampling_interval()]} and
+\verb{[select_random_start()]}. An integer vector for
+\verb{[select_sampling_clusters()]} giving the row index for selected clusters.
+A data.frame for \verb{[create_sampling_list()]} which is a subset of
+\code{cluster_list}
 }
 \description{
 Select sampling clusters using systematic sampling

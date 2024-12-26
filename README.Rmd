@@ -48,6 +48,42 @@ install.packages(
 )
 ```
 
+## Usage
+
+### Lot quality assurance sampling frame
+
+To setup an LQAS sampling frame, a target sample size is first estimated. For example, if the survey area has an estimated population of about 600 severe acute malnourished (SAME) children and you want to assess whether coverage is reaching at least 50%, the sample size can be calculated as follows:
+
+```{r samp-size-1, eval = FALSE}
+get_sample_n(N = 600, dLower = 0.5, dUpper = 0.8)
+```
+
+which gives an LQAS sampling plan list with values for the target minimum sample size (`n`), the decision rule (`d`), the observed alpha error (`alpha`), and the observed beta error (`beta`).
+
+```{r samp-size-1-show, echo = FALSE}
+get_sample_n(N = 600, dLower = 0.5, dUpper = 0.8)
+```
+
+In this sampling plan, a target minimum sample size of 19 SAM cases should be aimed for with a decision rule of more than 12 SAM cases covered to determine whether programme coverage is at least 50% with alpha and beta errors no more than 10%. The alpha and beta errors requirement is set at no more than 10% by default. This can be made more precise by setting alpha and beta errors less than 10%.
+
+There are contexts where survey data has already been collected and the sample is less than what was aimed for based on the original sampling frame. The `get_sample_d()` function is used to determine the error levels of the achieved sample size. For example, if the survey described above only achieved a sample size of 16, the `get_sample_d()` function can be used as follows:
+
+```{r samp-size-2, eval = FALSE}
+get_sample_d(N = 600, n = 16, dLower = 0.5, dUpper = 0.8)
+```
+
+which gives an alternative LQAS sampling plan based on the achieved sample size.
+
+```{r samp-size-2-show, echo = FALSE}
+get_sample_d(N = 600, n = 16, dLower = 0.5, dUpper = 0.8)
+```
+
+In this updated sampling plan, the decision rule is now more than 10 SAM cases but with higher alpha and beta errors. Note that the beta error is now slightly higher than 10%.
+
+### Stage 1 sample
+
+
+
 ## Citation
 
 If you use `{sleacr}` in your work, please cite using the suggested citation provided by a call to the `citation` function as follows:

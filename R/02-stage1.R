@@ -1,19 +1,18 @@
-################################################################################
-#
 #'
 #' Select sampling clusters using systematic sampling
 #'
 #' @param N_clusters Total number of clusters in survey area
 #' @param n_clusters Number of sampling clusters to be selected
 #' @param interval Sampling interval usually calculated using
-#'   `get_sampling_interval()`
+#'   `[get_sampling_interval()]`
 #' @param cluster_list A data.frame containing at least the name or any other
 #'   identifier for the entire set of clusters to sample from.
 #'
-#' @return A numeric value for `get_sampling_interval()` and
-#'   `select_random_start()`; An integer vector for `select_sampling_clusters()`
-#'   giving the row index for selected clusters; A data.frame for
-#'   `create_sampling_list()` which is a subset of `cluster_list`
+#' @return A numeric value for `[get_sampling_interval()]` and
+#'   `[select_random_start()]`. An integer vector for 
+#'   `[select_sampling_clusters()]` giving the row index for selected clusters. 
+#'   A data.frame for `[create_sampling_list()]` which is a subset of 
+#'   `cluster_list`
 #'
 #' @examples
 #' get_sampling_interval(N_clusters = 211, n_clusters = 35)
@@ -25,8 +24,6 @@
 #' @export
 #' @rdname sampling
 #'
-#
-################################################################################
 
 get_sampling_interval <- function(N_clusters, n_clusters) {
   floor(N_clusters / n_clusters)
