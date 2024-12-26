@@ -21,6 +21,13 @@ navbar:
     left:  [home, intro, reference, articles, news]
     right: [search, website, mastodon, bluesky, github]
   components:
+    articles:
+      text: Articles
+      menu:
+      - text: SLEAC Sampling Plan 
+        href: articles/sampling-plan.html
+      - text: SLEAC Classification
+        href: articles/classification.html
     website:
       icon: "fa-globe"
       aria-label: Website
