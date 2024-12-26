@@ -22,6 +22,49 @@
 #'
 
 get_sample_n <- function(N, dLower, dUpper, alpha = 0.1, beta = 0.1) {
+  ## Check that dLower and dUpper are within 0 to 1 ----
+  if (dLower < 0 | dLower > 1) {
+    stop(
+      "The value for `dLower` should be from 0 and 1. ",
+      "Check value and try again.",
+      call. = TRUE
+    )
+  }
+
+  if (dUpper < 0 | dUpper > 1) {
+    stop(
+      "The value for `dUpper` should be from 0 and 1. ",
+      "Check value and try again.",
+      call. = TRUE
+    )
+  }
+
+  ## Check that dLower is less than dUpper ----
+  if (dLower > dUpper) {
+    stop(
+      "Value for `dLower` should be less than `dUpper`. Check values ",
+      "and try again.",
+      call. = TRUE
+    )
+  }
+
+  ## Check that alpha and beta error values are within 0 and 1 ----
+  if (alpha < 0 | alpha > 1) {
+    stop(
+      "The value for `alpha` should be from 0 and 1. ",
+      "Check value and try again.",
+      call. = TRUE
+    )
+  }
+
+  if (beta < 0 | beta > 1) {
+    stop(
+      "The value for `beta` should be from 0 and 1. ",
+      "Check value and try again.",
+      call. = TRUE
+    )
+  }  
+
   low <- ceiling(dLower  * N)
   high <- ceiling(dUpper * N)
 
@@ -73,6 +116,49 @@ get_sample_n <- function(N, dLower, dUpper, alpha = 0.1, beta = 0.1) {
 #'
 
 get_sample_d <- function(N, n, dLower, dUpper, alpha = 0.1, beta = 0.1) {
+  ## Check that dLower and dUpper are within 0 to 1 ----
+  if (dLower < 0 | dLower > 1) {
+    stop(
+      "The value for `dLower` should be from 0 and 1. ",
+      "Check value and try again.",
+      call. = TRUE
+    )
+  }
+
+  if (dUpper < 0 | dUpper > 1) {
+    stop(
+      "The value for `dUpper` should be from 0 and 1. ",
+      "Check value and try again.",
+      call. = TRUE
+    )
+  }
+
+  ## Check that dLower is less than dUpper ----
+  if (dLower > dUpper) {
+    stop(
+      "Value for `dLower` should be less than `dUpper`. Check values ",
+      "and try again.",
+      call. = TRUE
+    )
+  }
+
+  ## Check that alpha and beta error values are within 0 and 1 ----
+  if (alpha < 0 | alpha > 1) {
+    stop(
+      "The value for `alpha` should be from 0 and 1. ",
+      "Check value and try again.",
+      call. = TRUE
+    )
+  }
+
+  if (beta < 0 | beta > 1) {
+    stop(
+      "The value for `beta` should be from 0 and 1. ",
+      "Check value and try again.",
+      call. = TRUE
+    )
+  }
+
   low <- ceiling(dLower  * N)
   high <- ceiling(dUpper * N)
 
@@ -123,10 +209,10 @@ get_sample_d <- function(N, n, dLower, dUpper, alpha = 0.1, beta = 0.1) {
 #' Calculate estimated number of cases for a condition affecting children under
 #' 5 years old in a specified survey area
 #'
-#' @param N Population for all ages in the specified survey area
+#' @param N Population for all ages in the specified survey area.
 #' @param u5 Proportion (value from 0 to 1) of population that are aged 6-59
-#'   months
-#' @param p Prevalence of condition that is to be assessed
+#'   months.
+#' @param p Prevalence (value from 0 to 1) of condition that is to be assessed.
 #'
 #' @returns A numeric value of the estimated number of cases in the specified
 #'   survey area
@@ -140,6 +226,20 @@ get_sample_d <- function(N, n, dLower, dUpper, alpha = 0.1, beta = 0.1) {
 #'
 
 get_n_cases <- function(N, u5, p) {
+  if (u5 < 0 | u5 > 1) {
+    stop(
+      "The value for `u5` should be from 0 to 1. Check value and try again.",
+      call. = TRUE
+    )
+  }
+
+  if (p < 0 | p > 1) {
+    stop(
+      "The value for `p` should be from 0 to 1. Check value and try again.",
+      call. = TRUE
+    )
+  }
+
   floor(N * u5 * p)
 }
 
@@ -147,25 +247,26 @@ get_n_cases <- function(N, u5, p) {
 #' 
 #' Calculate number of clusters to sample to reach target sample size
 #'
-#' @param n Target sample size of cases for the coverage survey
-#' @param N Average cluster population for all ages in the specified survey area
+#' @param n Target sample size of cases for the coverage survey.
+#' @param n_cluster Average cluster population for all ages in the specified
+#'   survey area.
 #' @param u5 Proportion (value from 0 to 1) of population that are aged 6-59
-#'   months
-#' @param p Prevalence of condition that is to be assessed
+#'   months.
+#' @param p Prevalence (value from 0 to 1) of condition that is to be assessed.
 #'
 #' @returns A numeric value of the estimated number of clusters to sample to 
-#'   reach target sample size
+#'   reach target sample size.
 #'
 #' @examples
 #' ## Calculate number of villages to sample given an average village population
 #' ## of 600 persons of all ages with an under-5 population of 17% and a
 #' ## prevalence of SAM of 2% if the target sample size is 40
-#' get_n_clusters(n = 40, N = 600, u5 = 0.17, p = 0.02)
+#' get_n_clusters(n = 40, n_cluster = 600, u5 = 0.17, p = 0.02)
 #'
 #' @export
 #'
 
-get_n_clusters <- function(n, N, u5, p) {
-  ceiling(n / floor(N * u5 * p))
+get_n_clusters <- function(n, n_cluster, u5, p) {
+  ceiling(n / get_n_cases(N = n_cluster, u5 = u5, p = p))
 }
 

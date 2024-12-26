@@ -58,7 +58,8 @@ reference:
 
   - title: Tests for SLEAC classifier performance
     contents:
-    - starts_with("lqas")
+    - starts_with("lqas_simulate")
+    - lqas_get_class_prob
     - print.lqasClass
     - plot.lqasSim
 
