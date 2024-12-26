@@ -248,7 +248,7 @@ lqas_get_class_prob <- function(x) {
   ## Create confusion matrix ----
   x[[1]]$true <- cut(
     x[[1]]$proportion * 100,
-    breaks = c(0, x$dLower, x$dUpper, 100),
+    breaks = c(0, x$dLower * 100, x$dUpper * 100, 100),
     labels = c(1, 2, 3)
   )
 

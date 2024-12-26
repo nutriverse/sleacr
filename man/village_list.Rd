@@ -5,12 +5,12 @@
 \alias{village_list}
 \title{List of villages in Bo District, Sierra Leone}
 \format{
-A tibble with 1001 rows and 4 columns:
-\describe{
-\item{\code{id}}{Unique identifier}
-\item{\code{chiefdom}}{Chiefdom}
-\item{\code{section}}{Section}
-\item{\code{village}}{Village}
+A tibble with 1001 rows and 4 columns\tabular{ll}{
+   \strong{Variable} \tab \strong{Description} \cr
+   \emph{id} \tab Unique identifier \cr
+   \emph{chiefdom} \tab Chiefdom \cr
+   \emph{section} \tab Section \cr
+   \emph{village} \tab Village \cr
 }
 }
 \source{

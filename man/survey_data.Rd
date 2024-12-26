@@ -5,14 +5,14 @@
 \alias{survey_data}
 \title{SLEAC survey data from Sierra Leone}
 \format{
-A tibble with 14 rows and 6 columns:
-\describe{
-\item{\code{country}}{Country}
-\item{\code{province}}{Province}
-\item{\code{district}}{District}
-\item{\code{in_cases}}{Cases found who are in the programme}
-\item{\code{out_cases}}{Cases found who are not in the programme}
-\item{\code{n}}{Total number of under 5 children sampled}
+A tibble with 14 rows and 6 columns\tabular{ll}{
+   \strong{Variable} \tab \strong{Description} \cr
+   \emph{country} \tab Country \cr
+   \emph{province} \tab Province \cr
+   \emph{district} \tab District \cr
+   \emph{in_cases} \tab Cases found who are in the programme \cr
+   \emph{out_cases} \tab Cases found who are not in the programme \cr
+   \emph{n} \tab Total number of under 5 children sampled \cr
 }
 }
 \source{
