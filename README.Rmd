@@ -11,6 +11,8 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+library(sleacr)
 ```
 
 # sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools <img src="man/figures/logo.png" width="200px" align="right" />
@@ -34,6 +36,8 @@ The `{sleacr}` package provides functions that facilitate the design, sampling, 
 * Functions to calculate the sample size needed for a SLEAC survey;
 
 * Functions to draw a stage 1 sample for a SLEAC survey;
+
+* Functions to classify coverage; and,
 
 * Functions to determine the performance of chosen classifier cut-offs for analysis of SLEAC survey data.
 
@@ -82,7 +86,49 @@ In this updated sampling plan, the decision rule is now more than 10 SAM cases b
 
 ### Stage 1 sample
 
+The first stage sample of a SLEAC survey is a systematic spatial sample. Two methods can be used and both methods take the sample from all parts of the survey area: the *list-based* method and the *map-based* method. The `{sleacr}` package currently supports the implementation of the *list-based* method.
 
+In the list-based method, communities to be sampled are selected systematically from a complete list of communities in the survey area. This list of communities should sorted by one or more non-overlapping spatial factors such as district and subdistricts within districts. The `village_list` dataset is an example of such a list.
+
+```{r}
+village_list
+```
+
+The `get_sampling_list()` function implements the list-based sampling method. For example, if 40 clusters/villages are needed to be sampled to find the 19 SAM cases calculated earlier, a sampling list can be created as follows:
+
+```{r stage-1-sample, eval = FALSE}
+get_sampling_list(village_list, 40)
+```
+
+which provides the following sampling list:
+
+```{r stage-1-sample-show, echo = FALSE}
+get_sampling_list(village_list, 40) |>
+  knitr::kable()
+```
+
+### Classifying coverage
+
+With data collected from a SLEAC survey, the `lqas_classify_coverage()` function is used to classify coverage. For example, using the `survey_data` dataset, per district coverage classification can be calculated as follows:
+
+```{r classify-coverage, eval = FALSE}
+with(survey_data, lqas_classify_coverage(n = in_cases, n_total = n))
+```
+
+which outputs the following results:
+
+```{r classify-coverage-show, echo = FALSE}
+with(survey_data, lqas_classify_coverage(n = in_cases, n_total = n))
+```
+
+### Assessing classifier performance
+
+It is useful to be able to assess the performance of the classifier chosen for a SLEAC survey. For example, in the context presented above of an area with a population of 600, a sample size of 40 and a 60% and 90% threshold classifier, the performance of this classifier can be assessed by first simulating a population and then determining the classification probabilities of the chosen classifier on this population.
+
+```{r classifier-test}
+lqas_simulate_test(pop = 600, n = 40, dLower = 0.6, dUpper = 0.9) |>
+  lqas_get_class_prob()
+```
 
 ## Citation
 
