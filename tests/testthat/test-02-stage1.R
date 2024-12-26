@@ -16,7 +16,7 @@ test_that("output is numeric or integer", {
 
   ## Sampling sequence
   expect_type(
-    select_sampling_clusters(N_clusters = 211, n_clusters = 35), "double"
+    get_sampling_clusters(N_clusters = 211, n_clusters = 35), "double"
   )
 })
 
@@ -24,19 +24,17 @@ test_that("output is numeric or integer", {
 
 test_that("output is tibble or data.frame", {
   expect_type(
-    create_sampling_list(cluster_list = village_list, n_clusters = 70),
+    get_sampling_list(cluster_list = village_list, n_clusters = 70),
     "list"
   )
 
-  expect_true(
-    is_tibble(
-      create_sampling_list(cluster_list = village_list, n_clusters = 70)
-    )
+  expect_s3_class(
+    get_sampling_list(cluster_list = village_list, n_clusters = 70),
+    "data.frame"
   )
 
-  expect_true(
-    is.data.frame(
-      create_sampling_list(cluster_list = village_list, n_clusters = 70)
-    )
+  expect_s3_class(
+    get_sampling_list(cluster_list = village_list, n_clusters = 70),
+    "tbl"
   )
 })

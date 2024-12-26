@@ -48,10 +48,7 @@ reference:
 
   - title: Stage 1 sampling
     contents:
-    - get_sampling_interval
-    - select_random_start
-    - select_sampling_clusters
-    - create_sampling_list
+    - starts_with("get_sampling")
 
   - title: Coverage classifier
     contents: classify_coverage
