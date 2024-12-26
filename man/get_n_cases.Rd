@@ -8,12 +8,12 @@
 get_n_cases(N, u5, p)
 }
 \arguments{
-\item{N}{Population for all ages in the specified survey area}
+\item{N}{Population for all ages in the specified survey area.}
 
 \item{u5}{Proportion (value from 0 to 1) of population that are aged 6-59
-months}
+months.}
 
-\item{p}{Prevalence of condition that is to be assessed}
+\item{p}{Prevalence (value from 0 to 1) of condition that is to be assessed.}
 }
 \value{
 A numeric value of the estimated number of cases in the specified

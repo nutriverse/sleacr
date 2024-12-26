@@ -52,7 +52,7 @@ install.packages(
 
 ### Lot quality assurance sampling frame
 
-To setup an LQAS sampling frame, a target sample size is first estimated. For example, if the survey area has an estimated population of about 600 severe acute malnourished (SAME) children and you want to assess whether coverage is reaching at least 50%, the sample size can be calculated as follows:
+To setup an LQAS sampling frame, a target sample size is first estimated. For example, if the survey area has an estimated population of about 600 severe acute malnourished (SAM) children and you want to assess whether coverage is reaching at least 50%, the sample size can be calculated as follows:
 
 ```{r samp-size-1, eval = FALSE}
 get_sample_n(N = 600, dLower = 0.5, dUpper = 0.8)
