@@ -2,27 +2,28 @@
 % Please edit documentation in R/04-test_classifier.R
 \name{print.lqasClass}
 \alias{print.lqasClass}
-\title{\code{print} helper function for \code{\link[=get_class_prob]{get_class_prob()}} function}
+\title{\code{print} helper function for \code{\link[=lqas_get_class_prob]{lqas_get_class_prob()}} function}
 \usage{
 \method{print}{lqasClass}(x, ...)
 }
 \arguments{
-\item{x}{An object resulting from applying the \code{\link[=get_class_prob]{get_class_prob()}}
+\item{x}{An object resulting from applying the \code{\link[=lqas_get_class_prob]{lqas_get_class_prob()}}
 function.}
 
 \item{...}{Additional \code{print} parameters}
 }
 \value{
-Printed output of \code{\link[=get_class_prob]{get_class_prob()}} function
+Printed output of \code{\link[=lqas_get_class_prob]{lqas_get_class_prob()}} function
 }
 \description{
-\code{print} helper function for \code{\link[=get_class_prob]{get_class_prob()}} function
+\code{print} helper function for \code{\link[=lqas_get_class_prob]{lqas_get_class_prob()}} function
 }
 \examples{
-sim <- test_lqas_classifier(replicates = 5, runs = 5,
-                            pop = 10000, n = 40,
-                            d.lower = 60, d.upper = 90)
-x <- get_class_prob(x = sim)
+sim <- lqas_simulate_test(
+  pop = 10000, n = 40, dLower = 0.6, dUpper = 0.9, replicates = 5, runs = 5
+)
+
+x <- lqas_get_class_prob(x = sim)
 print(x)
 
 }

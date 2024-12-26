@@ -1,5 +1,3 @@
-################################################################################
-#
 #'
 #' Classify coverage results
 #'
@@ -28,8 +26,6 @@
 #'
 #' @export
 #'
-#
-################################################################################
 
 classify_coverage <- function(n_in, n_total, standard = c(0.2, 0.5)) {
   coverage_class <- Map(
@@ -68,8 +64,9 @@ classify_coverage_ <- function(n_in, n_total, standard = c(0.2, 0.5)) {
   if (length(standard) == 2) {
     if ((standard[2] - standard[1]) < 0.3) {
       warning(
-        "Difference between lower and upper standards is less than 0.3. This
-        may cause gross mis-classification.", call. = TRUE
+        "Difference between lower and upper standards is less than 0.3. ",
+        "This may cause gross mis-classification.", 
+        call. = TRUE
       )
     }
   }

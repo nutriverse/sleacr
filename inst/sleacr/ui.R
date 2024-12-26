@@ -7,7 +7,7 @@
 if(!require(shiny)) install.packages("shiny")
 if(!require(shinythemes)) install.packages("shinythemes")
 if(!require(remotes)) install.packages("remotes")
-if(!require(sleacr)) remotes::install_github("rapidsurveys/sleacr")
+if(!require(sleacr)) remotes::install_github("nutriverse/sleacr")
 ##
 navbarPage(title = "sleacr", id = "chosenTab", theme = shinytheme("sandstone"),
   tabPanel(title = "", value = 1, icon = icon(name = "home", class = "fa-lg"),

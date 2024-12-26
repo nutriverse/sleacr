@@ -58,6 +58,43 @@ install.packages(
 )
 ```
 
+## Usage
+
+### Lot quality assurance sampling frame
+
+To setup an LQAS sampling frame, a target sample size is first
+estimated. For example, if the survey area has an estimated population
+of about 600 severe acute malnourished (SAME) children and you want to
+assess whether coverage is reaching at least 50%, the sample size can be
+calculated as follows:
+
+``` r
+get_sample_n(N = 600, dLower = 0.5, dUpper = 0.8)
+```
+
+which gives an LQAS sampling plan list with values for the target
+minimum sample size (`n`), the decision rule (`d`), the observed alpha
+error (`alpha`), and the observed beta error (`beta`).
+
+    #> $n
+    #> [1] 19
+    #> 
+    #> $d
+    #> [1] 12
+    #> 
+    #> $alpha
+    #> [1] 0.06446194
+    #> 
+    #> $beta
+    #> [1] 0.08014249
+
+In this sampling plan, a target minimum sample size of 19 SAM cases
+should be aimed for with a decision rule of more than 12 SAM cases
+covered to determine whether programme coverage is at least 50% with
+alpha and beta errors no more than 10%. The alpha and beta errors
+requirement is set at no more than 10% by default. This can be made more
+precise by setting alpha and beta errors less than 10%.
+
 ## Citation
 
 If you use `{sleacr}` in your work, please cite using the suggested
@@ -68,12 +105,11 @@ citation("sleacr")
 #> To cite sleacr in publications use:
 #> 
 #>   Mark Myatt, Ernest Guevarra, Lionella Fieschi, Allison
-#>   Norris, Saul Guerrero, Lilly Schofield, Daniel Jones,
-#>   Ephrem Emru, Kate Sadler (2012). _Semi-Quantitative
-#>   Evaluation of Access and Coverage (SQUEAC)/Simplified Lot
-#>   Quality Assurance Sampling Evaluation of Access and
-#>   Coverage (SLEAC) Technical Reference_. FHI 360/FANTA,
-#>   Washington, DC.
+#>   Norris, Saul Guerrero, Lilly Schofield, Daniel Jones, Ephrem
+#>   Emru, Kate Sadler (2012). _Semi-Quantitative Evaluation of
+#>   Access and Coverage (SQUEAC)/Simplified Lot Quality
+#>   Assurance Sampling Evaluation of Access and Coverage (SLEAC)
+#>   Technical Reference_. FHI 360/FANTA, Washington, DC.
 #>   <https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf>.
 #> 
 #> A BibTeX entry for LaTeX users is

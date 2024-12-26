@@ -69,3 +69,22 @@ get_hypergeom_cumulative <- function(k, m, n, N, tail = "lower") {
 
   x
 }
+
+#'
+#' Get low, moderate, and high probabilities per proportion
+#' 
+#' @param x A vector of low, moderate, and high classification labelled as
+#'   1, 2, and 3 respectively.
+#' 
+#' @returns A table object of low, moderate, and high classification 
+#'   probabilities
+#' 
+#' @keywords internal
+#' 
+
+get_classification_probabilities <- function(x) {
+  factor(x, levels = c(1, 2, 3)) |>
+    table() |>
+    prop.table() |>
+    (\(x) x * 100)()
+}
