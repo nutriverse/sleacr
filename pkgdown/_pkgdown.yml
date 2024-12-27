@@ -8,6 +8,7 @@ development:
 template:
   bootstrap: 5
   theme: breeze-light
+  math-rendering: mathjax
   ganalytics: "G-8JY8XQC801"
   bslib:
     bootswatch: pulse    

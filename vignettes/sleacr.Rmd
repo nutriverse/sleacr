@@ -40,7 +40,7 @@ SLEAC may also be used to estimate coverage over wide areas. SLEAC has been used
 
 The SLEAC method classifies program coverage for a service delivery unit such as a health district. A SLEAC survey does not provide an estimate of overall coverage with a confidence interval for a single service delivery unit. Instead, a SLEAC survey identifies the category of coverage (e.g. low, moderate, or high) that best describes the coverage of the service delivery unit being assessed. The advantage of this approach is that relatively small sample sizes (e.g. `n = 40`) are required in order to make accurate and reliable classifications.
 
-SLEAC uses lot quality assurance sampling (LQAS) classification technique.
+SLEAC uses the lot quality assurance sampling (LQAS) classification technique.
 
 * The SLEAC survey sample is designed to represent an entire service delivery unit such as a district.
       
