@@ -109,7 +109,7 @@ get_sample_n(N = 60, dLower = 0.5, dUpper = 0.7)
 
 The target sample size (`n`) together with estimates of the prevalence of severe acute undernutrition in the survey area and population data is used to calculate the number of villages ($n_{villages}$) that will need to be sampled in order to achieve the target sample size:
 
-$$ n_{villages} ~ \times ~ \Biggl\lceil \frac{n}{\text{average village population}_{\text{all ages}} ~ \times ~ \frac{\text{Percentage of population}_{\text{all ages}}}{100} ~ \times ~ \frac{SAM prevalence}{100}} \Biggr\rceil $$
+$$n_{villages} ~ \times ~ \left \lceil \frac{n}{\text{average village population}_{\text{all ages}} ~ \times ~ \frac{\text{Percentage of population}_{\text{all ages}}}{100} ~ \times ~ \frac{SAM prevalence}{100}} \right \rceil$$
 
 This calculation can be performed using the `get_n_clusters()` function in `{sleacr}`. If the target sample size is 40 and the average population size per village/cluster is 600:
 
@@ -117,8 +117,7 @@ This calculation can be performed using the `get_n_clusters()` function in `{sle
 get_n_clusters(n = 40, n_cluster = 600, u5 = 0.17, p = 0.02)
 ```
 
-### Footnotes
 
 [^1]: Milne, A. The centric systematic area-sample treated as a random sample. Biometrics 15, 270–297 (1959).
   
-[^2]: This is an estimate of the number of SAM cases in a service delivery unit at the time of the survey: $\lfloor {Population_{\text{all ages}} \times \frac{\text{Percentage of population}_{\text{6-59 months}}}{100} \times \frac{\text{Prevalence SAM}}{100}} \rfloor$
+[^2]: This is an estimate of the number of SAM cases in a service delivery unit at the time of the survey: $\left \lfloor {Population_{\text{all ages}} \times \frac{\text{Percentage of population}_{\text{6-59 months}}}{100} \times \frac{\text{Prevalence SAM}}{100}} \right \rfloor$
