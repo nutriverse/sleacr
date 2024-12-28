@@ -20,7 +20,8 @@ lqas_simulate_runs(
   pLower = 0,
   pUpper = 1,
   fine = 0.01,
-  runs = 50
+  runs = 50,
+  cores = parallelly::availableCores(omit = 1)
 )
 
 lqas_simulate_test(
@@ -32,7 +33,8 @@ lqas_simulate_test(
   pUpper = 1,
   fine = 0.01,
   runs = 50,
-  replicates = 20
+  replicates = 20,
+  cores = parallelly::availableCores(omit = 1)
 )
 }
 \arguments{
@@ -58,6 +60,9 @@ proportion. Value should be between 0 and 1.}
 
 \item{runs}{Number of simulation runs to perform per coverage proportion.
 Default is 50 runs.}
+
+\item{cores}{The number of computer cores to use/number of child processes
+will be run simultaneously.}
 
 \item{replicates}{Number of replicate LQAS simulations to perform.
 Default is set to 20 replicates.}

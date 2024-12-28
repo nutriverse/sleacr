@@ -10,7 +10,8 @@ lqas_get_class_prob(x)
 \item{x}{Simulated results data produced by \code{\link[=lqas_simulate_test]{lqas_simulate_test()}}}
 }
 \value{
-A list of LQAS misclassification probabilities results
+A list object of class \code{lqasClass} for LQAS misclassification
+probabilities results
 }
 \description{
 Produce misclassification probabilities
