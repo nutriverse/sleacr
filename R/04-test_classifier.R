@@ -62,6 +62,8 @@ lqas_simulate_population <- function(proportion, pop) {
 #'   Default is 50 runs.
 #' @param replicates Number of replicate LQAS simulations to perform.
 #'   Default is set to 20 replicates.
+#' @param cores The number of computer cores to use/number of child processes
+#'   will be run simultaneously.
 #'
 #' @returns A data.frame with variable `cases` for total number of 
 #'   covered/cases, `outcome` for LQAS outcome, and `proportion` for the
@@ -163,19 +165,21 @@ lqas_simulate_runs <- function(pop,
                                pLower = 0,
                                pUpper = 1,
                                fine = 0.01,
-                               runs = 50) {
+                               runs = 50,
+                               cores = parallelly::availableCores(omit = 1)) {
   proportion <- rep.int(
     seq(from = pLower, to = pUpper, by = fine), times = runs
   ) |>
     sort()
   
-  result <- lapply(
+  result <- parallel::mclapply(
     X = proportion,
     FUN = lqas_simulate_run,
     pop = pop,
     n = n,
     dLower = dLower,
-    dUpper = dUpper
+    dUpper = dUpper,
+    mc.cores = cores
   ) |>
     (\(x) do.call(rbind, x))()
 
@@ -197,20 +201,22 @@ lqas_simulate_test <- function(pop,
                                pUpper = 1,
                                fine = 0.01,
                                runs = 50,
-                               replicates = 20) {
+                               replicates = 20,
+                               cores = parallelly::availableCores(omit = 1)) {
   proportion <- rep.int(
     seq(from = pLower, to = pUpper, by = fine), times = runs
   ) |>
     sort() |>
     rep(times = replicates)
 
-  x <- lapply(
+  x <- parallel::mclapply(
     X = proportion,
     FUN = lqas_simulate_run,
     pop = pop,
     n = n,
     dLower = dLower,
-    dUpper = dUpper
+    dUpper = dUpper,
+    mc.cores = cores
   ) |>
     (\(x) do.call(rbind, x))()
 
@@ -232,7 +238,8 @@ lqas_simulate_test <- function(pop,
 #'
 #' @param x Simulated results data produced by [lqas_simulate_test()]
 #'
-#' @returns A list of LQAS misclassification probabilities results
+#' @returns A list object of class `lqasClass` for LQAS misclassification 
+#'   probabilities results
 #'
 #' @examples
 #' sim <- lqas_simulate_test(
@@ -310,7 +317,6 @@ lqas_get_class_prob <- function(x) {
 #'
 #' @export
 #'
-
 
 print.lqasClass <- function(x, ...) {
   cat("                    Low : ", round(x$probs[1], 4), "\n",
