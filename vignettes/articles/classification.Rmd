@@ -64,11 +64,11 @@ Three-tier classifications require two sampling plans/decision rules. These are 
 
 For three-tier classifications there are two coverage proportions:
 
-	* `p1`:	The upper limit of the “low coverage” tier or class
+* `p1`:	The upper limit of the *low coverage* tier or class
 
-	* `p2`:	The lower limit of the “high coverage” tier or class
+* `p2`:	The lower limit of the *high coverage* tier or class
 
-The “moderate coverage” class runs from `p1` to `p2`.
+The *moderate coverage* class runs from `p1` to `p2`.
 
 Two classification thresholds (`d1` and `d2`) are used and are calculated as:
 
