@@ -10,9 +10,10 @@ A tibble with 14 rows and 6 columns\tabular{ll}{
    \emph{country} \tab Country \cr
    \emph{province} \tab Province \cr
    \emph{district} \tab District \cr
-   \emph{in_cases} \tab Cases found who are in the programme \cr
-   \emph{out_cases} \tab Cases found who are not in the programme \cr
-   \emph{n} \tab Total number of under 5 children sampled \cr
+   \emph{cases_in} \tab SAM cases found who are in the programme \cr
+   \emph{cases_out} \tab SAM cases found who are not in the programme \cr
+   \emph{rec_in} \tab Recovering SAM cases in the programme \cr
+   \emph{cases_total} \tab Total number SAM cases found \cr
 }
 }
 \source{

@@ -14,3 +14,4 @@
 ^README\.html$
 ^LICENSE\.md$
 ^vignettes/articles$
+^CITATION\.cff$

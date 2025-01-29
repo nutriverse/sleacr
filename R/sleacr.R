@@ -27,7 +27,9 @@
 #' @importFrom stats lowess phyper
 #' @importFrom parallel mclapply
 #' @importFrom parallelly availableCores
+#' @importFrom cli cli_abort
 #'
+
 "_PACKAGE"
 
 

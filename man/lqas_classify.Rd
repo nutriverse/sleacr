@@ -39,7 +39,10 @@ LQAS classifier
 }
 \examples{
 lqas_classify_coverage(n = 6, n_total = 40)
-with(survey_data, lqas_classify_coverage(n = in_cases, n_total = n))
+with(
+  survey_data,
+  lqas_classify_coverage(n = cases_in, n_total = cases_total)
+)
 
 }
 \author{

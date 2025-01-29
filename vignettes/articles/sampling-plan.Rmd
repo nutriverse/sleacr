@@ -18,14 +18,14 @@ The SLEAC sample design uses a two-stage cluster sample survey.
 
 ## First stage sampling method
 
-This is the sampling method that is used to select the villages to be sampled. A centric systematic area sampling (CSAS)[^1] method or quadrat method could be used to select villages to be sampled for SLEAC surveys. The villages to be sampled may be selected by their proximity to the centre of each quadrat. The number/size of quadrats should be selected so as to spread the sample of villages over the entire program area. Many small quadrats are better than few large quadrats. For example, the sample illustrated im **Figure 1B** (nineteen quadrats) spreads the sample more evenly and over more of the program catchment area than the sample illustrated in **Figure 1A** (eight quadrats). You should use as many quadrats as is feasible with the time and resources available for the survey. 
+This is the sampling method that is used to select the villages to be sampled. A centric systematic area sampling (CSAS)[^1] method or quadrat method could be used to select villages to be sampled for SLEAC surveys. The villages to be sampled may be selected by their proximity to the centre of each quadrat. The number/size of quadrats should be selected so as to spread the sample of villages over the entire program area. Many small quadrats are better than few large quadrats. For example, the sample illustrated in **Figure 1B** (nineteen quadrats) spreads the sample more evenly and over more of the program catchment area than the sample illustrated in **Figure 1A** (eight quadrats). You should use as many quadrats as is feasible with the time and resources available for the survey. 
 
 ```{r quadrat-method, echo = FALSE, out.width = "50%", fig.hold = TRUE, fig.alt = "Figure A is a map with 8 quadrats. Figure B is a map with 18 quadrats."}
 knitr::include_graphics("csas1.png")
 knitr::include_graphics("csas2.png")
 ```
 
-**Figure 1: A.** Sampling plan with 8 quadrats **B.** Sampling plan with 18 quadrats
+**Figure 1A:** Sampling plan with 8 quadrats. **Figure 1B:** Sampling plan with 18 quadrats
 
 The CSAS/quadrat sampling method is appropriate for estimating coverage over a wide area such as a health district. Another useful approach is to stratify by clinic catchment area with a fixed number of villages selected systematically from a complete list of villages within each clinic catchment area (**Figure 2**) or within the boundaries of (e.g.) administrative areas for which lists of village or localities are available. 
 
@@ -62,36 +62,50 @@ SLEAC uses a target sample size (`n`) which, together with prevalence and popula
 
 A target sample size (`n`) of forty (40) cases from each service delivery unit in which coverage is to be classified is usually large enough for most SLEAC applications.
 
-In some settings it may be difficult or even impossible to find forty (40) cases. This will be the case if service delivery units are small and/or the prevalence of SAM is low. In these situations it is possible to use a smaller target sample size without increasing error. **Table 1** below shows target sample sizes that may be used when the total number of cases in a service delivery unit is likely to be small. 
+In some settings it may be difficult or even impossible to find forty (40) cases. This will be the case if service delivery units are small and/or the prevalence of SAM is low. In these situations it is possible to use a smaller target sample size without increasing error. **Table 1** below shows target sample sizes that may be used when the total number of cases in a service delivery unit is likely to be small.
 
-**Table 1:** Target sample sizes for 50% and 70% coverage standards for use when surveying small service delivery units and/or the prevalence of SAM is low
+Note that the total number of cases in a service delivery unit should be the estimate at the time of the survey. This can be estimated as follows:
 
-+-----------------------------+------------------+-----------------------------+
-| **Total number of**         | **50% standard** | **70% standard or 30%/70%** |
-| **cases in the**            |                  | **class thresholds**        |
-| **service delivery unit**   |                  |                             | 
-| [^2]                        |                  |                             |
-+-----------------------------+------------------+-----------------------------+
-| 500                         | 37               | 33                          |
-+-----------------------------+------------------+-----------------------------+
-| 250                         | 35               | 32                          |
-+-----------------------------+------------------+-----------------------------+
-| 125                         | 31               | 29                          |
-+-----------------------------+------------------+-----------------------------+
-| 100                         | 29               | 26                          |
-+-----------------------------+------------------+-----------------------------+
-| 80                          | 27               | 26                          |
-+-----------------------------+------------------+-----------------------------+
-| 60                          | 25               | 25                          |
-+-----------------------------+------------------+-----------------------------+
-| 50                          | 23               | 22                          |
-+-----------------------------+------------------+-----------------------------+
-| 40                          | 21               | 19                          |
-+-----------------------------+------------------+-----------------------------+
-| 30                          | 17               | 18                          |
-+-----------------------------+------------------+-----------------------------+
-| 20                          | 15               | 15                          |
-+-----------------------------+------------------+-----------------------------+
+$\left \lfloor {Population_{\text{all ages}} \times \frac{\text{Percentage of population}_{\text{6-59 months}}}{100} \times \frac{\text{Prevalence SAM}}{100}} \right \rfloor$
+
+**Table 1:** Target sample sizes for 50% and 70% coverage standards for use when surveying small service delivery units and/or the prevalence of SAM is low.
+
+```{r lqas-sample-1, echo = FALSE}
+cases <- c(500, 250, 125, 100, 80, 60, 50, 40, 30, 20)
+data.frame(
+  cases,
+  lapply(X = cases, FUN = get_sample_n, dLower = 0.3, dUpper = 0.5) |>
+    do.call(what = rbind, args = _) |>
+    subset(select = -d)
+)
+```
+
++---------------------------+--------------+---------------------+
+| **Total number of**       | **50%**      | **70% standard or** |
+| **cases in the**          | **standard** | **30%/70% class**   |
+| **service delivery unit** |              | **thresholds**      | 
+| [^2]                      |              |                     |
++---------------------------+--------------+---------------------+
+| 500                       | 37           | 33                  |
++---------------------------+--------------+---------------------+
+| 250                       | 35           | 32                  |
++---------------------------+--------------+---------------------+
+| 125                       | 31           | 29                  |
++---------------------------+--------------+---------------------+
+| 100                       | 29           | 26                  |
++---------------------------+--------------+---------------------+
+| 80                        | 27           | 26                  |
++---------------------------+--------------+---------------------+
+| 60                        | 25           | 25                  |
++---------------------------+--------------+---------------------+
+| 50                        | 23           | 22                  |
++---------------------------+--------------+---------------------+
+| 40                        | 21           | 19                  |
++---------------------------+--------------+---------------------+
+| 30                        | 17           | 18                  |
++---------------------------+--------------+---------------------+
+| 20                        | 15           | 15                  |
++---------------------------+--------------+---------------------+
 
 If, for example, the total number of cases in a service delivery unit is estimated to be about sixty (60) cases then a target sample size of twenty-five (25) cases may be used.
 
@@ -120,4 +134,4 @@ get_n_clusters(n = 40, n_cluster = 600, u5 = 0.17, p = 0.02)
 
 [^1]: Milne, A. The centric systematic area-sample treated as a random sample. Biometrics 15, 270–297 (1959).
   
-[^2]: This is an estimate of the number of SAM cases in a service delivery unit at the time of the survey: $\left \lfloor {Population_{\text{all ages}} \times \frac{\text{Percentage of population}_{\text{6-59 months}}}{100} \times \frac{\text{Prevalence SAM}}{100}} \right \rfloor$
+[^2]: This is an estimate of the number of SAM cases in a service delivery unit at the time of the survey.

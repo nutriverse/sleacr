@@ -88,3 +88,71 @@ get_classification_probabilities <- function(x) {
     prop.table() |>
     (\(x) x * 100)()
 }
+
+
+#'
+#' Check coverage data for post-stratification weighted estimation
+#' 
+#' @param cov_df A [data.frame()] of stratified coverage survey data.
+#' 
+#' @returns A message or an error on whether `cov_df` is structured
+#'   appropriately for post-stratification weighted estimation.
+#' 
+#' @keywords internal
+#' 
+
+check_coverage_data <- function(cov_df) {
+  ## Get cov_df name ----
+  df_name <- deparse(substitute(cov_df))
+
+  ## Check that cov_df is a data.frame ----
+  if (!is.data.frame(cov_df))
+    cli::cli_abort(
+      "{.strong {df_name}} is not a {.var data.frame}"
+    )
+  
+  ## Check that cov_df has the required variables ----
+  df_names_check <- c("cases_in", "cases_out", "rec_in") %in% names(cov_df)
+  df_names_missing <- names(cov_df)[!df_names_check]
+
+  if (!all(df_names_check))
+    cli::cli_abort(
+      "Variable {.strong {df_names_missing}} not found or has different name."
+    )
+}
+
+
+#'
+#' Check population data for post-stratification weighted estimation
+#' 
+#' @param pop_df A [data.frame()] of population data.
+#' 
+#' @returns A message or an error on whether `pop_df` is structured
+#'   appropriately for post-stratification weighted estimation.
+#' 
+#' @keywords internal
+#' 
+
+check_pop_data <- function(pop_df) {
+  ## Get pop_df name ----
+  df_name <- deparse(substitute(pop_df))
+
+  ## Check that pop_df is a data.frame ----
+  if (!is.data.frame(pop_df))
+    cli::cli_abort(
+      "{.strong {df_name}} is not a {.var data.frame}"
+    )
+  
+  ## Check that pop_df has the required variables ----
+  df_names_check <- c("strata", "pop") %in% names(pop_df)
+  df_names_missing <- names(pop_df)[!df_names_check]
+
+  if (!all(df_names_check))
+    cli::cli_abort(
+      "Variable {.strong {df_names_missing}} not found or has different name."
+    )
+}
+
+
+
+
