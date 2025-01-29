@@ -181,7 +181,7 @@ lqas_simulate_runs <- function(pop,
     dUpper = dUpper,
     mc.cores = cores
   ) |>
-    (\(x) do.call(rbind, x))()
+    do.call(rbind, args = _)
 
   ## Return result ----
   result
@@ -218,7 +218,7 @@ lqas_simulate_test <- function(pop,
     dUpper = dUpper,
     mc.cores = cores
   ) |>
-    (\(x) do.call(rbind, x))()
+    do.call(rbind, args = _)
 
   ## concatenate parameters and results
   x <- list(x, dLower, dUpper, pLower = pLower, pUpper = pUpper)

@@ -5,7 +5,7 @@ test_that("output is character", {
   
   expect_type(
     lqas_classify_coverage(
-      n = survey_data$in_cases, n_total = survey_data$n
+      n = survey_data$cases_in, n_total = survey_data$cases_total
     ), "character"
   )
 
@@ -16,7 +16,8 @@ test_that("output is character", {
   
   expect_type(
     lqas_classify_coverage(
-      n = survey_data$in_cases, n_total = survey_data$n, threshold = 0.5
+      n = survey_data$cases_in, n_total = survey_data$cases_total, 
+      threshold = 0.5
     ), 
     "character"
   )

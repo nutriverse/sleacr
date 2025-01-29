@@ -69,7 +69,12 @@ reference:
     - print.lqasClass
     - plot.lqasSim
 
+  - title: Post-stratification weighted estimator
+    contents:
+    - starts_with("estimate_coverage")
+
   - title: Datasets
     contents:
     - village_list
     - survey_data
+    - pop_data
