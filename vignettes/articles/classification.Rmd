@@ -137,7 +137,7 @@ samp_size <- c(38, 32, 43, 35, 42, 37, 39, 42, 308)
 in_cases <- c(29, 18, 36, 15, 14, 10, 5, 23, 150)
 
 lqas_classify_cf(
-  cases_in = in_cases, cases_out = samp_size, 
+  cases_in = in_cases, cases_out = samp_size - in_cases, 
   threshold = c(0.3, 0.7), label = TRUE
 )
 ```
@@ -149,7 +149,7 @@ samp_size <- c(38, 32, 43, 35, 42, 37, 39, 42, 308)
 in_cases <- c(29, 18, 36, 15, 14, 10, 5, 23, 150)
 
 lqas_classify_cf(
-  cases_in = cases_in, cases_out = cases_out, 
+  cases_in = in_cases, cases_out = samp_size - in_cases, 
   threshold = c(0.3, 0.7), label = TRUE
 )
 ```
