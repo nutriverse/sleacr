@@ -6,16 +6,42 @@
 \alias{lqas_classify_coverage}
 \title{LQAS classifier}
 \usage{
-lqas_classify_(n, n_total, threshold = c(0.2, 0.5))
+lqas_classify_(
+  cases_in,
+  cases_out,
+  rec_in = NULL,
+  k = 3,
+  threshold = c(0.2, 0.5)
+)
 
-lqas_classify(n, n_total, threshold = c(0.2, 0.5))
+lqas_classify(
+  cases_in,
+  cases_out,
+  rec_in = NULL,
+  k = 3,
+  threshold = c(0.2, 0.5)
+)
 
-lqas_classify_coverage(n, n_total, threshold = c(0.2, 0.5))
+lqas_classify_coverage(
+  cases_in,
+  cases_out,
+  rec_in = NULL,
+  k = 3,
+  threshold = c(0.2, 0.5)
+)
 }
 \arguments{
-\item{n}{Number of cases found.}
+\item{cases_in}{Number of SAM and/or MAM cases found during the survey who
+are in the CMAM programme.}
 
-\item{n_total}{Number sampled.}
+\item{cases_out}{Number of SAM and/or MAM cases found during the survey who
+are in the CMAM programme.}
+
+\item{rec_in}{Number of children recovering from SAM or MAM found during the
+survey who are in the programme.}
+
+\item{k}{Correction factor. Ratio of the mean length of an untreated episode
+to the mean length of a CMAM treatment episode}
 
 \item{threshold}{Decision rule threshold/s. Should be between 0 and 1. At
 least one threshold should be provided for a two-tier classifier. Two
@@ -23,25 +49,20 @@ thresholds should be provided for a three-tier classifier. Default is a
 three-tier classifier with rule set at 0.2 and 0.5.}
 }
 \value{
-A character value or vector indicating classification. If
-\code{threshold} is a single value, the generic function returns \emph{1} if \code{n} is
-greater than the threshold else \emph{0}. The coverage classifier
-function returns \strong{"Satisfactory"} if \code{n} is greater than the threshold
-else \strong{"Not satisfactory"}. If \code{threshold} is two values, the generic
-function returns \emph{1} if \code{n} is greater than the first threshold and \emph{2} if
-\code{n} is greater than the second threshold else \emph{0}. The CMAM coverage
-classifier returns \strong{"Low"} if \code{n} is below or equal to lower threshold,
-\strong{"High"} if \code{n} is above the higher threshold, and \strong{"Moderate"} for
-all other values of \code{n}.
+A \code{\link[=data.frame]{data.frame()}} of coverage classifications for case-finding
+effectiveness and for treatment coverage.
 }
 \description{
 LQAS classifier
 }
 \examples{
-lqas_classify_coverage(n = 6, n_total = 40)
+lqas_classify_coverage(cases_in = 6, cases_out = 34, rec_in = 6)
+
 with(
   survey_data,
-  lqas_classify_coverage(n = cases_in, n_total = cases_total)
+  lqas_classify_coverage(
+    cases_in = cases_in, cases_out = cases_out, rec_in = rec_in
+  )
 )
 
 }

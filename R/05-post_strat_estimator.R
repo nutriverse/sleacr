@@ -1,5 +1,6 @@
 #'
-#' Weighted post-stratification estimation
+#' Weighted post-stratification estimation of coverage over several service
+#' delivery units
 #' 
 #' @param cov_df A [data.frame()] of stratified coverage survey data to get
 #'   overall coverage estimates of. `cov_df` should have a variable named
@@ -24,7 +25,8 @@
 #'   Default is *"cf"*.
 #' @inheritParams squeacr::calculate_tc
 #'
-#' @returns An overall coverage estimate with 95% confidence interval.
+#' @returns A list of overall coverage estimates with corresponding 95%
+#'   confidence intervals for case-finding effectiveness and treatment coverage.
 #' 
 #' @examples
 #' cov_df <- survey_data
@@ -33,7 +35,7 @@
 #'   setNames(nm = c("strata", "pop"))
 #' 
 #' estimate_coverage_overall(
-#'   cov_df, pop_df, strata = "district", u5 = 0.17, p = 0.015
+#'   cov_df, pop_df, strata = "district", u5 = 0.177, p = 0.01
 #' )
 #' 
 #' @export
@@ -42,7 +44,7 @@
 
 estimate_coverage_overall <- function(cov_df, pop_df, strata, 
                                       u5, p, 
-                                      cov_type = c("cf", "treat"), k = 3) {
+                                      k = 3) {
   ## Check data ----
   check_coverage_data(cov_df)
 
@@ -50,8 +52,6 @@ estimate_coverage_overall <- function(cov_df, pop_df, strata,
     cli::cli_abort(
       "{.strong {strata}} is not a variable in {.var cov_df}"
     )
-  
-  cov_type <- match.arg(cov_type)
   
   ## Calculate weights ----
   weights <- calculate_weights(pop_df = pop_df, u5 = u5, p = p)
@@ -61,16 +61,52 @@ estimate_coverage_overall <- function(cov_df, pop_df, strata,
     by.x = strata, by.y = "strata", all.x = TRUE
   )
 
-  ## Calculate coverage ----
-  cov <- estimate_coverage(
-    cov_df = cov_pop_df, cov_type = cov_type, k = k
+  ## Calculate case-finding effectiveness ----
+  cov_cf <- estimate_coverage(
+    cov_df = cov_pop_df, cov_type = "cf", k = k
   )
 
   ## Weight coverage estimates and sum ----
-  cov <- sum(cov * weights)
+  cov_cf <- sum(cov_cf * weights)
 
-  ## Return cov ----
-  cov
+  ## Calculate weighted ci ----
+  ci_cf <- calculate_ci(
+    cov_df = cov_df, cov_type = "cf", k = k, weights = weights
+  )
+
+  ## Calculate overall ci ----
+  lcl_cf <- cov_cf - 1.96 * sqrt(sum(ci_cf))
+  ucl_cf <- cov_cf + 1.96 * sqrt(sum(ci_cf))
+
+  ## Calculate treatment coverage ----
+  cov_tc <- estimate_coverage(
+    cov_df = cov_pop_df, cov_type = "tc", k = k
+  )
+
+  ## Weight coverage estimates and sum ----
+  cov_tc <- sum(cov_tc * weights)
+
+  ## Calculate weighted ci ----
+  ci_tc <- calculate_ci(
+    cov_df = cov_df, cov_type = "tc", k = k, weights = weights
+  )
+
+  ## Calculate overall ci ----
+  lcl_tc <- cov_tc - 1.96 * sqrt(sum(ci_tc))
+  ucl_tc <- cov_tc + 1.96 * sqrt(sum(ci_tc))
+
+  ## Concatenate outputs ----
+  coverage_overall <- list(
+    cf = list(
+      estimate = cov_cf, ci = c(lcl_cf, ucl_cf)
+    ),
+    tc = list(
+      estimate = cov_tc, ci = c(lcl_tc, ucl_tc)
+    )
+  )
+
+  ## Return coverage_overall ----
+  coverage_overall
 }
 
 #'
@@ -98,8 +134,8 @@ calculate_weights <- function(pop_df, u5, p) {
 #' 
 
 estimate_coverage <- function(cov_df, 
-                               cov_type = c("cf", "tc"), 
-                               k = 3) {
+                              cov_type = c("cf", "tc"), 
+                              k = 3) {
   check_coverage_data(cov_df)
 
   cov_type <- match.arg(cov_type)
@@ -118,3 +154,28 @@ estimate_coverage <- function(cov_df,
   ## Return cov ----
   cov
 }
+
+#'
+#' @keywords internal
+#'
+
+calculate_ci <- function(cov_df, cov_type = c("cf", "tc"), k = 3, weights) {
+  if (cov_type == "cf") {
+    c <- cov_df$cases_in
+    n <- cov_df$cases_in + cov_df$cases_out
+  } else {
+    rec_out <- with(
+      cov_df,
+      squeacr::calculate_rout(cases_in, cases_out, rec_in, k = k)
+    )
+
+    c <- cov_df$cases_in + cov_df$rec_in
+  
+    n <- cov_df$cases_in + cov_df$cases_out + cov_df$rec_in + rec_out
+  }
+
+
+  ci <- ((weights ^ 2) * (c / n) * (1 - (c / n))) / n
+}
+
+
