@@ -3,7 +3,8 @@
 \name{lqas_classify_}
 \alias{lqas_classify_}
 \alias{lqas_classify}
-\alias{lqas_classify_coverage}
+\alias{lqas_classify_cf}
+\alias{lqas_classify_tc}
 \title{LQAS classifier}
 \usage{
 lqas_classify_(
@@ -11,7 +12,8 @@ lqas_classify_(
   cases_out,
   rec_in = NULL,
   k = 3,
-  threshold = c(0.2, 0.5)
+  threshold = c(0.2, 0.5),
+  label = FALSE
 )
 
 lqas_classify(
@@ -19,15 +21,19 @@ lqas_classify(
   cases_out,
   rec_in = NULL,
   k = 3,
-  threshold = c(0.2, 0.5)
+  threshold = c(0.2, 0.5),
+  label = FALSE
 )
 
-lqas_classify_coverage(
+lqas_classify_cf(cases_in, cases_out, threshold = c(0.2, 0.5), label = FALSE)
+
+lqas_classify_tc(
   cases_in,
   cases_out,
-  rec_in = NULL,
-  k = 3,
-  threshold = c(0.2, 0.5)
+  rec_in,
+  k,
+  threshold = c(0.2, 0.5),
+  label = FALSE
 )
 }
 \arguments{
@@ -47,6 +53,10 @@ to the mean length of a CMAM treatment episode}
 least one threshold should be provided for a two-tier classifier. Two
 thresholds should be provided for a three-tier classifier. Default is a
 three-tier classifier with rule set at 0.2 and 0.5.}
+
+\item{label}{Logical. Should the output results be classification labels?
+If TRUE, output classification are character labels else they are integer
+values. Default is FALSE.}
 }
 \value{
 A \code{\link[=data.frame]{data.frame()}} of coverage classifications for case-finding
@@ -56,11 +66,11 @@ effectiveness and for treatment coverage.
 LQAS classifier
 }
 \examples{
-lqas_classify_coverage(cases_in = 6, cases_out = 34, rec_in = 6)
+lqas_classify(cases_in = 6, cases_out = 34, rec_in = 6)
 
 with(
   survey_data,
-  lqas_classify_coverage(
+  lqas_classify(
     cases_in = cases_in, cases_out = cases_out, rec_in = rec_in
   )
 )

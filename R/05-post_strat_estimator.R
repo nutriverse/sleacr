@@ -73,7 +73,7 @@ estimate_coverage_overall <- function(cov_df, pop_df, strata,
   ci_cf <- calculate_ci(
     cov_df = cov_df, cov_type = "cf", k = k, weights = weights
   )
-
+  
   ## Calculate overall ci ----
   lcl_cf <- cov_cf - 1.96 * sqrt(sum(ci_cf))
   ucl_cf <- cov_cf + 1.96 * sqrt(sum(ci_cf))

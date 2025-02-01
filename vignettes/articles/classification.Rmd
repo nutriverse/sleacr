@@ -136,8 +136,9 @@ The `lqas_classify_coverage()` function in `{sleacr}` can perform this classific
 samp_size <- c(38, 32, 43, 35, 42, 37, 39, 42, 308)
 in_cases <- c(29, 18, 36, 15, 14, 10, 5, 23, 150)
 
-lqas_classify_coverage(
-  n = in_cases, n_total = samp_size, threshold = c(0.3, 0.7)
+lqas_classify_cf(
+  cases_in = in_cases, cases_out = samp_size, 
+  threshold = c(0.3, 0.7), label = TRUE
 )
 ```
 
@@ -147,7 +148,8 @@ which produces the following outputs:
 samp_size <- c(38, 32, 43, 35, 42, 37, 39, 42, 308)
 in_cases <- c(29, 18, 36, 15, 14, 10, 5, 23, 150)
 
-lqas_classify_coverage(
-  n = in_cases, n_total = samp_size, threshold = c(0.3, 0.7)
+lqas_classify_cf(
+  cases_in = cases_in, cases_out = cases_out, 
+  threshold = c(0.3, 0.7), label = TRUE
 )
 ```

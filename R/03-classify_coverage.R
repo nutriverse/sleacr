@@ -12,6 +12,9 @@
 #'   least one threshold should be provided for a two-tier classifier. Two 
 #'   thresholds should be provided for a three-tier classifier. Default is a 
 #'   three-tier classifier with rule set at 0.2 and 0.5.
+#' @param label Logical. Should the output results be classification labels?
+#'   If TRUE, output classification are character labels else they are integer
+#'   values. Default is FALSE.
 #'
 #' @returns A [data.frame()] of coverage classifications for case-finding
 #'   effectiveness and for treatment coverage.
@@ -19,11 +22,11 @@
 #' @author Ernest Guevarra
 #'
 #' @examples
-#' lqas_classify_coverage(cases_in = 6, cases_out = 34, rec_in = 6)
+#' lqas_classify(cases_in = 6, cases_out = 34, rec_in = 6)
 #' 
 #' with(
 #'   survey_data,
-#'   lqas_classify_coverage(
+#'   lqas_classify(
 #'     cases_in = cases_in, cases_out = cases_out, rec_in = rec_in
 #'   )
 #' )
@@ -36,7 +39,8 @@ lqas_classify_ <- function(cases_in,
                            cases_out,
                            rec_in = NULL,
                            k = 3,
-                           threshold = c(0.2, 0.5)) {  
+                           threshold = c(0.2, 0.5),
+                           label = FALSE) {  
   ## Check that threshold/s is/are numeric
   if (!all(is.numeric(threshold))) {
     stop(
@@ -66,43 +70,19 @@ lqas_classify_ <- function(cases_in,
     }
   }
 
-  ## Calculate rec_out ----
-  rec_out <- squeacr::calculate_rout(
-    cin = cases_in, cout = cases_out, rin = rec_in, k = k
-  )
-  
-  ## Determine decision rules ----
-  d <- list(
-    cf = (cases_in * cases_out) * threshold,
-    tc = (cases_in + cases_out + rec_in + rec_out) * threshold
+  ## Classify case-finding effectiveness ----
+  cf <- lqas_classify_cf(
+    cases_in = cases_in, cases_out = cases_out, 
+    threshold = threshold, label = label
   )
 
-  ## Two-tier classification ----
-  if (length(threshold) == 1) {
-    cf <- ifelse(cases_in > d$cf, 1, 0)
-    tc <- ifelse(
-      (cases_in + rec_in) > d$tc, 1, 0
-    )
-  }
+  ## Classify treatment coverage ----
+  tc <- lqas_classify_tc(
+    cases_in = cases_in, cases_out = cases_out, rec_in = rec_in, k = k,
+    threshold = threshold, label = label
+  )
   
-  ## Three-tier classification ----
-  if (length(threshold) == 2) {
-    cf <- ifelse(
-      cases_in > d$cf[2], 2,
-      ifelse(
-        cases_in <= d$cf[1], 0, 1
-      )
-    )
-
-    tc <- ifelse(
-      (cases_in + rec_in) > d$tc[2], 2,
-      ifelse(
-        (cases_in + rec_in) <= d$tc[1], 0, 1
-      )
-    )
-  }
-  
-  ## Concatenate cf and tec ----
+  ## Concatenate cf and tc ----
   coverage_class <- list(cf = cf, tc = tc)
 
   ## Return coverage class ----
@@ -118,14 +98,16 @@ lqas_classify <- function(cases_in,
                           cases_out, 
                           rec_in = NULL, 
                           k = 3, 
-                          threshold = c(0.2, 0.5)) {
+                          threshold = c(0.2, 0.5),
+                          label = FALSE) {
   Map(
     f = lqas_classify_,
     cases_in = as.list(cases_in),
     cases_out = as.list(cases_out),
     rec_in = as.list(rec_in),
     k = as.list(k),
-    threshold = rep(list(threshold), length(cases_in))
+    threshold = rep(list(threshold), length(cases_in)),
+    label = label
   ) |>
     do.call(rbind, args = _) |>
     data.frame()
@@ -134,43 +116,60 @@ lqas_classify <- function(cases_in,
 #'
 #' @export
 #' @rdname lqas_classify
-#' 
+#'
 
-lqas_classify_coverage <- function(cases_in, 
-                                   cases_out, 
-                                   rec_in = NULL, 
-                                   k = 3, 
-                                   threshold = c(0.2, 0.5)) {
-  coverage_class <- lqas_classify(
-    cases_in = cases_in, cases_out = cases_out,
-    rec_in = rec_in, k = k, threshold = threshold
-  )
+lqas_classify_cf <- function(cases_in, cases_out, 
+                             threshold = c(0.2, 0.5), label = FALSE) {
+  d <- (cases_in + cases_out) * threshold
 
   if (length(threshold) == 1) {
-    coverage_label <- data.frame(
-      cf = ifelse(coverage_class$cf == 1, "Satisfactory", "Not satisfactory"),
-      tc = ifelse(coverage_class$tc == 1, "Satisfactory", "Not satisfactory")
-    )
-  }
-  
-  if (length(threshold) == 2) {
-    coverage_label <- data.frame(
-      cf = ifelse(coverage_class$cf == 0, "Low",
-        ifelse(
-          coverage_class$cf == 1, "Moderate", "High"
-        )
-      ),
-      tc = ifelse(coverage_class$tc == 0, "Low",
-        ifelse(
-          coverage_class$tc == 1, "Moderate", "High"
-        )
+    cf <- ifelse(cases_in > d, 1L, 0L)
+
+    if (label) cf <- ifelse(cf == 0L, "Not satisfactory", "Satisfactory")
+  } else {
+    cf <- ifelse(
+      cases_in > d[2], 2L,
+      ifelse(
+        cases_in <= d[1], 0L, 1L
       )
     )
-  }
-  
-  ## Remove row names ----
-  row.names(coverage_label) <- NULL
 
-  ## Return coverage_label ----
-  coverage_label
+    if (label)
+      cf <- ifelse(cf == 0L, "Low", ifelse(cf == 1L, "Moderate", "High"))
+  }
+
+  ## Return cf ----
+  cf
+}
+
+
+#'
+#' @export
+#' @rdname lqas_classify
+#' 
+
+lqas_classify_tc <- function(cases_in, cases_out, rec_in, k,
+                             threshold = c(0.2, 0.5), label = FALSE) {
+  rec_out <- squeacr::calculate_rout(cases_in, cases_out, rec_in, k = k)
+  
+  d <- (cases_in + cases_out + rec_in + rec_out) * threshold
+
+  if (length(threshold) == 1) {
+    tc <- ifelse((cases_in + rec_in) > d, 1L, 0L)
+
+    if (label) tc <- ifelse(tc == 0L, "Not satisfactory", "Satisfactory")
+  } else {
+    tc <- ifelse(
+      (cases_in + rec_in) > d[2], 2L,
+      ifelse(
+        (cases_in + rec_in) <= d[1], 0L, 1L
+      )
+    )
+
+    if (label)
+      tc <- ifelse(tc == 0L, "Low", ifelse(tc == 1L, "Moderate", "High"))
+  }
+
+  ## Return tc ----
+  tc
 }
