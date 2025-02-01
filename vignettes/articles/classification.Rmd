@@ -46,10 +46,10 @@ $$d ~ = ~ \left \lfloor 43 ~ \times ~ \frac{70}{100} \right \rfloor ~ = ~ 30$$
 
 Coverage is classified as described above. For example, out of the 43 SAM cases found only 34 are in the programme, the number of covered cases can be compared to the the decision threshold `d` calculated earlier. Since `34 > 30`, then coverage can be classified as *satisfactory*.
 
-The `lqas_classify_coverage()` function in `{sleacr}` can perform this classification as follows:
+The `lqas_classify_cf()` function in `{sleacr}` can perform this classification as follows:
 
 ```{r class-coverage}
-lqas_classify_coverage(n = 34, n_total = 43, threshold = 0.7)
+lqas_classify_cf(cases_in = 34, cases_out = 43 - 34, threshold = 0.7)
 ```
 
 ## Extending the classification method to yield finer classifications
