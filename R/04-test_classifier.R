@@ -359,13 +359,13 @@ plot.lqasSim <- function(x, ...) {
 
   plot(
     x = c(x$dLower, x$dUpper),
-    y = c(0, 1),
+    y = c(0, 100),
     pch = "",
     xlab = "Indicator Proportion (%)",
     ylab = "Probability of Classification",
     frame.plot = FALSE,
-    xlim = c(x$pLower, x$pUpper),
-    ylim = c(0, 1)
+    xlim = c(x$pLower * 100, x$pUpper * 100),
+    ylim = c(0, 100)
   )
 
   points(p, z[ , 1], pch = 6, cex= 0.5, col = "gray")
@@ -376,8 +376,8 @@ plot.lqasSim <- function(x, ...) {
   lines(lowess(p, z[ , 2], f = 0.02), col = "orange", lwd = 2)
   lines(lowess(p, z[ , 3], f = 0.02), col = "green", lwd = 2)
   
-  abline(v = x$dLower, lty = 3)
-  abline(v = x$dUpper, lty = 3)
+  abline(v = x$dLower * 100, lty = 3)
+  abline(v = x$dUpper * 100, lty = 3)
   
   legend(
     x = "bottomright",
