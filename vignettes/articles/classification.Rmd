@@ -130,7 +130,7 @@ data.frame(
 
 In this example the target sample size was applied to each of the clinic catchment areas separately. This allows coverage classifications to be made for individual clinic catchment areas. This approach enables the identification of low coverage and high coverage service delivery units (clinics in this example) for subsequent investigations.
 
-The `lqas_classify_coverage()` function in `{sleacr}` can perform this classification as well. This can be done as follows:
+The `lqas_classify_cf()` function in `{sleacr}` can perform this classification as well. This can be done as follows:
 
 ```{r two-tier-coverage, eval = FALSE}
 samp_size <- c(38, 32, 43, 35, 42, 37, 39, 42, 308)
