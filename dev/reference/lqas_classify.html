@@ -47,23 +47,58 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">lqas_classify_</span><span class="op">(</span><span class="va">n</span>, <span class="va">n_total</span>, threshold <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">lqas_classify_</span><span class="op">(</span></span>
+<span>  <span class="va">cases_in</span>,</span>
+<span>  <span class="va">cases_out</span>,</span>
+<span>  rec_in <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  k <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>  threshold <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>  label <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">lqas_classify</span><span class="op">(</span><span class="va">n</span>, <span class="va">n_total</span>, threshold <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu">lqas_classify</span><span class="op">(</span></span>
+<span>  <span class="va">cases_in</span>,</span>
+<span>  <span class="va">cases_out</span>,</span>
+<span>  rec_in <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  k <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>  threshold <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>  label <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">lqas_classify_coverage</span><span class="op">(</span><span class="va">n</span>, <span class="va">n_total</span>, threshold <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">lqas_classify_cf</span><span class="op">(</span><span class="va">cases_in</span>, <span class="va">cases_out</span>, threshold <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.5</span><span class="op">)</span>, label <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">lqas_classify_tc</span><span class="op">(</span></span>
+<span>  <span class="va">cases_in</span>,</span>
+<span>  <span class="va">cases_out</span>,</span>
+<span>  <span class="va">rec_in</span>,</span>
+<span>  <span class="va">k</span>,</span>
+<span>  threshold <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.5</span><span class="op">)</span>,</span>
+<span>  label <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
 
 
-<dl><dt id="arg-n">n<a class="anchor" aria-label="anchor" href="#arg-n"></a></dt>
-<dd><p>Number of cases found.</p></dd>
+<dl><dt id="arg-cases-in">cases_in<a class="anchor" aria-label="anchor" href="#arg-cases-in"></a></dt>
+<dd><p>Number of SAM and/or MAM cases found during the survey who
+are in the CMAM programme.</p></dd>
 
 
-<dt id="arg-n-total">n_total<a class="anchor" aria-label="anchor" href="#arg-n-total"></a></dt>
-<dd><p>Number sampled.</p></dd>
+<dt id="arg-cases-out">cases_out<a class="anchor" aria-label="anchor" href="#arg-cases-out"></a></dt>
+<dd><p>Number of SAM and/or MAM cases found during the survey who
+are in the CMAM programme.</p></dd>
+
+
+<dt id="arg-rec-in">rec_in<a class="anchor" aria-label="anchor" href="#arg-rec-in"></a></dt>
+<dd><p>Number of children recovering from SAM or MAM found during the
+survey who are in the programme.</p></dd>
+
+
+<dt id="arg-k">k<a class="anchor" aria-label="anchor" href="#arg-k"></a></dt>
+<dd><p>Correction factor. Ratio of the mean length of an untreated episode
+to the mean length of a CMAM treatment episode</p></dd>
 
 
 <dt id="arg-threshold">threshold<a class="anchor" aria-label="anchor" href="#arg-threshold"></a></dt>
@@ -72,19 +107,17 @@ least one threshold should be provided for a two-tier classifier. Two
 thresholds should be provided for a three-tier classifier. Default is a
 three-tier classifier with rule set at 0.2 and 0.5.</p></dd>
 
+
+<dt id="arg-label">label<a class="anchor" aria-label="anchor" href="#arg-label"></a></dt>
+<dd><p>Logical. Should the output results be classification labels?
+If TRUE, output classification are character labels else they are integer
+values. Default is FALSE.</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A character value or vector indicating classification. If
-<code>threshold</code> is a single value, the generic function returns <em>1</em> if <code>n</code> is
-greater than the threshold else <em>0</em>. The coverage classifier
-function returns <strong>"Satisfactory"</strong> if <code>n</code> is greater than the threshold
-else <strong>"Not satisfactory"</strong>. If <code>threshold</code> is two values, the generic
-function returns <em>1</em> if <code>n</code> is greater than the first threshold and <em>2</em> if
-<code>n</code> is greater than the second threshold else <em>0</em>. The CMAM coverage
-classifier returns <strong>"Low"</strong> if <code>n</code> is below or equal to lower threshold,
-<strong>"High"</strong> if <code>n</code> is above the higher threshold, and <strong>"Moderate"</strong> for
-all other values of <code>n</code>.</p>
+    <p>A <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> of coverage classifications for case-finding
+effectiveness and for treatment coverage.</p>
     </div>
     <div class="section level2">
     <h2 id="author">Author<a class="anchor" aria-label="anchor" href="#author"></a></h2>
@@ -93,15 +126,31 @@ all other values of <code>n</code>.</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">lqas_classify_coverage</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">6</span>, n_total <span class="op">=</span> <span class="fl">40</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Low"</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">lqas_classify</span><span class="op">(</span>cases_in <span class="op">=</span> <span class="fl">6</span>, cases_out <span class="op">=</span> <span class="fl">34</span>, rec_in <span class="op">=</span> <span class="fl">6</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   cf tc</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  0  1</span>
+<span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  <span class="va">survey_data</span>,</span></span>
-<span class="r-in"><span>  <span class="fu">lqas_classify_coverage</span><span class="op">(</span>n <span class="op">=</span> <span class="va">cases_in</span>, n_total <span class="op">=</span> <span class="va">cases_total</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">lqas_classify</span><span class="op">(</span></span></span>
+<span class="r-in"><span>    cases_in <span class="op">=</span> <span class="va">cases_in</span>, cases_out <span class="op">=</span> <span class="va">cases_out</span>, rec_in <span class="op">=</span> <span class="va">rec_in</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "Low"      "Low"      "Low"      "Low"      "Low"      "Low"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "Low"      "Moderate" "Moderate" "Moderate" "Low"      "Low"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [13] "Low"      "Low"     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    cf tc</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   0  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   0  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   1  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   1  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  1  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13  0  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  0  0</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

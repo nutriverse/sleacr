@@ -138,11 +138,11 @@ SAM cases found only 34 are in the programme, the number of covered
 cases can be compared to the the decision threshold <code>d</code>
 calculated earlier. Since <code>34 &gt; 30</code>, then coverage can be
 classified as <em>satisfactory</em>.</p>
-<p>The <code><a href="../reference/lqas_classify.html">lqas_classify_coverage()</a></code> function in
-<a href="https://nutriverse.io/sleacr/">sleacr</a> can perform this classification as follows:</p>
+<p>The <code><a href="../reference/lqas_classify.html">lqas_classify_cf()</a></code> function in <a href="https://nutriverse.io/sleacr/">sleacr</a>
+can perform this classification as follows:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/lqas_classify.html">lqas_classify_coverage</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">34</span>, n_total <span class="op">=</span> <span class="fl">43</span>, threshold <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Satisfactory"</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/lqas_classify.html">lqas_classify_cf</a></span><span class="op">(</span>cases_in <span class="op">=</span> <span class="fl">34</span>, cases_out <span class="op">=</span> <span class="fl">43</span> <span class="op">-</span> <span class="fl">34</span>, threshold <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 1</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="extending-the-classification-method-to-yield-finer-classifications">Extending the classification method to yield finer
 classifications<a class="anchor" aria-label="anchor" href="#extending-the-classification-method-to-yield-finer-classifications"></a>
@@ -319,19 +319,22 @@ clinic catchment areas separately. This allows coverage classifications
 to be made for individual clinic catchment areas. This approach enables
 the identification of low coverage and high coverage service delivery
 units (clinics in this example) for subsequent investigations.</p>
-<p>The <code><a href="../reference/lqas_classify.html">lqas_classify_coverage()</a></code> function in
-<a href="https://nutriverse.io/sleacr/">sleacr</a> can perform this classification as well. This can
-be done as follows:</p>
+<p>The <code><a href="../reference/lqas_classify.html">lqas_classify_cf()</a></code> function in <a href="https://nutriverse.io/sleacr/">sleacr</a>
+can perform this classification as well. This can be done as
+follows:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">samp_size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">38</span>, <span class="fl">32</span>, <span class="fl">43</span>, <span class="fl">35</span>, <span class="fl">42</span>, <span class="fl">37</span>, <span class="fl">39</span>, <span class="fl">42</span>, <span class="fl">308</span><span class="op">)</span></span>
 <span><span class="va">in_cases</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">29</span>, <span class="fl">18</span>, <span class="fl">36</span>, <span class="fl">15</span>, <span class="fl">14</span>, <span class="fl">10</span>, <span class="fl">5</span>, <span class="fl">23</span>, <span class="fl">150</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/lqas_classify.html">lqas_classify_coverage</a></span><span class="op">(</span></span>
-<span>  n <span class="op">=</span> <span class="va">in_cases</span>, n_total <span class="op">=</span> <span class="va">samp_size</span>, threshold <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.3</span>, <span class="fl">0.7</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/lqas_classify.html">lqas_classify_cf</a></span><span class="op">(</span></span>
+<span>  cases_in <span class="op">=</span> <span class="va">in_cases</span>, cases_out <span class="op">=</span> <span class="va">samp_size</span> <span class="op">-</span> <span class="va">in_cases</span>, </span>
+<span>  threshold <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.3</span>, <span class="fl">0.7</span><span class="op">)</span>, label <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <p>which produces the following outputs:</p>
-<pre><code><span><span class="co">#&gt; [1] "High"     "Moderate" "High"     "Moderate" "Moderate" "Low"      "Low"     </span></span>
-<span><span class="co">#&gt; [8] "Moderate" "Moderate"</span></span></code></pre>
+<pre><code><span><span class="co">#&gt; Warning in (cases_in + cases_out) * threshold: longer object length is not a</span></span>
+<span><span class="co">#&gt; multiple of shorter object length</span></span>
+<span><span class="co">#&gt; [1] "High"     "Moderate" "High"     "Moderate" "Moderate" "Low"      "Low"     </span></span>
+<span><span class="co">#&gt; [8] "High"     "High"</span></span></code></pre>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
