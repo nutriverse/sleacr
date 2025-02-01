@@ -3,17 +3,10 @@
 \name{estimate_coverage_overall}
 \alias{estimate_coverage_overall}
 \alias{estimate_coverage}
-\title{Weighted post-stratification estimation}
+\title{Weighted post-stratification estimation of coverage over several service
+delivery units}
 \usage{
-estimate_coverage_overall(
-  cov_df,
-  pop_df,
-  strata,
-  u5,
-  p,
-  cov_type = c("cf", "treat"),
-  k = 3
-)
+estimate_coverage_overall(cov_df, pop_df, strata, u5, p, k = 3)
 
 estimate_coverage(cov_df, cov_type = c("cf", "tc"), k = 3)
 }
@@ -41,18 +34,20 @@ years old.}
 
 \item{p}{Prevalence of SAM or MAM in the given population.}
 
+\item{k}{Correction factor. Ratio of the mean length of an untreated episode
+to the mean length of a CMAM treatment episode}
+
 \item{cov_type}{Coverage estimator to report. Either \emph{"cf"} for
 \emph{case-finding effectiveness} or \emph{"tc"} for \emph{treatment coverage}.
 Default is \emph{"cf"}.}
-
-\item{k}{Correction factor. Ratio of the mean length of an untreated episode
-to the mean length of a CMAM treatment episode}
 }
 \value{
-An overall coverage estimate with 95\% confidence interval.
+A list of overall coverage estimates with corresponding 95\%
+confidence intervals for case-finding effectiveness and treatment coverage.
 }
 \description{
-Weighted post-stratification estimation
+Weighted post-stratification estimation of coverage over several service
+delivery units
 }
 \examples{
 cov_df <- survey_data
@@ -61,7 +56,7 @@ pop_df <- pop_data |>
   setNames(nm = c("strata", "pop"))
 
 estimate_coverage_overall(
-  cov_df, pop_df, strata = "district", u5 = 0.17, p = 0.015
+  cov_df, pop_df, strata = "district", u5 = 0.177, p = 0.01
 )
 
 }

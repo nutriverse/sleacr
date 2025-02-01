@@ -145,7 +145,7 @@ check_pop_data <- function(pop_df) {
   
   ## Check that pop_df has the required variables ----
   df_names_check <- c("strata", "pop") %in% names(pop_df)
-  df_names_missing <- names(pop_df)[!df_names_check]
+  df_names_missing <- c("strata", "pop")[!df_names_check]
 
   if (!all(df_names_check))
     cli::cli_abort(

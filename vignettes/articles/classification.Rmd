@@ -46,10 +46,10 @@ $$d ~ = ~ \left \lfloor 43 ~ \times ~ \frac{70}{100} \right \rfloor ~ = ~ 30$$
 
 Coverage is classified as described above. For example, out of the 43 SAM cases found only 34 are in the programme, the number of covered cases can be compared to the the decision threshold `d` calculated earlier. Since `34 > 30`, then coverage can be classified as *satisfactory*.
 
-The `lqas_classify_coverage()` function in `{sleacr}` can perform this classification as follows:
+The `lqas_classify_cf()` function in `{sleacr}` can perform this classification as follows:
 
 ```{r class-coverage}
-lqas_classify_coverage(n = 34, n_total = 43, threshold = 0.7)
+lqas_classify_cf(cases_in = 34, cases_out = 43 - 34, threshold = 0.7)
 ```
 
 ## Extending the classification method to yield finer classifications
@@ -130,14 +130,15 @@ data.frame(
 
 In this example the target sample size was applied to each of the clinic catchment areas separately. This allows coverage classifications to be made for individual clinic catchment areas. This approach enables the identification of low coverage and high coverage service delivery units (clinics in this example) for subsequent investigations.
 
-The `lqas_classify_coverage()` function in `{sleacr}` can perform this classification as well. This can be done as follows:
+The `lqas_classify_cf()` function in `{sleacr}` can perform this classification as well. This can be done as follows:
 
 ```{r two-tier-coverage, eval = FALSE}
 samp_size <- c(38, 32, 43, 35, 42, 37, 39, 42, 308)
 in_cases <- c(29, 18, 36, 15, 14, 10, 5, 23, 150)
 
-lqas_classify_coverage(
-  n = in_cases, n_total = samp_size, threshold = c(0.3, 0.7)
+lqas_classify_cf(
+  cases_in = in_cases, cases_out = samp_size - in_cases, 
+  threshold = c(0.3, 0.7), label = TRUE
 )
 ```
 
@@ -147,7 +148,8 @@ which produces the following outputs:
 samp_size <- c(38, 32, 43, 35, 42, 37, 39, 42, 308)
 in_cases <- c(29, 18, 36, 15, 14, 10, 5, 23, 150)
 
-lqas_classify_coverage(
-  n = in_cases, n_total = samp_size, threshold = c(0.3, 0.7)
+lqas_classify_cf(
+  cases_in = in_cases, cases_out = samp_size - in_cases, 
+  threshold = c(0.3, 0.7), label = TRUE
 )
 ```
