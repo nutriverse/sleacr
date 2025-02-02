@@ -10,6 +10,12 @@
 <url><loc>https://nutriverse.io/sleacr/authors.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/index.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/news/index.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/reference/calculate_weights.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/reference/check_coverage_data.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/reference/check_coverage_homogeneity.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/reference/check_p.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/reference/check_pop_data.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/reference/estimate_coverage.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/get_binom_hypergeom.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/get_classification_probabilities.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/get_hypergeom.html</loc></url>
@@ -23,6 +29,7 @@
 <url><loc>https://nutriverse.io/sleacr/reference/lqas_get_class_prob.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/lqas_simulate.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/plot.lqasSim.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/reference/pop_data.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/print.lqasClass.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/sleacr.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/reference/survey_data.html</loc></url>

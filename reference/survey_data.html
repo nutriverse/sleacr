@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">sleacr</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A tibble with 14 rows and 6 columns</p><table class="table table"><tr><td><strong>Variable</strong></td><td><strong>Description</strong></td></tr><tr><td><em>country</em></td><td>Country</td></tr><tr><td><em>province</em></td><td>Province</td></tr><tr><td><em>district</em></td><td>District</td></tr><tr><td><em>in_cases</em></td><td>Cases found who are in the programme</td></tr><tr><td><em>out_cases</em></td><td>Cases found who are not in the programme</td></tr><tr><td><em>n</em></td><td>Total number of under 5 children sampled</td></tr></table></div>
+    <p>A tibble with 14 rows and 6 columns</p><table class="table table"><tr><td><strong>Variable</strong></td><td><strong>Description</strong></td></tr><tr><td><em>country</em></td><td>Country</td></tr><tr><td><em>province</em></td><td>Province</td></tr><tr><td><em>district</em></td><td>District</td></tr><tr><td><em>cases_in</em></td><td>SAM cases found who are in the programme</td></tr><tr><td><em>cases_out</em></td><td>SAM cases found who are not in the programme</td></tr><tr><td><em>rec_in</em></td><td>Recovering SAM cases in the programme</td></tr><tr><td><em>cases_total</em></td><td>Total number SAM cases found</td></tr></table></div>
     <div class="section level2">
     <h2 id="source">Source<a class="anchor" aria-label="anchor" href="#source"></a></h2>
     <p>Ministry of Health, Sierra Leone</p>
@@ -61,23 +61,23 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">survey_data</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 14 × 6</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    country      province     district           in_cases out_cases     n</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Sierra Leone Northern     Bombali                   4         6    30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Sierra Leone Northern     Koinadugu                 0         6    32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Sierra Leone Northern     Kambia                    0         0    28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Sierra Leone Northern     Port Loko                 2         0    30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Sierra Leone Northern     Tonkolili                 1         5    28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Sierra Leone Eastern      Kono                      2         3    16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Sierra Leone Eastern      Kailahun                  4         3    34</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Sierra Leone Eastern      Kenema                    8         4    34</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Sierra Leone Southern     Pujehun                   6         1    27</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Sierra Leone Southern     Bo                        6         8    22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> Sierra Leone Southern     Bonthe                    7         2    41</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> Sierra Leone Southern     Moyamba                   6         0    40</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> Sierra Leone Western Area Western Area Rural        6         5    46</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> Sierra Leone Western Area Western Area Urban        2         0    20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 14 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    country      province     district      cases_in cases_out rec_in cases_total</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> Sierra Leone Northern     Bombali              4        26      6          30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> Sierra Leone Northern     Koinadugu            0        32      6          32</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> Sierra Leone Northern     Kambia               0        28      0          28</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> Sierra Leone Northern     Port Loko            2        28      0          30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> Sierra Leone Northern     Tonkolili            1        27      5          28</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> Sierra Leone Eastern      Kono                 2        14      3          16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> Sierra Leone Eastern      Kailahun             4        30      3          34</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> Sierra Leone Eastern      Kenema               8        26      4          34</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> Sierra Leone Southern     Pujehun              6        21      1          27</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> Sierra Leone Southern     Bo                   6        16      8          22</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> Sierra Leone Southern     Bonthe               7        34      2          41</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> Sierra Leone Southern     Moyamba              6        34      0          40</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> Sierra Leone Western Area Western Area…        6        40      5          46</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> Sierra Leone Western Area Western Area…        2        18      0          20</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

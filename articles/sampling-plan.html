@@ -26,7 +26,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">sleacr</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Unreleased version">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,14 +88,14 @@ The villages to be sampled may be selected by their proximity to the
 centre of each quadrat. The number/size of quadrats should be selected
 so as to spread the sample of villages over the entire program area.
 Many small quadrats are better than few large quadrats. For example, the
-sample illustrated im <strong>Figure 1B</strong> (nineteen quadrats)
+sample illustrated in <strong>Figure 1B</strong> (nineteen quadrats)
 spreads the sample more evenly and over more of the program catchment
 area than the sample illustrated in <strong>Figure 1A</strong> (eight
 quadrats). You should use as many quadrats as is feasible with the time
 and resources available for the survey.</p>
 <p><img src="csas1.png" alt="Figure A is a map with 8 quadrats. Figure B is a map with 18 quadrats." width="50%"><img src="csas2.png" alt="Figure A is a map with 8 quadrats. Figure B is a map with 18 quadrats." width="50%"></p>
-<p><strong>Figure 1: A.</strong> Sampling plan with 8 quadrats
-<strong>B.</strong> Sampling plan with 18 quadrats</p>
+<p><strong>Figure 1A:</strong> Sampling plan with 8 quadrats.
+<strong>Figure 1B:</strong> Sampling plan with 18 quadrats</p>
 <p>The CSAS/quadrat sampling method is appropriate for estimating
 coverage over a wide area such as a health district. Another useful
 approach is to stratify by clinic catchment area with a fixed number of
@@ -450,28 +450,46 @@ to use a smaller target sample size without increasing error.
 <strong>Table 1</strong> below shows target sample sizes that may be
 used when the total number of cases in a service delivery unit is likely
 to be small.</p>
+<p>Note that the total number of cases in a service delivery unit should
+be the estimate at the time of the survey. This can be estimated as
+follows:</p>
+<p><span class="math inline">\(\left \lfloor {Population_{\text{all
+ages}} \times \frac{\text{Percentage of population}_{\text{6-59
+months}}}{100} \times \frac{\text{Prevalence SAM}}{100}} \right
+\rfloor\)</span></p>
 <p><strong>Table 1:</strong> Target sample sizes for 50% and 70%
 coverage standards for use when surveying small service delivery units
-and/or the prevalence of SAM is low</p>
-<table style="width:99%;" class="table">
+and/or the prevalence of SAM is low.</p>
+<pre><code><span><span class="co">#&gt;    cases  n      alpha       beta</span></span>
+<span><span class="co">#&gt; 1    500 39 0.09078419 0.08562322</span></span>
+<span><span class="co">#&gt; 2    250 34  0.0980027 0.09390928</span></span>
+<span><span class="co">#&gt; 3    125 31 0.09763227 0.08461451</span></span>
+<span><span class="co">#&gt; 4    100 29 0.09280604 0.09037959</span></span>
+<span><span class="co">#&gt; 5     80 29  0.0811892 0.07857344</span></span>
+<span><span class="co">#&gt; 6     60 24 0.09359355 0.09353083</span></span>
+<span><span class="co">#&gt; 7     50 24 0.07818089 0.07740396</span></span>
+<span><span class="co">#&gt; 8     40 22 0.05548477 0.09274916</span></span>
+<span><span class="co">#&gt; 9     30 19 0.06406797 0.06456772</span></span>
+<span><span class="co">#&gt; 10    20 14 0.07043344 0.07747678</span></span></code></pre>
+<table style="width:90%;" class="table">
 <colgroup>
-<col width="37%">
-<col width="23%">
-<col width="37%">
+<col width="38%">
+<col width="20%">
+<col width="30%">
 </colgroup>
 <tbody>
 <tr class="odd">
 <td>
 <strong>Total number of</strong> <strong>cases in the</strong>
-<strong>service delivery unit</strong> <a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;This is an estimate of the number of SAM cases in a
-service delivery unit at the time of the survey: &lt;span class="math inline"&gt;\(\left \lfloor {Population_{\text{all ages}} \times
-\frac{\text{Percentage of population}_{\text{6-59 months}}}{100} \times
-\frac{\text{Prevalence SAM}}{100}} \right \rfloor\)&lt;/span&gt;&lt;/p&gt;'><sup>2</sup></a>
+<strong>service delivery unit</strong> <a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content="&lt;p&gt;This is an estimate of the number of SAM cases in a
+service delivery unit at the time of the survey.&lt;/p&gt;"><sup>2</sup></a>
 </td>
-<td><strong>50% standard</strong></td>
 <td>
-<strong>70% standard or 30%/70%</strong> <strong>class
-thresholds</strong>
+<strong>50%</strong> <strong>standard</strong>
+</td>
+<td>
+<strong>70% standard or</strong> <strong>30%/70% class</strong>
+<strong>thresholds</strong>
 </td>
 </tr>
 <tr class="even">
@@ -532,7 +550,7 @@ twenty-five (25) cases may be used.</p>
 <p>This sample size estimation can be performed using the
 <a href="https://nutriverse.io/sleacr/">sleacr</a> package using the <code><a href="../reference/get_sample.html">get_sample_n()</a></code>
 function.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_sample.html">get_sample_n</a></span><span class="op">(</span>N <span class="op">=</span> <span class="fl">60</span>, dLower <span class="op">=</span> <span class="fl">0.5</span>, dUpper <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span></span></code></pre></div>
 <p>which gives the following:</p>
 <pre><code><span><span class="co">#&gt; $n</span></span>
@@ -558,7 +576,7 @@ sampled in order to achieve the target sample size:</p>
 <code><a href="../reference/get_n_clusters.html">get_n_clusters()</a></code> function in <a href="https://nutriverse.io/sleacr/">sleacr</a>. If the
 target sample size is 40 and the average population size per
 village/cluster is 600:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/get_n_clusters.html">get_n_clusters</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">40</span>, n_cluster <span class="op">=</span> <span class="fl">600</span>, u5 <span class="op">=</span> <span class="fl">0.17</span>, p <span class="op">=</span> <span class="fl">0.02</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 20</span></span></code></pre></div>
 </div>
