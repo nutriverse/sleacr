@@ -125,7 +125,7 @@ Using this dataset, per district coverage classifications can be calculated as f
 ```{r classify-coverage, eval = FALSE}
 with(
   survey_data, 
-  lqas_classify_coverage(
+  lqas_classify(
     cases_in = cases_in, cases_out = cases_out, rec_in = rec_in
   )
 )
@@ -136,7 +136,7 @@ which outputs the following results:
 ```{r classify-coverage-show, echo = FALSE}
 with(
   survey_data, 
-  lqas_classify_coverage(
+  lqas_classify(
     cases_in = cases_in, cases_out = cases_out, rec_in = rec_in
   )
 )

@@ -154,5 +154,19 @@ check_pop_data <- function(pop_df) {
 }
 
 
+#'
+#' Check p value
+#' 
+#' @keywords internal
+#' 
+
+check_p <- function(p) {
+  if (!is(p, "numeric"))
+    cli::cli_abort("{.arg p} should be numeric.")
+  
+  if (p >= 1 | p <= 0)
+    cli::cli_abort("{.arg p} should be greater than 0 and less than 1")
+}
+
 
 
