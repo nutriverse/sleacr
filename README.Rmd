@@ -42,9 +42,11 @@ The `{sleacr}` package provides functions that facilitate the design, sampling, 
 
 * Functions to classify coverage;
 
-* Functions to determine the performance of chosen classifier cut-offs for analysis of SLEAC survey data; and,
+* Functions to determine the performance of chosen classifier cut-offs for analysis of SLEAC survey data;
 
-* Functions to estimate coverage over wide areas.
+* Functions to estimate coverage over wide areas; and,
+
+* Functions to test for coverage homogeneity across multiple surveys over wide areas.
 
 ## Installation
 
@@ -193,6 +195,22 @@ estimate_coverage_overall(
   survey_data, pop_df, strata = "district", u5 = 0.177, p = 0.01
 )
 ```
+
+### Testing coverage homogeneity
+
+When estimating coverage across multiple surveys over wide areas, it is good practice to assess whether coverage across each of the service delivery units is homogenous. The function `check_coverage_homogeneity()` is used for this purpose:
+
+```{r check-homogeneity, eval = FALSE}
+check_coverage_homogeneity(survey_data)
+```
+
+which results in the following output:
+
+```{r check-homogeneity-show, echo = FALSE}
+check_coverage_homogeneity(survey_data)
+```
+
+In this example, case-finding effectiveness is homogeneous while treatement coverage is patchy.
 
 ## Citation
 

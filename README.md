@@ -45,9 +45,12 @@ following:
   - Functions to classify coverage;
 
   - Functions to determine the performance of chosen classifier cut-offs
-    for analysis of SLEAC survey data; and,
+    for analysis of SLEAC survey data;
 
-  - Functions to estimate coverage over wide areas.
+  - Functions to estimate coverage over wide areas; and,
+
+  - Functions to test for coverage homogeneity across multiple surveys
+    over wide areas.
 
 ## Installation
 
@@ -294,10 +297,10 @@ lqas_sim_pop <- lqas_simulate_test(
 
 ## Get classification probabilities ----
 lqas_get_class_prob(lqas_sim_pop)
-#>                     Low : 0.9552
-#>                Moderate : 0.8305
-#>                    High : 0.8395
-#>                 Overall : 0.9062
+#>                     Low : 0.955
+#>                Moderate : 0.8376
+#>                    High : 0.8299
+#>                 Overall : 0.9073
 #> Gross misclassification : 0
 ```
 
@@ -368,6 +371,45 @@ which gives the following results:
     #> 
     #> $tc$ci
     #> [1] 0.1371647 0.2041284
+
+### Testing coverage homogeneity
+
+When estimating coverage across multiple surveys over wide areas, it is
+good practice to assess whether coverage across each of the service
+delivery units is homogenous. The function
+`check_coverage_homogeneity()` is used for this purpose:
+
+``` r
+check_coverage_homogeneity(survey_data)
+```
+
+which results in the following output:
+
+    #> ℹ Case-finding effectiveness across 14 surveys is not patchy.
+    #> ! Treatment coverage across 14 surveys is patchy.
+    #> $cf
+    #> $cf$statistic
+    #> [1] 20.1292
+    #> 
+    #> $cf$df
+    #> [1] 13
+    #> 
+    #> $cf$p
+    #> [1] 0.09203514
+    #> 
+    #> 
+    #> $tc
+    #> $tc$statistic
+    #> [1] 33.10622
+    #> 
+    #> $tc$df
+    #> [1] 13
+    #> 
+    #> $tc$p
+    #> [1] 0.001642536
+
+In this example, case-finding effectiveness is homogeneous while
+treatement coverage is patchy.
 
 ## Citation
 

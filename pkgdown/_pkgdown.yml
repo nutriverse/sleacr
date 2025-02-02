@@ -2,8 +2,8 @@ title: sleacr
 
 url: https://nutriverse.io/sleacr/
 
-# development:
-#   mode: auto
+development:
+  mode: unreleased
 
 template:
   bootstrap: 5
