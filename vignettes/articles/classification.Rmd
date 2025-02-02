@@ -133,8 +133,8 @@ In this example the target sample size was applied to each of the clinic catchme
 The `lqas_classify_cf()` function in `{sleacr}` can perform this classification as well. This can be done as follows:
 
 ```{r two-tier-coverage, eval = FALSE}
-samp_size <- c(38, 32, 43, 35, 42, 37, 39, 42, 308)
-in_cases <- c(29, 18, 36, 15, 14, 10, 5, 23, 150)
+samp_size <- c(38, 32, 43, 35, 42, 37, 39, 42)
+in_cases <- c(29, 18, 36, 15, 14, 10, 5, 23)
 
 lqas_classify_cf(
   cases_in = in_cases, cases_out = samp_size - in_cases, 
@@ -145,8 +145,8 @@ lqas_classify_cf(
 which produces the following outputs:
 
 ```{r two-tier-coverage-show, echo = FALSE}
-samp_size <- c(38, 32, 43, 35, 42, 37, 39, 42, 308)
-in_cases <- c(29, 18, 36, 15, 14, 10, 5, 23, 150)
+samp_size <- c(38, 32, 43, 35, 42, 37, 39, 42)
+in_cases <- c(29, 18, 36, 15, 14, 10, 5, 23)
 
 lqas_classify_cf(
   cases_in = in_cases, cases_out = samp_size - in_cases, 

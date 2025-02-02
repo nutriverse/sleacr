@@ -2,8 +2,8 @@ title: sleacr
 
 url: https://nutriverse.io/sleacr/
 
-development:
-  mode: auto
+# development:
+#   mode: auto
 
 template:
   bootstrap: 5
@@ -72,6 +72,10 @@ reference:
   - title: Post-stratification weighted estimator
     contents:
     - starts_with("estimate_coverage")
+
+  - title: Test for coverage homogeneity
+    contents:
+    - check_coverage_homogeneity
 
   - title: Datasets
     contents:

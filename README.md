@@ -249,7 +249,7 @@ calculated as follows:
 ``` r
 with(
   survey_data, 
-  lqas_classify_coverage(
+  lqas_classify(
     cases_in = cases_in, cases_out = cases_out, rec_in = rec_in
   )
 )
@@ -257,21 +257,21 @@ with(
 
 which outputs the following results:
 
-    #>     cf       tc
-    #> 1  Low Moderate
-    #> 2  Low      Low
-    #> 3  Low      Low
-    #> 4  Low      Low
-    #> 5  Low      Low
-    #> 6  Low Moderate
-    #> 7  Low      Low
-    #> 8  Low Moderate
-    #> 9  Low Moderate
-    #> 10 Low Moderate
-    #> 11 Low      Low
-    #> 12 Low      Low
-    #> 13 Low      Low
-    #> 14 Low      Low
+    #>    cf tc
+    #> 1   0  1
+    #> 2   0  0
+    #> 3   0  0
+    #> 4   0  0
+    #> 5   0  0
+    #> 6   0  1
+    #> 7   0  0
+    #> 8   1  1
+    #> 9   1  1
+    #> 10  1  1
+    #> 11  0  0
+    #> 12  0  0
+    #> 13  0  0
+    #> 14  0  0
 
 The function provides estimates for *case-finding effectiveness* and for
 *treatment coverage* as a `data.frame` object.
@@ -294,10 +294,10 @@ lqas_sim_pop <- lqas_simulate_test(
 
 ## Get classification probabilities ----
 lqas_get_class_prob(lqas_sim_pop)
-#>                     Low : 0.9549
-#>                Moderate : 0.8308
-#>                    High : 0.8317
-#>                 Overall : 0.9054
+#>                     Low : 0.9552
+#>                Moderate : 0.8305
+#>                    High : 0.8395
+#>                 Overall : 0.9062
 #> Gross misclassification : 0
 ```
 
