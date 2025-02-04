@@ -210,7 +210,7 @@ which results in the following output:
 check_coverage_homogeneity(survey_data)
 ```
 
-In this example, case-finding effectiveness is homogeneous while treatement coverage is patchy.
+In this example, case-finding effectiveness is homogeneous while treatment coverage is patchy.
 
 ## Citation
 
