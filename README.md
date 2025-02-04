@@ -297,10 +297,10 @@ lqas_sim_pop <- lqas_simulate_test(
 
 ## Get classification probabilities ----
 lqas_get_class_prob(lqas_sim_pop)
-#>                     Low : 0.955
-#>                Moderate : 0.8376
-#>                    High : 0.8299
-#>                 Overall : 0.9073
+#>                     Low : 0.9551
+#>                Moderate : 0.8332
+#>                    High : 0.835
+#>                 Overall : 0.9065
 #> Gross misclassification : 0
 ```
 
@@ -409,7 +409,7 @@ which results in the following output:
     #> [1] 0.001642536
 
 In this example, case-finding effectiveness is homogeneous while
-treatement coverage is patchy.
+treatment coverage is patchy.
 
 ## Citation
 
