@@ -3,17 +3,27 @@ title: sleacr
 url: https://nutriverse.io/sleacr/
 
 development:
-  mode: unreleased
+  mode: auto
 
 template:
   bootstrap: 5
   theme: breeze-light
   math-rendering: mathjax
-  ganalytics: "G-8JY8XQC801"
   bslib:
-    bootswatch: pulse    
+    bootswatch: pulse
     pkgdown-nav-height: 100px
     success: "#004225"
+  includes:
+    in_header: |
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-8JY8XQC801"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8JY8XQC801');
+      </script>
 
 navbar:
   bg: success

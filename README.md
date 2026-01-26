@@ -9,13 +9,13 @@
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml)
 [![test-coverage](https://github.com/nutriverse/sleacr/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/nutriverse/sleacr/actions/workflows/test-coverage.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/nutriverse/sleacr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/sleacr?branch=main)
+coverage](https://codecov.io/gh/nutriverse/sleacr/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/sleacr)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/sleacr/badge)](https://www.codefactor.io/repository/github/nutriverse/sleacr)
-[![DOI](https://zenodo.org/badge/186984529.svg)](https://zenodo.org/badge/latestdoi/186984529)
+[![DOI](https://zenodo.org/badge/186984529.svg)](https://doi.org/10.5281/zenodo.7510932)
 <!-- badges: end -->
 
 In the recent past, measurement of coverage has been mainly through
@@ -38,32 +38,53 @@ sampling, data collection, and data analysis of a SLEAC survey. The
 current version of the `{sleacr}` package currently provides the
 following:
 
-  - Functions to calculate the sample size needed for a SLEAC survey;
+- Functions to calculate the sample size needed for a SLEAC survey;
 
-  - Functions to draw a stage 1 sample for a SLEAC survey;
+- Functions to draw a stage 1 sample for a SLEAC survey;
 
-  - Functions to classify coverage;
+- Functions to classify coverage;
 
-  - Functions to determine the performance of chosen classifier cut-offs
-    for analysis of SLEAC survey data;
+- Functions to determine the performance of chosen classifier cut-offs
+  for analysis of SLEAC survey data;
 
-  - Functions to estimate coverage over wide areas; and,
+- Functions to estimate coverage over wide areas; and,
 
-  - Functions to test for coverage homogeneity across multiple surveys
-    over wide areas.
+- Functions to test for coverage homogeneity across multiple surveys
+  over wide areas.
 
 ## Installation
 
-The `{sleacr}` package is not yet available on
-[CRAN](https://cran.r-project.org) but can be installed from the
-[nutriverse R Universe](https://nutriverse.r-universe.dev) as follows:
+<div class="pkgdown-release">
+
+You can install `{sleacr}` from [CRAN](https://cran.r-project.org) with:
+
+``` r
+install.packages("sleacr")
+```
+
+</div>
+
+<div class="pkgdown-devel">
+
+You can install the development version of `{sleacr}` from GitHub using
+the `{pak}` package with:
+
+``` r
+if (!require("pak")) install.packages("pak")
+pak::pak("nutriverse/sleacr")
+```
+
+You can also install `{sleacr}` from the [nutriverse R
+Universe](https://nutriverse.r-universe.dev) with:
 
 ``` r
 install.packages(
-  "sleacr",
+  "sleacr", 
   repos = c('https://nutriverse.r-universe.dev', 'https://cloud.r-project.org')
 )
 ```
+
+</div>
 
 ## Usage
 
@@ -176,7 +197,7 @@ get_sampling_list(village_list, 40)
 which provides the following sampling list:
 
 |  id | chiefdom      | section       | village          |
-| --: | :------------ | :------------ | :--------------- |
+|----:|:--------------|:--------------|:-----------------|
 |  20 | Badjia        | Njargbahun    | Kpetema          |
 |  45 | Bagbe         | Jongo         | Yengema          |
 |  70 | Bagbe         | Samawa        | Baiama           |
@@ -297,10 +318,10 @@ lqas_sim_pop <- lqas_simulate_test(
 
 ## Get classification probabilities ----
 lqas_get_class_prob(lqas_sim_pop)
-#>                     Low : 0.9551
-#>                Moderate : 0.8332
-#>                    High : 0.835
-#>                 Overall : 0.9065
+#>                     Low : 0.9561
+#>                Moderate : 0.8333
+#>                    High : 0.8377
+#>                 Overall : 0.9074
 #> Gross misclassification : 0
 ```
 
@@ -310,7 +331,7 @@ This diagnostic test can also be plotted.
 plot(lqas_sim_pop)
 ```
 
-<img src="man/figures/README-classifier-test-plot-1.png" width="100%" />
+<img src="man/figures/README-classifier-test-plot-1.png" alt="" width="100%" />
 
 ### Estimating coverage over wide areas
 
@@ -413,12 +434,23 @@ treatment coverage is patchy.
 
 ## Citation
 
-If you use `{sleacr}` in your work, please cite using the suggested
-citation provided by a call to the `citation` function as follows:
+If you use the `{sleacr}` package in your work, please cite both the
+`{sleacr}` package and the authors and developers of the **SQUEAC and
+SLEAC method**.
+
+A suggested citation for both is provided by a call to the `citation()`
+function as follows:
 
 ``` r
 citation("sleacr")
 #> To cite sleacr in publications use:
+#> 
+#>   Ernest Guevarra, Mark Myatt (2026). _sleacr: Simplified Lot Quality
+#>   Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools_.
+#>   doi:10.5281/zenodo.7510931 <https://doi.org/10.5281/zenodo.7510931>,
+#>   R package version 0.1.0, <https://nutriverse.io/sleacr/>.
+#> 
+#> To cite the SQUEAC and SLEAC Technical Reference in publications use:
 #> 
 #>   Mark Myatt, Ernest Guevarra, Lionella Fieschi, Allison Norris, Saul
 #>   Guerrero, Lilly Schofield, Daniel Jones, Ephrem Emru, Kate Sadler
@@ -426,18 +458,10 @@ citation("sleacr")
 #>   (SQUEAC)/Simplified Lot Quality Assurance Sampling Evaluation of
 #>   Access and Coverage (SLEAC) Technical Reference_. FHI 360/FANTA,
 #>   Washington, DC.
-#>   <https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf>.
 #> 
-#> A BibTeX entry for LaTeX users is
-#> 
-#>   @Book{,
-#>     title = {Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference},
-#>     author = {{Mark Myatt} and {Ernest Guevarra} and {Lionella Fieschi} and {Allison Norris} and {Saul Guerrero} and {Lilly Schofield} and {Daniel Jones} and {Ephrem Emru} and {Kate Sadler}},
-#>     year = {2012},
-#>     publisher = {FHI 360/FANTA},
-#>     address = {Washington, DC},
-#>     url = {https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf},
-#>   }
+#> To see these entries in BibTeX format, use 'print(<citation>,
+#> bibtex=TRUE)', 'toBibtex(.)', or set
+#> 'options(citation.bibtex.max=999)'.
 ```
 
 ## Community guidelines
@@ -450,3 +474,10 @@ guidelines](https://nutriverse.io/sleacr/CONTRIBUTING.html).
 This project is released with a [Contributor Code of
 Conduct](https://nutriverse.io/sleacr/CODE_OF_CONDUCT.html). By
 contributing to this project, you agree to abide by its terms.
+
+ 
+
+[![This is part of the nutriverse project under the Oxford iHealth
+initiative of the MSc in International Health and Tropical Medicine,
+Nuffield Department of Medicine, University of
+Oxford](https://github.com/nutriverse/nutriverse-images/blob/main/nutriverse/nutriverse_footer.png?raw=true)](https://nutriverse.io)

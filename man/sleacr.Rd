@@ -27,7 +27,8 @@ Access and Coverage (SLEAC) Technical Reference. Washington, DC: FHI 360/FANTA.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://nutriverse.io/sleacr/,https://github.com/nutriverse/sleacr}
+  \item \url{https://nutriverse.io/sleacr/}
+  \item \url{https://github.com/nutriverse/sleacr}
   \item Report bugs at \url{https://github.com/nutriverse/sleacr/issues}
 }
 

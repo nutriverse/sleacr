@@ -1,10 +1,20 @@
 bibentry(
+  bibtype  = "Manual",
+  header   = "To cite sleacr in publications use:",
+  title    = "sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools",
+  author   = c(person("Ernest Guevarra"), person("Mark Myatt")),
+  year     = "2026",
+  note     = "R package version 0.1.0",
+  url      = "https://nutriverse.io/sleacr/",
+  doi      = "10.5281/zenodo.7510931"
+)
+
+bibentry(
   bibtype   = "Book",
-  header    = "To cite sleacr in publications use:",
+  header    = "To cite the SQUEAC and SLEAC Technical Reference in publications use:",
 	title     = "Semi-Quantitative Evaluation of Access and Coverage ({SQUEAC})/Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage ({SLEAC}) Technical Reference",
 	author    = c(person("Mark Myatt"), person("Ernest Guevarra"), person("Lionella Fieschi"), person("Allison Norris"), person("Saul Guerrero"), person("Lilly Schofield"), person("Daniel Jones"), person("Ephrem Emru"), person("Kate Sadler")),
   year      = "2012",
   publisher = "FHI 360/FANTA",
-  address   = "Washington, DC",
-	url       = "https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf"
+  address   = "Washington, DC"
 )

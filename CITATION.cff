@@ -9,7 +9,8 @@ type: software
 license: GPL-3.0-or-later
 title: 'sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and
   Coverage (SLEAC) Tools'
-version: 0.1.0.9000
+version: 0.1.0
+doi: 10.5281/zenodo.7510931
 abstract: In the recent past, measurement of coverage has been mainly through two-stage
   cluster sampled surveys either as part of a nutrition assessment or through a specific
   coverage survey known as Centric Systematic Area Sampling (CSAS). However, such
@@ -31,7 +32,33 @@ authors:
   email: mark@brixtonhealth.com
   orcid: https://orcid.org/0000-0003-1119-1474
 preferred-citation:
-  type: book
+  type: manual
+  title: 'sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and
+    Coverage (SLEAC) Tools'
+  authors:
+  - name: Ernest Guevarra
+  - name: Mark Myatt
+  year: '2026'
+  notes: R package version 0.1.0
+  url: https://nutriverse.io/sleacr/
+  doi: 10.5281/zenodo.7510931
+repository-code: https://github.com/nutriverse/sleacr
+url: https://nutriverse.io/sleacr/
+contact:
+- family-names: Guevarra
+  given-names: Ernest
+  email: ernest@guevarra.io
+  orcid: https://orcid.org/0000-0002-4887-4415
+keywords:
+- acute-malnutrition
+- cmam
+- coverage
+- nutrition
+- rstats
+- sleac
+- wasting
+references:
+- type: book
   title: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC)/Simplified Lot
     Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Technical
     Reference
@@ -49,20 +76,6 @@ preferred-citation:
   publisher:
     name: FHI 360/FANTA
     address: Washington, DC
-  url: https://www.fantaproject.org/sites/default/files/resources/SQUEAC-SLEAC-Technical-Reference-Oct2012_0.pdf
-repository-code: https://github.com/nutriverse/sleacr
-url: https://nutriverse.io/sleacr/
-contact:
-- family-names: Guevarra
-  given-names: Ernest
-  email: ernest@guevarra.io
-  orcid: https://orcid.org/0000-0002-4887-4415
-keywords:
-- cmam
-- coverage
-- rstats
-- sleac
-references:
 - type: software
   title: 'R: A Language and Environment for Statistical Computing'
   notes: Depends
@@ -72,8 +85,30 @@ references:
   institution:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
-  year: '2025'
+  year: '2026'
   version: '>= 4.1.0'
+- type: software
+  title: cli
+  abstract: 'cli: Helpers for Developing Command Line Interfaces'
+  notes: Imports
+  url: https://cli.r-lib.org
+  repository: https://CRAN.R-project.org/package=cli
+  authors:
+  - family-names: Csárdi
+    given-names: Gábor
+    email: gabor@posit.co
+  year: '2026'
+  doi: 10.32614/CRAN.package.cli
+- type: software
+  title: methods
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  institution:
+    name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2026'
 - type: software
   title: parallel
   abstract: 'R: A Language and Environment for Statistical Computing'
@@ -83,7 +118,7 @@ references:
   institution:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
-  year: '2025'
+  year: '2026'
 - type: software
   title: parallelly
   abstract: 'parallelly: Enhancing the ''parallel'' Package'
@@ -95,8 +130,30 @@ references:
     given-names: Henrik
     email: henrikb@braju.com
     orcid: https://orcid.org/0000-0002-7579-5165
-  year: '2025'
+  year: '2026'
   doi: 10.32614/CRAN.package.parallelly
+- type: software
+  title: squeacr
+  abstract: 'squeacr: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC)
+    Tools'
+  notes: Imports
+  url: https://nutriverse.io/squeacr/
+  authors:
+  - family-names: Guevarra
+    given-names: Ernest
+    email: ernest@guevarra.io
+    orcid: https://orcid.org/0000-0002-4887-4415
+  year: '2026'
+- type: software
+  title: stats
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  institution:
+    name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2026'
 - type: software
   title: covr
   abstract: 'covr: Test Coverage for Packages'
@@ -107,7 +164,7 @@ references:
   - family-names: Hester
     given-names: Jim
     email: james.f.hester@gmail.com
-  year: '2025'
+  year: '2026'
   doi: 10.32614/CRAN.package.covr
 - type: software
   title: knitr
@@ -120,7 +177,7 @@ references:
     given-names: Yihui
     email: xie@yihui.name
     orcid: https://orcid.org/0000-0003-0645-5666
-  year: '2025'
+  year: '2026'
   doi: 10.32614/CRAN.package.knitr
 - type: software
   title: rmarkdown
@@ -164,7 +221,7 @@ references:
     given-names: Richard
     email: rich@posit.co
     orcid: https://orcid.org/0000-0003-3925-190X
-  year: '2025'
+  year: '2026'
   doi: 10.32614/CRAN.package.rmarkdown
 - type: software
   title: spelling
@@ -175,15 +232,12 @@ references:
   authors:
   - family-names: Ooms
     given-names: Jeroen
-    email: jeroen@berkeley.edu
+    email: jeroenooms@gmail.com
     orcid: https://orcid.org/0000-0002-4035-0289
   - family-names: Hester
     given-names: Jim
     email: james.hester@rstudio.com
-  year: '2025'
-  identifiers:
-  - type: url
-    value: https://docs.ropensci.org/spelling/
+  year: '2026'
   doi: 10.32614/CRAN.package.spelling
 - type: software
   title: testthat
@@ -195,7 +249,7 @@ references:
   - family-names: Wickham
     given-names: Hadley
     email: hadley@posit.co
-  year: '2025'
+  year: '2026'
   doi: 10.32614/CRAN.package.testthat
   version: '>= 3.0.0'
 - type: software
@@ -212,6 +266,6 @@ references:
   - family-names: Wickham
     given-names: Hadley
     email: hadley@rstudio.com
-  year: '2025'
+  year: '2026'
   doi: 10.32614/CRAN.package.tibble
 

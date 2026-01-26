@@ -2,7 +2,7 @@ Package: sleacr
 Type: Package
 Title: Simplified Lot Quality Assurance Sampling Evaluation of Access and 
     Coverage (SLEAC) Tools
-Version: 0.1.0.9000
+Version: 0.1.0
 Authors@R: c(
     person("Ernest", "Guevarra", 
            comment = c(ORCID = "0000-0002-4887-4415"), 
@@ -47,9 +47,9 @@ Remotes:
 Encoding: UTF-8
 Language: en-GB
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
-URL: https://nutriverse.io/sleacr/,https://github.com/nutriverse/sleacr
+URL: https://nutriverse.io/sleacr/, https://github.com/nutriverse/sleacr
 BugReports: https://github.com/nutriverse/sleacr/issues
 Config/testthat/edition: 3
 VignetteBuilder: knitr
