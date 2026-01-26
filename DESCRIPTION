@@ -27,7 +27,7 @@ Description: In the recent past, measurement of coverage has been mainly through
     use in conducting a SLEAC assessment.
 License: GPL (>= 3)
 Depends: 
-    R (>= 4.1.0)
+    R (>= 4.2.0)
 Imports: 
     cli,
     methods,
