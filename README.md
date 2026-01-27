@@ -318,10 +318,10 @@ lqas_sim_pop <- lqas_simulate_test(
 
 ## Get classification probabilities ----
 lqas_get_class_prob(lqas_sim_pop)
-#>                     Low : 0.9561
-#>                Moderate : 0.8333
-#>                    High : 0.8377
-#>                 Overall : 0.9074
+#>                     Low : 0.9553
+#>                Moderate : 0.8323
+#>                    High : 0.8386
+#>                 Overall : 0.9067
 #> Gross misclassification : 0
 ```
 
@@ -448,7 +448,7 @@ citation("sleacr")
 #>   Ernest Guevarra, Mark Myatt (2026). _sleacr: Simplified Lot Quality
 #>   Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools_.
 #>   doi:10.5281/zenodo.7510931 <https://doi.org/10.5281/zenodo.7510931>,
-#>   R package version 0.1.0, <https://nutriverse.io/sleacr/>.
+#>   R package version 0.1.2, <https://nutriverse.io/sleacr/>.
 #> 
 #> To cite the SQUEAC and SLEAC Technical Reference in publications use:
 #> 
