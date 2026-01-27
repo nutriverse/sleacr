@@ -30,7 +30,7 @@ navbar:
   type: dark
   structure:
     left:  [home, intro, reference, articles, news]
-    right: [search, website, mastodon, bluesky, github]
+    right: [search, website, mastodon, bluesky, linkedin, github]
   components:
     articles:
       text: Articles
@@ -41,8 +41,8 @@ navbar:
         href: articles/classification.html
     website:
       icon: "fa-globe"
-      aria-label: Website
       href: https://nutriverse.io
+      aria-label: Website
     mastodon:
       icon: "fab fa-mastodon fa-lg"
       aria-label: Mastodon
@@ -51,6 +51,10 @@ navbar:
       icon: "fab fa-bluesky fa-lg"
       aria-label: Bluesky
       href: https://bsky.app/profile/nutriverse.io
+    linkedin:
+      icon: "fab fa-linkedin fa-lg"
+      href: https://www.linkedin.com/company/nutriverse-community
+      aria-label: LinkedIn
 
 home:
   links:
