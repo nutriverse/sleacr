@@ -22,12 +22,12 @@ library(tibble)
 
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R-CMD-check](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml)
 [![test-coverage](https://github.com/nutriverse/sleacr/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/nutriverse/sleacr/actions/workflows/test-coverage.yaml)
-[![Codecov test coverage](https://codecov.io/gh/nutriverse/sleacr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/sleacr?branch=main)
+[![Codecov test coverage](https://codecov.io/gh/nutriverse/sleacr/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/sleacr)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/sleacr/badge)](https://www.codefactor.io/repository/github/nutriverse/sleacr)
-[![DOI](https://zenodo.org/badge/186984529.svg)](https://zenodo.org/badge/latestdoi/186984529)
+[![DOI](https://zenodo.org/badge/186984529.svg)](https://doi.org/10.5281/zenodo.7510932)
 <!-- badges: end -->
 
 In the recent past, measurement of coverage has been mainly through two-stage cluster sampled surveys either as part of a nutrition assessment or through a specific coverage survey known as Centric Systematic Area Sampling (CSAS). However, such methods are resource intensive and often only used for final programme evaluation meaning results arrive too late for programme adaptation. SLEAC, which stands for Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage, is a low resource method designed specifically to address this limitation and is used regularly for monitoring, planning and importantly, timely improvement to programme quality, both for agency and Ministry of Health (MoH) led programmes. This package provides functions for use in conducting a SLEAC assessment.
@@ -50,14 +50,30 @@ The `{sleacr}` package provides functions that facilitate the design, sampling, 
 
 ## Installation
 
-The `{sleacr}` package is not yet available on [CRAN](https://cran.r-project.org) but can be installed from the [nutriverse R Universe](https://nutriverse.r-universe.dev) as follows:
+::: {.pkgdown-release}
+You can install `{sleacr}` from [CRAN](https://cran.r-project.org) with:
 
-```{r install, echo = TRUE, eval = FALSE}
+```R
+install.packages("sleacr")
+```
+:::
+
+::: {.pkgdown-devel}
+You can install the development version of `{sleacr}` from GitHub using the `{pak}` package with:
+
+```R
+if (!require("pak")) install.packages("pak")
+pak::pak("nutriverse/sleacr")
+```
+You can also install `{sleacr}` from the [nutriverse R Universe](https://nutriverse.r-universe.dev) with:
+
+```R
 install.packages(
-  "sleacr",
+  "sleacr", 
   repos = c('https://nutriverse.r-universe.dev', 'https://cloud.r-project.org')
 )
 ```
+:::
 
 ## Usage
 
@@ -214,7 +230,9 @@ In this example, case-finding effectiveness is homogeneous while treatment cover
 
 ## Citation
 
-If you use `{sleacr}` in your work, please cite using the suggested citation provided by a call to the `citation` function as follows:
+If you use the `{sleacr}` package in your work, please cite both the `{sleacr}` package and the authors and developers of the **SQUEAC and SLEAC method**.
+
+A suggested citation for both is provided by a call to the `citation()` function as follows:
 
 ```{r cite}
 citation("sleacr")
@@ -226,3 +244,6 @@ Feedback, bug reports, and feature requests are welcome; file issues or seek sup
 
 This project is released with a [Contributor Code of Conduct](https://nutriverse.io/sleacr/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 
+&nbsp;
+
+[![This is part of the nutriverse project under the Oxford iHealth initiative of the MSc in International Health and Tropical Medicine, Nuffield Department of Medicine, University of Oxford](https://github.com/nutriverse/nutriverse-images/blob/main/nutriverse/nutriverse_footer.png?raw=true)](https://nutriverse.io)

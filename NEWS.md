@@ -1,3 +1,3 @@
-# sleacr 0.0.0.9000
+# sleacr 0.1.0
 
-This is pre-release of the `sleacr` package.
+This is the first release of the `{sleacr}` package.

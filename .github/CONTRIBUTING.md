@@ -8,16 +8,16 @@
 
 * Fork this repository to your Github account
 
-* Clone your version on your account down to your machine from your account
+* Clone your forked version to your machine with
 
-```
+```bash
 git clone https://github.com/<yourgithubusername>/sleacr.git
 ```
 
 * Make sure to track progress upstream i.e., on our version of `sleacr`
 at `nutriverse/sleacr`, by doing
 
-```
+```bash
 git remote add upstream https://github.com/nutriverse/sleacr.git
 ```
 
