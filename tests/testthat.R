@@ -9,4 +9,6 @@
 library(testthat)
 library(sleacr)
 
+set.seed(1972)
+
 test_check("sleacr")

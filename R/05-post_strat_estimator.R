@@ -20,10 +20,11 @@
 #' @param u5 A numeric value for the proportion of the population that is under
 #'   years old.
 #' @param p Prevalence of SAM or MAM in the given population.
+#' @param k Correction factor. Ratio of the mean length of an untreated episode
+#'   to the mean length of a CMAM treatment episode
 #' @param cov_type Coverage estimator to report. Either *"cf"* for
 #'   *case-finding effectiveness* or *"tc"* for *treatment coverage*.
 #'   Default is *"cf"*.
-#' @inheritParams squeacr::calculate_tc
 #'
 #' @returns A list of overall coverage estimates with corresponding 95%
 #'   confidence intervals for case-finding effectiveness and treatment coverage.
@@ -141,11 +142,11 @@ estimate_coverage <- function(cov_df,
   cov_type <- match.arg(cov_type)
 
   if (cov_type == "cf") {
-    cov <- with(cov_df, squeacr::calculate_cf(cin = cases_in, cout = cases_out))
+    cov <- with(cov_df, calculate_cf(cin = cases_in, cout = cases_out))
   } else {
     cov <- with(
       cov_df, 
-      squeacr::calculate_tc(
+      calculate_tc(
         cin = cases_in, cout = cases_out, rin = rec_in, k = k
       )
     )
@@ -166,7 +167,7 @@ calculate_ci <- function(cov_df, cov_type = c("cf", "tc"), k = 3, weights) {
   } else {
     rec_out <- with(
       cov_df,
-      squeacr::calculate_rout(cases_in, cases_out, rec_in, k = k)
+      calculate_rout(cases_in, cases_out, rec_in, k = k)
     )
 
     c <- cov_df$cases_in + cov_df$rec_in

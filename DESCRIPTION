@@ -33,7 +33,6 @@ Imports:
     methods,
     parallel,
     parallelly,
-    squeacr,
     stats
 Suggests: 
     covr,
@@ -42,8 +41,6 @@ Suggests:
     spelling,
     testthat (>= 3.0.0),
     tibble
-Remotes:
-    rapidsurveys/squeacr
 Encoding: UTF-8
 Language: en-GB
 LazyData: true

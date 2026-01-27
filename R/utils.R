@@ -169,4 +169,37 @@ check_p <- function(p) {
 }
 
 
+#'
+#' Calculate r_out
+#'
+#' @keywords internal
+#'  
+
+calculate_rout <- function(cin, cout, rin, k = 3) {
+  floor((1 / k) * (rin * ((cin + 1 + cout) / (cin + 1)) - rin))
+}
+
+
+#'
+#' Calculate case-finding effectiveness
+#' 
+#' @keywords internal
+#'
+
+calculate_cf <- function(cin, cout) {
+  cin / (cin + cout)
+}
+
+
+#'
+#' Calculate treatment coverage
+#' 
+#' @keywords internal
+#'
+
+calculate_tc <- function(cin, cout, rin, k = 3) {
+  rout <- calculate_rout(cin = cin, cout = cout, rin = rin, k = k)
+  (cin + rin) / (cin + cout + rin + rout)
+}
+
 
