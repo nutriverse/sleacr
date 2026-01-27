@@ -9,7 +9,7 @@ type: software
 license: GPL-3.0-or-later
 title: 'sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and
   Coverage (SLEAC) Tools'
-version: 0.1.0
+version: 0.1.1
 doi: 10.5281/zenodo.7510931
 abstract: In the recent past, measurement of coverage has been mainly through two-stage
   cluster sampled surveys either as part of a nutrition assessment or through a specific
@@ -39,7 +39,7 @@ preferred-citation:
   - name: Ernest Guevarra
   - name: Mark Myatt
   year: '2026'
-  notes: R package version 0.1.0
+  notes: R package version 0.1.1
   url: https://nutriverse.io/sleacr/
   doi: 10.5281/zenodo.7510931
 repository-code: https://github.com/nutriverse/sleacr
@@ -86,7 +86,7 @@ references:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
   year: '2026'
-  version: '>= 4.1.0'
+  version: '>= 4.2.0'
 - type: software
   title: cli
   abstract: 'cli: Helpers for Developing Command Line Interfaces'
@@ -132,18 +132,6 @@ references:
     orcid: https://orcid.org/0000-0002-7579-5165
   year: '2026'
   doi: 10.32614/CRAN.package.parallelly
-- type: software
-  title: squeacr
-  abstract: 'squeacr: Semi-Quantitative Evaluation of Access and Coverage (SQUEAC)
-    Tools'
-  notes: Imports
-  url: https://nutriverse.io/squeacr/
-  authors:
-  - family-names: Guevarra
-    given-names: Ernest
-    email: ernest@guevarra.io
-    orcid: https://orcid.org/0000-0002-4887-4415
-  year: '2026'
 - type: software
   title: stats
   abstract: 'R: A Language and Environment for Statistical Computing'
