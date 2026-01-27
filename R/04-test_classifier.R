@@ -33,7 +33,7 @@ lqas_simulate_population <- function(proportion, pop) {
   case <- c(rep(1, d), rep(0, pop - d))
 
   ## Add unique identifier ----
-  id <- seq_len(length(case))
+  id <- seq_along(case)
 
   ## Concatenate results into a data.frame ----
   result <- data.frame(id, case)
