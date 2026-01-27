@@ -7,7 +7,8 @@
 #'   are in the CMAM programme.
 #' @param rec_in Number of children recovering from SAM or MAM found during the
 #'   survey who are in the programme.
-#' @inheritParams squeacr::calculate_tc
+#' @param k Correction factor. Ratio of the mean length of an untreated episode
+#'   to the mean length of a CMAM treatment episode
 #' @param threshold  Decision rule threshold/s. Should be between 0 and 1. At
 #'   least one threshold should be provided for a two-tier classifier. Two 
 #'   thresholds should be provided for a three-tier classifier. Default is a 
@@ -150,7 +151,7 @@ lqas_classify_cf <- function(cases_in, cases_out,
 
 lqas_classify_tc <- function(cases_in, cases_out, rec_in, k,
                              threshold = c(0.2, 0.5), label = FALSE) {
-  rec_out <- squeacr::calculate_rout(cases_in, cases_out, rec_in, k = k)
+  rec_out <- calculate_rout(cases_in, cases_out, rec_in, k = k)
   
   d <- (cases_in + cases_out + rec_in + rec_out) * threshold
 

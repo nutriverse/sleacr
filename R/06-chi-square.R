@@ -92,7 +92,7 @@ calculate_x2_stat <- function(cases_in, cases_out, rec_in, k = 3) {
   observed_tc <- cases_in + rec_in
 
   ## Calculate rec_out ----
-  rec_out <- squeacr::calculate_rout(
+  rec_out <- calculate_rout(
     cin = cases_in, cout = cases_out, rin = rec_in, k = k
   )
 
