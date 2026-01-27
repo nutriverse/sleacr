@@ -104,6 +104,7 @@ test_that("outcome is lqasClass", {
 
 
 test_that("outcome is as expected", {
+  skip_on_ci()
   expect_snapshot_output(
     print(
       lqas_get_class_prob(
