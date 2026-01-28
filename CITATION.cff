@@ -9,7 +9,7 @@ type: software
 license: GPL-3.0-or-later
 title: 'sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and
   Coverage (SLEAC) Tools'
-version: 0.1.1
+version: 0.1.2
 doi: 10.5281/zenodo.7510931
 abstract: In the recent past, measurement of coverage has been mainly through two-stage
   cluster sampled surveys either as part of a nutrition assessment or through a specific
@@ -39,7 +39,7 @@ preferred-citation:
   - name: Ernest Guevarra
   - name: Mark Myatt
   year: '2026'
-  notes: R package version 0.1.1
+  notes: R package version 0.1.2
   url: https://nutriverse.io/sleacr/
   doi: 10.5281/zenodo.7510931
 repository-code: https://github.com/nutriverse/sleacr
