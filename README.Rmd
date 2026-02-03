@@ -23,11 +23,17 @@ library(tibble)
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![CRAN status](https://www.r-pkg.org/badges/version/sleacr)](https://CRAN.R-project.org/package=sleacr){.pkgdown-release}
+[![cran checks](https://badges.cranchecks.info/worst/sleacr.svg)](https://cran.r-project.org/web/checks/check_results_sleacr.html)
+[![CRAN](https://img.shields.io/cran/l/sleacr.svg)](https://CRAN.R-project.org/package=sleacr)
+[![CRAN](http://cranlogs.r-pkg.org/badges/sleacr)](https://cran.r-project.org/package=sleacr)
+[![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/nipnTK)](https://cran.r-project.org/package=sleacr)
 [![R-CMD-check](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml)
 [![test-coverage](https://github.com/nutriverse/sleacr/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/nutriverse/sleacr/actions/workflows/test-coverage.yaml)
 [![Codecov test coverage](https://codecov.io/gh/nutriverse/sleacr/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/sleacr)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/sleacr/badge)](https://www.codefactor.io/repository/github/nutriverse/sleacr)
-[![DOI](https://zenodo.org/badge/186984529.svg)](https://doi.org/10.5281/zenodo.7510932)
+[![DOI](https://zenodo.org/badge/186984529.svg)](https://doi.org/10.5281/zenodo.7510932){.pkgdown-release}
+[![DOI](https://img.shields.io/badge/DOI-10.32614/CRAN.package.sleacr-blue)](https://doi.org/10.32614/CRAN.package.sleacr){.pkgdown-release}
 <!-- badges: end -->
 
 In the recent past, measurement of coverage has been mainly through two-stage cluster sampled surveys either as part of a nutrition assessment or through a specific coverage survey known as Centric Systematic Area Sampling (CSAS). However, such methods are resource intensive and often only used for final programme evaluation meaning results arrive too late for programme adaptation. SLEAC, which stands for Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage, is a low resource method designed specifically to address this limitation and is used regularly for monitoring, planning and importantly, timely improvement to programme quality, both for agency and Ministry of Health (MoH) led programmes. This package provides functions for use in conducting a SLEAC assessment.
