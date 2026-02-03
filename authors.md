@@ -11,7 +11,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/nutriverse/sleacr/blob/v0.1.3/inst/CITATION)
+[`inst/CITATION`](https://github.com/nutriverse/sleacr/blob/main/inst/CITATION)
 
 Ernest Guevarra, Mark Myatt (2026). *sleacr: Simplified Lot Quality
 Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools*.

@@ -28,10 +28,10 @@ sim <- lqas_simulate_test(
 )
 
 lqas_get_class_prob(x = sim)
-#>                     Low : 0.9547
-#>                Moderate : 0.8387
-#>                    High : 0.844
-#>                 Overall : 0.9088
+#>                     Low : 0.9553
+#>                Moderate : 0.84
+#>                    High : 0.88
+#>                 Overall : 0.9132
 #> Gross misclassification : 0
 #> 
 ```
