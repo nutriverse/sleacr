@@ -10,13 +10,26 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+<a href="https://CRAN.R-project.org/package=sleacr"
+class="pkgdown-release"><img
+src="https://www.r-pkg.org/badges/version/sleacr"
+alt="CRAN status" /></a> [![cran
+checks](https://badges.cranchecks.info/worst/sleacr.svg)](https://cran.r-project.org/web/checks/check_results_sleacr.html)
+[![CRAN](https://img.shields.io/cran/l/sleacr.svg)](https://CRAN.R-project.org/package=sleacr)
+[![CRAN](http://cranlogs.r-pkg.org/badges/sleacr)](https://cran.r-project.org/package=sleacr)
+[![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/nipnTK)](https://cran.r-project.org/package=sleacr)
 [![R-CMD-check](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml)
 [![test-coverage](https://github.com/nutriverse/sleacr/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/nutriverse/sleacr/actions/workflows/test-coverage.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/nutriverse/sleacr/graph/badge.svg)](https://app.codecov.io/gh/nutriverse/sleacr)
 [![CodeFactor](https://www.codefactor.io/repository/github/nutriverse/sleacr/badge)](https://www.codefactor.io/repository/github/nutriverse/sleacr)
-[![DOI](https://zenodo.org/badge/186984529.svg)](https://doi.org/10.5281/zenodo.7510932)
-<!-- badges: end -->
+<a href="https://doi.org/10.5281/zenodo.7510932"
+class="pkgdown-release"><img
+src="https://zenodo.org/badge/186984529.svg" alt="DOI" /></a>
+<a href="https://doi.org/10.32614/CRAN.package.sleacr"
+class="pkgdown-release"><img
+src="https://img.shields.io/badge/DOI-10.32614/CRAN.package.sleacr-blue"
+alt="DOI" /></a> <!-- badges: end -->
 
 In the recent past, measurement of coverage has been mainly through
 two-stage cluster sampled surveys either as part of a nutrition
@@ -318,10 +331,10 @@ lqas_sim_pop <- lqas_simulate_test(
 
 ## Get classification probabilities ----
 lqas_get_class_prob(lqas_sim_pop)
-#>                     Low : 0.9553
-#>                Moderate : 0.8323
-#>                    High : 0.8386
-#>                 Overall : 0.9067
+#>                     Low : 0.956
+#>                Moderate : 0.8319
+#>                    High : 0.8392
+#>                 Overall : 0.9071
 #> Gross misclassification : 0
 ```
 
@@ -448,7 +461,7 @@ citation("sleacr")
 #>   Ernest Guevarra, Mark Myatt (2026). _sleacr: Simplified Lot Quality
 #>   Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools_.
 #>   doi:10.5281/zenodo.7510931 <https://doi.org/10.5281/zenodo.7510931>,
-#>   R package version 0.1.2, <https://nutriverse.io/sleacr/>.
+#>   R package version 0.1.3, <https://nutriverse.io/sleacr/>.
 #> 
 #> To cite the SQUEAC and SLEAC Technical Reference in publications use:
 #> 

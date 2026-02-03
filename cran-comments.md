@@ -1,3 +1,7 @@
+## Resubmission
+
+This is a resubmission. In this version, I have removed the offending folder named `sleacr` inside `inst`.
+
 ## Test environments
 * local OS X install, R 4.5.2
 * local ubuntu 22.04 install, R 4.5.2

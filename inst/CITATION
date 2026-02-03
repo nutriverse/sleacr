@@ -4,7 +4,7 @@ bibentry(
   title    = "sleacr: Simplified Lot Quality Assurance Sampling Evaluation of Access and Coverage (SLEAC) Tools",
   author   = c(person("Ernest Guevarra"), person("Mark Myatt")),
   year     = "2026",
-  note     = "R package version 0.1.2",
+  note     = "R package version 0.1.3",
   url      = "https://nutriverse.io/sleacr/",
   doi      = "10.5281/zenodo.7510931"
 )

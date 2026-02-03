@@ -1,3 +1,3 @@
-# sleacr 0.1.0
+# sleacr 0.1.3
 
 This is the first release of the `{sleacr}` package.
