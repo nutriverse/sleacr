@@ -17,7 +17,7 @@ alt="CRAN status" /></a> [![cran
 checks](https://badges.cranchecks.info/worst/sleacr.svg)](https://cran.r-project.org/web/checks/check_results_sleacr.html)
 [![CRAN](https://img.shields.io/cran/l/sleacr.svg)](https://CRAN.R-project.org/package=sleacr)
 [![CRAN](http://cranlogs.r-pkg.org/badges/sleacr)](https://cran.r-project.org/package=sleacr)
-[![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/nipnTK)](https://cran.r-project.org/package=sleacr)
+[![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/sleacr)](https://cran.r-project.org/package=sleacr)
 [![R-CMD-check](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nutriverse/sleacr/actions/workflows/R-CMD-check.yaml)
 [![test-coverage](https://github.com/nutriverse/sleacr/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/nutriverse/sleacr/actions/workflows/test-coverage.yaml)
 [![Codecov test
@@ -331,10 +331,10 @@ lqas_sim_pop <- lqas_simulate_test(
 
 ## Get classification probabilities ----
 lqas_get_class_prob(lqas_sim_pop)
-#>                     Low : 0.956
-#>                Moderate : 0.8319
-#>                    High : 0.8392
-#>                 Overall : 0.9071
+#>                     Low : 0.9561
+#>                Moderate : 0.8373
+#>                    High : 0.833
+#>                 Overall : 0.9082
 #> Gross misclassification : 0
 ```
 
