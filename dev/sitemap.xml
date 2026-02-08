@@ -9,8 +9,13 @@
 <url><loc>https://nutriverse.io/sleacr/dev/authors.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/dev/index.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/dev/news/index.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/dev/reference/calculate_cf.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/dev/reference/calculate_rout.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/dev/reference/calculate_tc.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/dev/reference/calculate_weights.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/dev/reference/check_coverage_data.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/dev/reference/check_coverage_homogeneity.html</loc></url>
+<url><loc>https://nutriverse.io/sleacr/dev/reference/check_p.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/dev/reference/check_pop_data.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/dev/reference/estimate_coverage.html</loc></url>
 <url><loc>https://nutriverse.io/sleacr/dev/reference/get_binom_hypergeom.html</loc></url>

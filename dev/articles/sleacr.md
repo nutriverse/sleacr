@@ -1,0 +1,54 @@
+# Introduction to SLEAC
+
+**Simplified LQAS (Lot Quality Assurance Sampling) Evaluation of Access
+and Coverage (SLEAC)** is a low-resource method for classifying the
+coverage of selective feeding programmes. It was designed for use in
+programmes delivering CMAM services over many service delivery units.
+Examples of such programs include:
+
+- National or regional programs delivering CMAM services through health
+  districts; and,
+
+- District programs delivering CMAM services through primary health care
+  centres.
+
+**SLEAC** surveys classify coverage at the level of the service delivery
+unit. This will vary with the scale of the programme. For example:
+
+- In the case of a national or regional program delivering CMAM services
+  through health districts (or the equivalent local administrative unit)
+  the service delivery unit is the heath district;
+
+- In the case of a district program delivering CMAM services through
+  primary healthcare centres the service delivery unit is the primary
+  healthcare centre
+
+It is not usually sensible to treat units larger than a health district
+as a service delivery unit.
+
+SLEAC may also be used to estimate coverage over wide areas. SLEAC has
+been used for regional and national coverage surveys. In these surveys
+coverage is usually classified and mapped at the district level and
+estimated at the regional and national levels.
+
+## Classifying coverage
+
+The SLEAC method classifies program coverage for a service delivery unit
+such as a health district. A SLEAC survey does not provide an estimate
+of overall coverage with a confidence interval for a single service
+delivery unit. Instead, a SLEAC survey identifies the category of
+coverage (e.g. low, moderate, or high) that best describes the coverage
+of the service delivery unit being assessed. The advantage of this
+approach is that relatively small sample sizes (e.g. `n = 40`) are
+required in order to make accurate and reliable classifications.
+
+SLEAC uses the lot quality assurance sampling (LQAS) classification
+technique.
+
+- The SLEAC survey sample is designed to represent an entire service
+  delivery unit such as a district.
+
+- A target sample size for SLEAC surveys is decided in advance of
+  data-collection. This is usually about `n = 40` SAM cases.
+
+- SLEAC surveys may classify coverage into three (or more) classes.
